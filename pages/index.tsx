@@ -25,49 +25,102 @@ const Home: NextPage = () => {
       </Head>
       <div className="flex justify-center items-center">
         <div
-          style={{ width: "30rem", height: "50rem" }}
+          style={{ width: "40rem", height: "50rem" }}
           className="relative bg-slate-500 "
         >
           <Carousel swipeable={false}>
             <TransformWrapper>
               <TransformComponent>
                 <div
-                  style={{ width: "30rem", height: "50rem" }}
-                  className="relative"
+                  style={{ width: "40rem", height: "50rem" }}
+                  className="relative bg-slate-500 flex items-center justify-center"
                 >
-                  <Image
-                    src="http://146.56.147.155/images/1.JPG"
-                    alt="test"
-                    layout="fill"
-                  />
+                  <div
+                    style={{ width: "30rem", height: "50rem" }}
+                    className="relative flex"
+                  >
+                    <Image
+                      src="http://146.56.147.155/images/1.JPG"
+                      alt="test"
+                      layout="fill"
+                    />
+                  </div>
                 </div>
               </TransformComponent>
             </TransformWrapper>
             <TransformWrapper>
               <TransformComponent>
                 <div
-                  style={{ width: "30rem", height: "50rem" }}
-                  className="relative"
+                  style={{ width: "40rem", height: "50rem" }}
+                  className="relative bg-slate-500 flex items-center justify-center"
                 >
-                  <Image
-                    src="http://146.56.147.155/images/2.JPG"
-                    alt="test"
-                    layout="fill"
-                  />
+                  <div
+                    style={{ width: "30rem", height: "50rem" }}
+                    className="relative flex"
+                  >
+                    <Image
+                      src="http://146.56.147.155/images/2.JPG"
+                      alt="test"
+                      layout="fill"
+                    />
+                  </div>
                 </div>
               </TransformComponent>
             </TransformWrapper>
             <TransformWrapper>
               <TransformComponent>
                 <div
-                  style={{ width: "30rem", height: "50rem" }}
-                  className="relative"
+                  style={{ width: "40rem", height: "50rem" }}
+                  className="relative bg-slate-500 flex items-center justify-center"
                 >
-                  <Image
-                    src="http://146.56.147.155/images/3.JPG"
-                    alt="test"
-                    layout="fill"
-                  />
+                  <div
+                    style={{ width: "30rem", height: "50rem" }}
+                    className="relative flex"
+                  >
+                    <Image
+                      src="http://146.56.147.155/images/3.JPG"
+                      alt="test"
+                      layout="fill"
+                    />
+                  </div>
+                </div>
+              </TransformComponent>
+            </TransformWrapper>
+            <TransformWrapper>
+              <TransformComponent>
+                <div
+                  style={{ width: "40rem", height: "50rem" }}
+                  className="relative bg-slate-500 flex items-center justify-center"
+                >
+                  <div
+                    style={{ width: "30rem", height: "50rem" }}
+                    className="relative flex"
+                  >
+                    <Image
+                      src="http://146.56.147.155/images/4.JPG"
+                      alt="test"
+                      layout="fill"
+                    />
+                  </div>
+                </div>
+              </TransformComponent>
+            </TransformWrapper>
+            <TransformWrapper>
+              <TransformComponent>
+                <div
+                  style={{ width: "40rem", height: "50rem" }}
+                  className="relative bg-slate-500 flex items-center justify-center"
+                >
+                  <div
+                    style={{ width: "30rem", height: "50rem" }}
+                    className="relative flex"
+                  >
+                    <Image
+                      src="http://146.56.147.155/images/5.JPG"
+                      alt="test"
+                      layout="fill"
+                    />
+                  </div>
                 </div>
               </TransformComponent>
             </TransformWrapper>
