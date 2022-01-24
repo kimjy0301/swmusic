@@ -5,8 +5,9 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Slider, { Settings } from "react-slick";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
 import { getPlaiceholder } from "plaiceholder";
+import image1 from "../public/image/1.png";
+import image2 from "../public/image/2.png";
 
 export const getStaticProps = async () => {
   const { base64, img } = await getPlaiceholder(
@@ -45,107 +46,104 @@ const Home: NextPage = ({ imageProps }: any) => {
           style={{ width: "40rem", height: "50rem" }}
           className="relative bg-slate-500 "
         >
-          <Carousel swipeable={false} showThumbs={false}>
-            <TransformWrapper>
-              <TransformComponent>
+          <TransformWrapper>
+            <TransformComponent>
+              <div
+                style={{ width: "40rem", height: "50rem" }}
+                className="relative bg-slate-500 flex items-center justify-center"
+              >
                 <div
-                  style={{ width: "40rem", height: "50rem" }}
-                  className="relative bg-slate-500 flex items-center justify-center"
+                  style={{ width: "30rem", height: "50rem" }}
+                  className="relative flex"
                 >
-                  <div
-                    style={{ width: "30rem", height: "50rem" }}
-                    className="relative flex"
-                  >
-                    <Image {...imageProps} alt="test" placeholder={"blur"} />
-                  </div>
+                  <Image
+                    src="http://146.56.147.155/images/5.JPG"
+                    alt="test"
+                    layout="fill"
+                    placeholder={"blur"}
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUTrxcDwADvgHQ1WpRPgAAAABJRU5ErkJggg=="
+                  />
                 </div>
-              </TransformComponent>
-            </TransformWrapper>
-            <TransformWrapper>
-              <TransformComponent>
+              </div>
+            </TransformComponent>
+          </TransformWrapper>
+          <TransformWrapper>
+            <TransformComponent>
+              <div
+                style={{ width: "40rem", height: "50rem" }}
+                className="relative bg-slate-500 flex items-center justify-center"
+              >
                 <div
-                  style={{ width: "40rem", height: "50rem" }}
-                  className="relative bg-slate-500 flex items-center justify-center"
+                  style={{ width: "30rem", height: "50rem" }}
+                  className="relative flex"
                 >
-                  <div
-                    style={{ width: "30rem", height: "50rem" }}
-                    className="relative flex"
-                  >
-                    <Image
-                      src="http://146.56.147.155/images/2.JPG"
-                      alt="test"
-                      layout="fill"
-                      placeholder={"blur"}
-                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUTrxcDwADvgHQ1WpRPgAAAABJRU5ErkJggg=="
-                    />
-                  </div>
+                  <Image src={image1} alt="test" placeholder="blur" />
                 </div>
-              </TransformComponent>
-            </TransformWrapper>
-            <TransformWrapper>
-              <TransformComponent>
+              </div>
+            </TransformComponent>
+          </TransformWrapper>
+          <TransformWrapper>
+            <TransformComponent>
+              <div
+                style={{ width: "40rem", height: "50rem" }}
+                className="relative bg-slate-500 flex items-center justify-center"
+              >
                 <div
-                  style={{ width: "40rem", height: "50rem" }}
-                  className="relative bg-slate-500 flex items-center justify-center"
+                  style={{ width: "30rem", height: "50rem" }}
+                  className="relative flex"
                 >
-                  <div
-                    style={{ width: "30rem", height: "50rem" }}
-                    className="relative flex"
-                  >
-                    <Image
-                      src="http://146.56.147.155/images/3.JPG"
-                      alt="test"
-                      layout="fill"
-                      placeholder={"blur"}
-                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUTrxcDwADvgHQ1WpRPgAAAABJRU5ErkJggg=="
-                    />
-                  </div>
+                  <Image
+                    src={image2}
+                    alt="test"
+                    layout="fill"
+                    placeholder={"blur"}
+                  />
                 </div>
-              </TransformComponent>
-            </TransformWrapper>
-            <TransformWrapper>
-              <TransformComponent>
+              </div>
+            </TransformComponent>
+          </TransformWrapper>
+          <TransformWrapper>
+            <TransformComponent>
+              <div
+                style={{ width: "40rem", height: "50rem" }}
+                className="relative bg-slate-500 flex items-center justify-center"
+              >
                 <div
-                  style={{ width: "40rem", height: "50rem" }}
-                  className="relative bg-slate-500 flex items-center justify-center"
+                  style={{ width: "30rem", height: "50rem" }}
+                  className="relative flex"
                 >
-                  <div
-                    style={{ width: "30rem", height: "50rem" }}
-                    className="relative flex"
-                  >
-                    <Image
-                      src="http://146.56.147.155/images/4.JPG"
-                      alt="test"
-                      layout="fill"
-                      placeholder={"blur"}
-                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUTrxcDwADvgHQ1WpRPgAAAABJRU5ErkJggg=="
-                    />
-                  </div>
+                  <Image
+                    src="http://146.56.147.155/images/3.JPG"
+                    alt="test"
+                    layout="fill"
+                    placeholder={"blur"}
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUTrxcDwADvgHQ1WpRPgAAAABJRU5ErkJggg=="
+                  />
                 </div>
-              </TransformComponent>
-            </TransformWrapper>
-            <TransformWrapper>
-              <TransformComponent>
+              </div>
+            </TransformComponent>
+          </TransformWrapper>
+          <TransformWrapper>
+            <TransformComponent>
+              <div
+                style={{ width: "40rem", height: "50rem" }}
+                className="relative bg-slate-500 flex items-center justify-center"
+              >
                 <div
-                  style={{ width: "40rem", height: "50rem" }}
-                  className="relative bg-slate-500 flex items-center justify-center"
+                  style={{ width: "30rem", height: "50rem" }}
+                  className="relative flex"
                 >
-                  <div
-                    style={{ width: "30rem", height: "50rem" }}
-                    className="relative flex"
-                  >
-                    <Image
-                      src="http://146.56.147.155/images/5.JPG"
-                      alt="test"
-                      layout="fill"
-                      placeholder={"blur"}
-                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUTrxcDwADvgHQ1WpRPgAAAABJRU5ErkJggg=="
-                    />
-                  </div>
+                  <Image
+                    src="http://146.56.147.155/images/4.JPG"
+                    alt="test"
+                    layout="fill"
+                    placeholder={"blur"}
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUTrxcDwADvgHQ1WpRPgAAAABJRU5ErkJggg=="
+                  />
                 </div>
-              </TransformComponent>
-            </TransformWrapper>
-          </Carousel>
+              </div>
+            </TransformComponent>
+          </TransformWrapper>
         </div>
       </div>
     </div>
