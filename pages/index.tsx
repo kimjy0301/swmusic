@@ -23,7 +23,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const Home: NextPage = ({ imageProps }) => {
+const Home: NextPage = ({ imageProps }: any) => {
   const settings: Settings = {
     dots: false,
     arrows: true,
