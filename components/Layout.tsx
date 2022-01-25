@@ -7,13 +7,13 @@ const Layout = (props: any) => {
   const springRef = useSpringRef();
   const sProps = useSpring({
     opacity: 1,
-    from: { opacity: 0 },
+    from: { opacity: 1 },
     ref: springRef,
   });
   const springRef2 = useSpringRef();
   const sProps2 = useSpring({
     opacity: 1,
-    from: { opacity: 0 },
+    from: { opacity: 1 },
     ref: springRef2,
   });
   useChain([springRef, springRef2]);

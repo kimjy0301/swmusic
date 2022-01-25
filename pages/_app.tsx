@@ -22,10 +22,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Transition
         items={items}
         keys={(items: any) => items.id}
-        from={{ opacity: 0 }}
-        initial={{ opacity: 0 }}
-        enter={{ opacity: 1 }}
-        leave={{ opacity: 0, position: "absolute" }}
+        from={{ opacity: 0, x: -500 }}
+        initial={{ opacity: 0, x: -500 }}
+        enter={{ opacity: 1, x: 0 }}
+        leave={{ opacity: 0, x: 500, position: "absolute" }}
       >
         {(styles, { pageProps, Component }) => (
           <animated.div style={{ ...styles, width: "100%" }}>

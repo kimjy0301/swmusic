@@ -10,4 +10,6 @@ body {
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
   @apply text-gray-700;
+
+  @apply overflow-x-hidden;
 }
