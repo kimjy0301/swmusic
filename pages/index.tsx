@@ -4,6 +4,8 @@ import Head from "next/head";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { getPlaiceholder } from "plaiceholder";
 import Link from "next/link";
+import { atom, useRecoilValue } from "recoil";
+import { categoryNaviState } from "../components/state/atomState";
 
 export const getStaticProps = async () => {
   const { base64, img } = await getPlaiceholder(
@@ -21,6 +23,9 @@ export const getStaticProps = async () => {
 };
 
 const Home: NextPage = ({ imageProps }: any) => {
+  const state = useRecoilValue(categoryNaviState);
+
+  console.log(state);
   return (
     <div className="">
       <Head>

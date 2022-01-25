@@ -5,6 +5,13 @@ import { animated, Transition } from "react-spring";
 import { useRouter } from "next/router";
 import { NextPage } from "next";
 import { ReactElement, ReactNode } from "react";
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from "recoil";
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -30,14 +37,16 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       <Transition
         items={items}
         keys={(items: any) => items.id}
-        from={{ opacity: 0, x: -1000 }}
-        initial={{ opacity: 0, x: -1000 }}
+        from={{ opacity: 0, x: -500 }}
+        initial={{ opacity: 0, x: -500 }}
         enter={{ opacity: 1, x: 0 }}
-        leave={{ opacity: 0, x: 1000, position: "absolute" }}
+        leave={{ opacity: 0, x: 500, position: "absolute" }}
       >
         {(styles, { pageProps, Component }) => (
           <animated.div style={{ ...styles, width: "100%" }}>
-            <Component {...pageProps} />
+            <RecoilRoot>
+              <Component {...pageProps} />
+            </RecoilRoot>
           </animated.div>
         )}
       </Transition>

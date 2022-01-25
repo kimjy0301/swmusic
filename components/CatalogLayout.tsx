@@ -1,34 +1,39 @@
-import { useEffect, useState } from "react";
-import { animated, useTransition } from "react-spring";
+import React, { useEffect, useState } from "react";
+import { animated, useSpring, useTransition } from "react-spring";
+import { atom, useRecoilState } from "recoil";
+import { categoryNaviState } from "./state/atomState";
 
 const CatalogLayout = (props: any) => {
+  const [show, setShow] = useRecoilState(categoryNaviState);
+
   useEffect(() => {
-    setShow(true);
-  }, []);
+    if (show == false) {
+      setShow(true);
+      console.log(show);
+    }
+  }, [show, setShow]);
 
-  const [show, setShow] = useState(false);
-
-  const transitions = useTransition(show, {
+  const styles = useSpring({
+    to: { opacity: 1, color: "#ffaaee" },
     from: { opacity: 0, color: "red" },
-    enter: { opacity: 1, color: "blue" },
-    leave: { opacity: 0, color: "green" },
   });
 
   return (
     <>
       {props.children}
-      {transitions(
-        (styles, item): any =>
-          item && (
-            <animated.div style={styles}>
-              <div className="fixed right-5 w-44 h-44 bg-black top-12 text-center flex items-center justify-center text-2xl">
-                Catalog layout
-              </div>
-            </animated.div>
-          )
+      {show ? (
+        <div className="fixed right-5 w-44 h-44 bg-black top-12 text-center flex items-center justify-center text-2xl">
+          Catalog layout
+        </div>
+      ) : (
+        <animated.div style={styles}>
+          <div className="fixed right-5 w-44 h-44 bg-black top-12 text-center flex items-center justify-center text-2xl">
+            Catalog layout
+          </div>
+        </animated.div>
       )}
     </>
   );
 };
 
-export default CatalogLayout;
+export default React.memo(CatalogLayout);

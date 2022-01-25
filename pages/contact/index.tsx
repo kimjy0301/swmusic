@@ -1,4 +1,7 @@
-const index = () => {
+import React, { useEffect } from "react";
+import { useRecoilState } from "recoil";
+
+const Contact = (props: any) => {
   return (
     <div className="flex flex-col justify-center items-center py-16 h-screen">
       ddd
@@ -6,4 +9,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Contact;

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getPlaiceholder } from "plaiceholder";
 import { ReactElement } from "react";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
+import { RecoilRoot } from "recoil";
 import CatalogLayout from "../../components/CatalogLayout";
 import Layout from "../../components/Layout";
 
@@ -56,27 +57,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
 const CatalogIndex = ({ imageProps }: any) => {
   return (
     <>
-      <div
-        style={{ width: "40rem", height: "50rem" }}
-        className="relative bg-slate-500 "
-      >
-        <TransformWrapper>
-          <TransformComponent>
-            d
-            <div
-              style={{ width: "40rem", height: "50rem" }}
-              className="relative bg-slate-500 flex items-center justify-center mt-16"
-            >
-              <div
-                style={{ width: "30rem", height: "42rem" }}
-                className="relative flex"
-              >
-                <Image {...imageProps} alt="test" placeholder={"blur"} />
-              </div>
-            </div>
-          </TransformComponent>
-        </TransformWrapper>
-      </div>
+      <TransformWrapper>
+        <TransformComponent>
+          <div style={{ width: "30rem" }} className="relative flex">
+            <Image {...imageProps} alt="test" placeholder={"blur"} />
+          </div>
+        </TransformComponent>
+      </TransformWrapper>
     </>
   );
 };
@@ -85,8 +72,10 @@ export default CatalogIndex;
 
 CatalogIndex.getLayout = function getLayout(page: ReactElement) {
   return (
-    <Layout>
-      <CatalogLayout>{page}</CatalogLayout>
-    </Layout>
+    <RecoilRoot>
+      <Layout>
+        <CatalogLayout>{page}</CatalogLayout>
+      </Layout>
+    </RecoilRoot>
   );
 };
