@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import Layout from "../components/Layout";
 import { animated, Transition } from "react-spring";
 import { useRouter } from "next/router";
+import PageTransition from "../components/PageTransition";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -30,6 +31,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           </animated.div>
         )}
       </Transition>
+
+      {/* <PageTransition
+        Component={Component}
+        pageProps={pageProps}
+      ></PageTransition> */}
     </Layout>
   );
 }
