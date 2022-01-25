@@ -6,9 +6,6 @@ import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-
-  console.log(router.pathname);
-
   const items = [
     {
       id: router.pathname,
@@ -22,10 +19,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Transition
         items={items}
         keys={(items: any) => items.id}
-        from={{ opacity: 0, x: -500 }}
-        initial={{ opacity: 0, x: -500 }}
+        from={{ opacity: 0, x: -1000 }}
+        initial={{ opacity: 0, x: -1000 }}
         enter={{ opacity: 1, x: 0 }}
-        leave={{ opacity: 0, x: 500, position: "absolute" }}
+        leave={{ opacity: 0, x: 1000, position: "absolute" }}
       >
         {(styles, { pageProps, Component }) => (
           <animated.div style={{ ...styles, width: "100%" }}>

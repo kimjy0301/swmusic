@@ -29,7 +29,7 @@ const Home: NextPage = ({ imageProps }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex flex-col justify-center items-center py-16 h-screen">
-        <Link href="/">Catalog 1</Link>
+        <Link href="/catalog/3">Catalog 1</Link>
         <Link href="/catalog/1">Catalog 2</Link>
       </div>
     </div>
