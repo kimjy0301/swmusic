@@ -1,7 +1,10 @@
 import { GetStaticProps } from "next";
 import Image from "next/image";
 import { getPlaiceholder } from "plaiceholder";
+import { ReactElement } from "react";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
+import CatalogLayout from "../../components/CatalogLayout";
+import Layout from "../../components/Layout";
 
 export async function getStaticPaths() {
   return {
@@ -59,6 +62,7 @@ const CatalogIndex = ({ imageProps }: any) => {
       >
         <TransformWrapper>
           <TransformComponent>
+            d
             <div
               style={{ width: "40rem", height: "50rem" }}
               className="relative bg-slate-500 flex items-center justify-center mt-16"
@@ -78,3 +82,11 @@ const CatalogIndex = ({ imageProps }: any) => {
 };
 
 export default CatalogIndex;
+
+CatalogIndex.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <Layout>
+      <CatalogLayout>{page}</CatalogLayout>
+    </Layout>
+  );
+};

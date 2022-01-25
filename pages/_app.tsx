@@ -3,9 +3,19 @@ import type { AppProps } from "next/app";
 import Layout from "../components/Layout";
 import { animated, Transition } from "react-spring";
 import { useRouter } from "next/router";
-import PageTransition from "../components/PageTransition";
+import { NextPage } from "next";
+import { ReactElement, ReactNode } from "react";
 
-function MyApp({ Component, pageProps }: AppProps) {
+type NextPageWithLayout = NextPage & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? ((page) => page);
+
   const router = useRouter();
   const items = [
     {
@@ -15,7 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     },
   ];
 
-  return (
+  return getLayout(
     <Layout>
       <Transition
         items={items}
@@ -31,11 +41,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           </animated.div>
         )}
       </Transition>
-
-      {/* <PageTransition
-        Component={Component}
-        pageProps={pageProps}
-      ></PageTransition> */}
     </Layout>
   );
 }
