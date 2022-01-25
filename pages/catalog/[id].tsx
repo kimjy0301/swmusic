@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { getPlaiceholder } from "plaiceholder";
 import { ReactElement } from "react";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
@@ -64,6 +65,11 @@ const CatalogIndex = ({ imageProps }: any) => {
           </div>
         </TransformComponent>
       </TransformWrapper>
+      <Link href="/catalog/1">Catalog 1</Link>
+      <Link href="/catalog/2">Catalog 2</Link>
+      <Link href="/catalog/3">Catalog 3</Link>
+      <Link href="/catalog/4">Catalog 4</Link>
+      <Link href="/catalog/5">Catalog 5</Link>
     </>
   );
 };
@@ -72,10 +78,8 @@ export default CatalogIndex;
 
 CatalogIndex.getLayout = function getLayout(page: ReactElement) {
   return (
-    <RecoilRoot>
-      <Layout>
-        <CatalogLayout>{page}</CatalogLayout>
-      </Layout>
-    </RecoilRoot>
+    <Layout>
+      <CatalogLayout>{page}</CatalogLayout>
+    </Layout>
   );
 };

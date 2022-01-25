@@ -4,8 +4,8 @@ import Head from "next/head";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { getPlaiceholder } from "plaiceholder";
 import Link from "next/link";
-import { atom, useRecoilValue } from "recoil";
-import { categoryNaviState } from "../components/state/atomState";
+import { atom, useRecoilState, useRecoilValue } from "recoil";
+import { categoryNaviState, countState } from "../components/state/atomState";
 
 export const getStaticProps = async () => {
   const { base64, img } = await getPlaiceholder(
@@ -23,9 +23,10 @@ export const getStaticProps = async () => {
 };
 
 const Home: NextPage = ({ imageProps }: any) => {
-  const state = useRecoilValue(categoryNaviState);
+  const [show, setShow] = useRecoilState(categoryNaviState);
 
-  console.log(state);
+  const count = useRecoilValue(countState);
+  setShow(false);
   return (
     <div className="">
       <Head>
@@ -36,6 +37,9 @@ const Home: NextPage = ({ imageProps }: any) => {
       <div className="flex flex-col justify-center items-center py-16 h-screen">
         <Link href="/catalog/3">Catalog 1</Link>
         <Link href="/catalog/1">Catalog 2</Link>
+        <h1>
+          <h1>{`show=${show} / count=${count}`}</h1>
+        </h1>
       </div>
     </div>
   );

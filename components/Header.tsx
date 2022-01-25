@@ -7,26 +7,34 @@ const Header = () => {
   return (
     <div className="w-screen flex justify-between h-16 items-center bg-gray-100 fixed top-0 z-50 min-w-min ">
       <animated.div className="relative w-56 flex items-center justify-center cursor-pointer ml-10 ">
-        <Link href="/" passHref>
-          <Image src={logo} alt={"swmusic logo"}></Image>
+        <Link href="/">
+          <a>
+            <Image src={logo} alt={"swmusic logo"}></Image>
+          </a>
         </Link>
       </animated.div>
 
       <animated.div className="flex">
-        <Link href="/" passHref>
-          <div className="font-bold text-2xl hover:underline cursor-pointer mx-10 select-none ">
-            HOME
-          </div>
+        <Link href="/">
+          <a>
+            <div className="font-bold text-2xl hover:underline cursor-pointer mx-10 select-none ">
+              HOME
+            </div>
+          </a>
         </Link>
-        <Link href="/catalog/3" passHref>
-          <div className="font-bold text-2xl hover:underline cursor-pointer mx-10 select-none ">
-            CATALOG
-          </div>
+        <Link href="/catalog/3">
+          <a>
+            <div className="font-bold text-2xl hover:underline cursor-pointer mx-10 select-none ">
+              CATALOG
+            </div>
+          </a>
         </Link>
-        <Link href="/contact" passHref>
-          <div className="font-bold text-2xl hover:underline cursor-pointer mx-10 select-none ">
-            CONTACT
-          </div>
+        <Link href="/contact">
+          <a>
+            <div className="font-bold text-2xl hover:underline cursor-pointer mx-10 select-none ">
+              CONTACT
+            </div>
+          </a>
         </Link>
       </animated.div>
     </div>
