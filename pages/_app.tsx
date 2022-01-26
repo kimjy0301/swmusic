@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
           from={{ opacity: 0, x: -500 }}
           initial={{ opacity: 0, x: -500 }}
           enter={{ opacity: 1, x: 0 }}
-          leave={{ opacity: 0, x: 500, position: "absolute" }}
+          leave={{ opacity: 0, position: "absolute" }}
         >
           {(styles, { pageProps, Component }) => (
             <animated.div style={{ ...styles, width: "100%" }}>
