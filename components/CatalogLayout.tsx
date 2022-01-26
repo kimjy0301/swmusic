@@ -26,7 +26,6 @@ const CatalogLayout = (props: any) => {
   return (
     <>
       {props.children}
-
       {transitions(
         (styles, item) =>
           item && (

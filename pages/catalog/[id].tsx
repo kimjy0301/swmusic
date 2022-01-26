@@ -5,6 +5,7 @@ import { getPlaiceholder } from "plaiceholder";
 import { ReactElement } from "react";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 import { RecoilRoot } from "recoil";
+import BaseLayout from "../../components/BaseLayout";
 import CatalogLayout from "../../components/CatalogLayout";
 import Layout from "../../components/Layout";
 
@@ -78,8 +79,8 @@ export default CatalogIndex;
 
 CatalogIndex.getLayout = function getLayout(page: ReactElement) {
   return (
-    <Layout>
-      <CatalogLayout>{page}</CatalogLayout>
-    </Layout>
+    <BaseLayout>
+      <CatalogLayout> {page}</CatalogLayout>
+    </BaseLayout>
   );
 };

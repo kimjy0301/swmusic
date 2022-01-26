@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { NextPage } from "next";
 import { ReactElement, ReactNode } from "react";
 import { RecoilRoot } from "recoil";
+import BaseLayout from "../components/BaseLayout";
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -17,6 +18,8 @@ type AppPropsWithLayout = AppProps & {
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
 
+  console.log(getLayout);
+
   const router = useRouter();
   const items = [
     {
@@ -27,22 +30,24 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   ];
 
   return getLayout(
-    <Layout>
-      <Transition
-        items={items}
-        keys={(items: any) => items.id}
-        from={{ opacity: 0, x: -500 }}
-        initial={{ opacity: 0, x: -500 }}
-        enter={{ opacity: 1, x: 0 }}
-        leave={{ opacity: 0, x: 500, position: "absolute" }}
-      >
-        {(styles, { pageProps, Component }) => (
-          <animated.div style={{ ...styles, width: "100%" }}>
-            <Component {...pageProps} />
-          </animated.div>
-        )}
-      </Transition>
-    </Layout>
+    <BaseLayout>
+      <Layout>
+        <Transition
+          items={items}
+          keys={(items: any) => items.id}
+          from={{ opacity: 0, x: -500 }}
+          initial={{ opacity: 0, x: -500 }}
+          enter={{ opacity: 1, x: 0 }}
+          leave={{ opacity: 0, x: 500, position: "absolute" }}
+        >
+          {(styles, { pageProps, Component }) => (
+            <animated.div style={{ ...styles, width: "100%" }}>
+              <Component {...pageProps} />
+            </animated.div>
+          )}
+        </Transition>
+      </Layout>
+    </BaseLayout>
   );
 }
 
