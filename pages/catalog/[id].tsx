@@ -82,9 +82,9 @@ const CatalogIndex = ({ imageProps, imageProps2 }: any) => {
         <Transition
           items={items}
           keys={(items: any) => items.id}
-          from={{ opacity: 0, x: -100, y: 0 }}
-          initial={{ opacity: 0, x: -100, y: 0 }}
-          enter={{ opacity: 1, x: 0, y: 0 }}
+          from={{ opacity: 0, x: -100, y: 0, position: "absolute" }}
+          initial={{ opacity: 0, x: -100, y: 0, position: "absolute" }}
+          enter={{ opacity: 1, x: 0, y: 0, position: "relative" }}
           leave={{ opacity: 0, x: 100, y: 0, position: "absolute" }}
         >
           {(styles) => (
@@ -111,7 +111,7 @@ const CatalogIndex = ({ imageProps, imageProps2 }: any) => {
             </animated.div>
           )}
         </Transition>
-        <div>
+        <div className="relative">
           <Link href="/catalog/1">Catalog 1</Link>
           <Link href="/catalog/2">Catalog 2</Link>
           <Link href="/catalog/3">Catalog 3</Link>
