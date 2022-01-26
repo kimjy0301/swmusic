@@ -99,7 +99,10 @@ const CatalogIndex = ({ imageProps, imageProps2 }: any) => {
                     <div style={{ width: "30rem" }} className="relative flex">
                       <Image {...imageProps} alt="test" placeholder={"blur"} />
                     </div>
-                    <div style={{ width: "30rem" }} className="relative flex">
+                    <div
+                      style={{ width: "30rem" }}
+                      className="relative hidden md:flex"
+                    >
                       <Image {...imageProps2} alt="test" placeholder={"blur"} />
                     </div>
                   </TransformComponent>

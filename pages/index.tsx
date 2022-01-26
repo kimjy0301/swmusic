@@ -6,6 +6,7 @@ import { getPlaiceholder } from "plaiceholder";
 import Link from "next/link";
 import { atom, useRecoilState, useRecoilValue } from "recoil";
 import { categoryNaviState, countState } from "../components/state/atomState";
+import { animated, useSpring } from "react-spring";
 
 export const getStaticProps = async () => {
   const { base64, img } = await getPlaiceholder(
@@ -25,6 +26,10 @@ export const getStaticProps = async () => {
 const Home: NextPage = ({ imageProps }: any) => {
   const [show, setShow] = useRecoilState(categoryNaviState);
 
+  const [countnumber, api] = useSpring(() => ({
+    number: 0,
+    config: { mass: 5, tension: 350, friction: 40 },
+  }));
   const count = useRecoilValue(countState);
   setShow(false);
   return (
@@ -42,6 +47,15 @@ const Home: NextPage = ({ imageProps }: any) => {
         </h1>
 
         <h6>testsetsetstsetsetsetsetsetsetsetsetsetset</h6>
+        <animated.div>{countnumber.number}</animated.div>
+
+        <div
+          onMouseEnter={() => api.start({ number: 1000 })}
+          onMouseOut={() => api.stop()}
+          className="rounded p-3 bg-red-200 cursor-pointer hover:bg-red-300"
+        >
+          Hover me
+        </div>
       </div>
     </div>
   );
