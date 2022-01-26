@@ -82,10 +82,10 @@ const CatalogIndex = ({ imageProps, imageProps2 }: any) => {
         <Transition
           items={items}
           keys={(items: any) => items.id}
-          from={{ opacity: 0 }}
-          initial={{ opacity: 0 }}
-          enter={{ opacity: 1 }}
-          leave={{ opacity: 0 }}
+          from={{ opacity: 0, x: -250 }}
+          initial={{ opacity: 0, x: -250 }}
+          enter={{ opacity: 1, x: 0 }}
+          leave={{ opacity: 0, x: 250 }}
         >
           {(styles) => (
             <animated.div
