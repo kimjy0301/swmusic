@@ -19,7 +19,7 @@ body {
 }
 
 .catalog {
-  width: 15rem;
+  width: 80vw;
 }
 
 @media (min-width: 768px) {
