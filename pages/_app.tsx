@@ -17,9 +17,6 @@ type AppPropsWithLayout = AppProps & {
 };
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
-
-  console.log(getLayout);
-
   const router = useRouter();
   const items = [
     {
