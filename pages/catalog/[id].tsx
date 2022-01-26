@@ -85,12 +85,13 @@ const CatalogIndex = ({ imageProps, imageProps2 }: any) => {
           from={{ opacity: 0 }}
           initial={{ opacity: 0 }}
           enter={{ opacity: 1 }}
-          leave={{ opacity: 0, position: "absolute" }}
+          leave={{ opacity: 0 }}
         >
           {(styles) => (
             <animated.div
               style={{
                 ...styles,
+                position: "absolute",
               }}
             >
               <div className="flex">
