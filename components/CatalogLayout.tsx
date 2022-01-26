@@ -31,34 +31,10 @@ const CatalogLayout = (props: any) => {
         (styles, item) =>
           item && (
             <animated.div style={styles}>
-              <div className="absolute left-0 w-44 h-5/6 bg-slate-300 top-16 mt-2 text-center flex items-center justify-center text-2xl flex-col overflow-y-auto">
+              <div className="absolute left-0 md:w-44 w-20 text-sm md:text-2xl h-5/6 bg-slate-300 top-16 mt-2 text-center flex items-center justify-center  flex-col overflow-y-auto">
                 <Link href="/catalog/1">Catalog 1</Link>
                 <Link href="/catalog/2">Catalog 2</Link>
                 <Link href="/catalog/3">Catalog 3</Link>
-                <Link href="/catalog/4">Catalog 4</Link>
-                <Link href="/catalog/5">Catalog 5</Link>
-                <Link href="/catalog/4">Catalog 4</Link>
-                <Link href="/catalog/5">Catalog 5</Link>
-                <Link href="/catalog/4">Catalog 4</Link>
-                <Link href="/catalog/5">Catalog 5</Link>
-                <Link href="/catalog/4">Catalog 4</Link>
-                <Link href="/catalog/5">Catalog 5</Link>
-                <Link href="/catalog/4">Catalog 4</Link>
-                <Link href="/catalog/5">Catalog 5</Link>
-                <Link href="/catalog/4">Catalog 4</Link>
-                <Link href="/catalog/5">Catalog 5</Link>
-                <Link href="/catalog/4">Catalog 4</Link>
-                <Link href="/catalog/5">Catalog 5</Link>
-                <Link href="/catalog/4">Catalog 4</Link>
-                <Link href="/catalog/5">Catalog 5</Link>
-                <Link href="/catalog/4">Catalog 4</Link>
-                <Link href="/catalog/5">Catalog 5</Link>
-                <Link href="/catalog/4">Catalog 4</Link>
-                <Link href="/catalog/5">Catalog 5</Link>
-                <Link href="/catalog/4">Catalog 4</Link>
-                <Link href="/catalog/5">Catalog 5</Link>
-                <Link href="/catalog/4">Catalog 4</Link>
-                <Link href="/catalog/5">Catalog 5</Link>
                 <Link href="/catalog/4">Catalog 4</Link>
                 <Link href="/catalog/5">Catalog 5</Link>
               </div>

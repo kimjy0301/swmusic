@@ -97,13 +97,10 @@ const CatalogIndex = ({ imageProps, imageProps2 }: any) => {
               <div className="flex">
                 <TransformWrapper>
                   <TransformComponent>
-                    <div style={{ width: "30rem" }} className="relative flex">
+                    <div className="relative catalog flex">
                       <Image {...imageProps} alt="test" placeholder={"blur"} />
                     </div>
-                    <div
-                      style={{ width: "30rem" }}
-                      className="relative hidden md:flex"
-                    >
+                    <div className="relative catalog hidden md:flex">
                       <Image {...imageProps2} alt="test" placeholder={"blur"} />
                     </div>
                   </TransformComponent>
@@ -112,13 +109,13 @@ const CatalogIndex = ({ imageProps, imageProps2 }: any) => {
             </animated.div>
           )}
         </Transition>
-        <div className="relative">
+        {/* <div className="relative">
           <Link href="/catalog/1">Catalog 1</Link>
           <Link href="/catalog/2">Catalog 2</Link>
           <Link href="/catalog/3">Catalog 3</Link>
           <Link href="/catalog/4">Catalog 4</Link>
           <Link href="/catalog/5">Catalog 5</Link>
-        </div>
+        </div> */}
       </div>
     </>
   );

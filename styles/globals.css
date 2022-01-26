@@ -17,3 +17,13 @@ body {
 .bg-header {
   background-color: #0099ff;
 }
+
+.catalog {
+  width: 15rem;
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    width: 30rem /* 384px */;
+  }
+}
