@@ -15,12 +15,12 @@ const Layout = (props: any) => {
         />
       </Head>
       <div className="">
-        <div className="bg-slate-100 h-screen flex justify-center items-center">
+        <div className="bg-slate-100 flex justify-center items-center">
           <Header></Header>
           {props.children}
         </div>
 
-        <div className="">Footer</div>
+        <div className="footer bg-blue-400">Footer</div>
       </div>
     </>
   );

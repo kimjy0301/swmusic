@@ -32,8 +32,8 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         <Transition
           items={items}
           keys={(items: any) => items.id}
-          from={{ opacity: 0, x: -500 }}
-          initial={{ opacity: 0, x: -500 }}
+          from={{ opacity: 0 }}
+          initial={{ opacity: 0 }}
           enter={{ opacity: 1, x: 0 }}
           leave={{ opacity: 0, x: 500, position: "absolute" }}
         >
