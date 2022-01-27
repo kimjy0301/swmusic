@@ -10,22 +10,22 @@ const MainPage = () => {
       <div id="show-scene-1">
         <section id="scroll-section-0" className="scroll-section">
           <h1>AirMugPro</h1>
-          <div className="sticky-elem main-message">
+          <div className="sticky-elem main-message a">
             <p>
               온전히 빠져들게 하는<br></br>최고급 세라믹
             </p>
           </div>
-          <div className="sticky-elem main-message">
+          <div className="sticky-elem main-message b">
             <p>
               주변 맛을 느끼게 해주는<br></br>주변 맛 허용 모드
             </p>
           </div>
-          <div className="sticky-elem main-message">
+          <div className="sticky-elem main-message c">
             <p>
               온전히 편안한<br></br>맞춤형 세라믹
             </p>
           </div>
-          <div className="sticky-elem main-message">
+          <div className="sticky-elem main-message d">
             <p>
               새롭게 입가를<br></br>찾아온 매혹
             </p>
