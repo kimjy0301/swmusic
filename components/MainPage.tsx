@@ -61,27 +61,24 @@ const MainPage = () => {
           </p>
         </section>
         <section id="scroll-section-2" className="scroll-section">
-          <div className="sticky-elem main-message">
+          <div className="sticky-elem main-message a">
             <p>
               <small>편안한 촉감</small>
               입과 하나되다
             </p>
           </div>
-          <div className="sticky-elem desc-message">
+          <div className="sticky-elem desc-message b">
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam
               nobis provident doloremque fugiat ex dignissimos officiis at
               suscipit, ea quas! Pariatur illum possimus soluta voluptatum,
-              saepe ullam laborum ad natus iure praesentium architecto non
-              voluptates suscipit repellendus esse itaque impedit sunt autem
-              incidunt doloribus ducimus et, optio ex magnam. Similique!
             </p>
             <div className="pin"></div>
           </div>
-          <div className="sticky-elem main-message">
+          <div className="sticky-elem main-message c">
             <p>
-              <small>편안한 촉감</small>
-              입과 하나되다
+              <small>스크롤섹션3</small>
+              설명글 여기에 추가
             </p>
           </div>
         </section>

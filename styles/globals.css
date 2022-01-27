@@ -31,6 +31,7 @@ body {
 
 .scroll-section {
   padding-top: 50vh;
+  @apply border-2 border-red-600;
 }
 
 #scroll-section-0 h1 {
@@ -75,8 +76,14 @@ body {
   margin-bottom: 0.5em;
 }
 
-#scroll-section2 .main-message {
+#scroll-section-2 .main-message {
   font-size: 3.5rem;
+}
+
+#scroll-section-2 .desc-message.b {
+  top: 12%;
+  left: 50%;
+  max-width: 40%;
 }
 
 .desc-message {

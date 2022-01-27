@@ -112,29 +112,24 @@ export const init = () => {
     const scrollRatio = currentYOffset / currentSceneHeight;
     switch (currentScene) {
       case 0:
-        const messageA_opacity_in = calcValues(
-          values.messageA_opacity_in,
-          currentYOffset
-        );
-        const messageA_opacity_out = calcValues(
-          values.messageA_opacity_out,
-          currentYOffset
-        );
-        const messageA_translateY_in = calcValues(
-          values.messageA_translateY_in,
-          currentYOffset
-        );
-        const messageA_translateY_out = calcValues(
-          values.messageA_translateY_out,
-          currentYOffset
-        );
-
         if (scrollRatio <= 0.225) {
-          objs.messageA.style.opacity = messageA_opacity_in;
-          objs.messageA.style.transform = `translateY(${messageA_translateY_in}%)`;
+          objs.messageA.style.opacity = calcValues(
+            values.messageA_opacity_in,
+            currentYOffset
+          );
+          objs.messageA.style.transform = `translateY(${calcValues(
+            values.messageA_translateY_in,
+            currentYOffset
+          )}%)`;
         } else {
-          objs.messageA.style.opacity = messageA_opacity_out;
-          objs.messageA.style.transform = `translateY(${messageA_translateY_out}%)`;
+          objs.messageA.style.opacity = calcValues(
+            values.messageA_opacity_out,
+            currentYOffset
+          );
+          objs.messageA.style.transform = `translateY(${calcValues(
+            values.messageA_translateY_out,
+            currentYOffset
+          )}%)`;
         }
 
         break;
