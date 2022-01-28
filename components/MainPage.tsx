@@ -8,7 +8,7 @@ const MainPage = () => {
     <>
       <div id="show-scene-1">
         <div className="video-container">
-          <video className="main-video" src={"/video/guitar.mp4"}></video>
+          <video className="main-video" src={"/video/video2.mp4"}></video>
         </div>
 
         <section id="scroll-section-0" className="scroll-section">
