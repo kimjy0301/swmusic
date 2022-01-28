@@ -138,7 +138,7 @@ body {
 }
 
 .main-video {
-  max-width: max-content;
+  max-width: fit-content;
 }
 
 #show-scene-0 #scroll-section-0 .sticky-elem,
