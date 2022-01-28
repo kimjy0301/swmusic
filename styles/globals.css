@@ -31,7 +31,6 @@ body {
 
 .scroll-section {
   padding-top: 40vh;
-  @apply border-2 border-red-600;
 }
 
 #scroll-section-0 h1 {
