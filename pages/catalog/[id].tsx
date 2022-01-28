@@ -111,7 +111,7 @@ const CatalogIndex = ({ imageProps, imageProps2 }: any) => {
                     <div className="relative catalog flex">
                       <Image {...imageProps} alt="test" placeholder={"blur"} />
                     </div>
-                    <div className="relative catalog hidden md:flex">
+                    <div className="relative catalog hidden lg:flex">
                       <Image {...imageProps2} alt="test" placeholder={"blur"} />
                     </div>
                   </TransformComponent>

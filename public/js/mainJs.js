@@ -6,7 +6,7 @@ export const init = () => {
   const sceneInfo = [
     {
       sceneType: "sticky",
-      heightRatio: 5,
+      heightRatio: 8,
       scrollHeight: 0,
       objs: {
         container: document.querySelector("#scroll-section-0"),
