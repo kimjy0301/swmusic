@@ -29,10 +29,10 @@ export const init = () => {
         messageB_translateY_out: [0, -20, { start: 0.5, end: 0.55 }],
 
         messageC_opacity_in: [0, 1, { start: 0.6, end: 0.7 }],
-        messageC_opacity_out: [1, 0, { start: 0.75, end: 0.85 }],
+        messageC_opacity_out: [1, 0, { start: 0.75, end: 0.8 }],
 
         messageC_translateY_in: [20, 0, { start: 0.6, end: 0.7 }],
-        messageC_translateY_out: [0, -20, { start: 0.75, end: 0.85 }],
+        messageC_translateY_out: [0, -20, { start: 0.75, end: 0.8 }],
 
         messageD_opacity_in: [0, 1, { start: 0.8, end: 0.85 }],
         messageD_opacity_out: [1, 0, { start: 0.9, end: 0.95 }],
