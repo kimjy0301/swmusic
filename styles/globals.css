@@ -30,7 +30,7 @@ body {
 }
 
 .scroll-section {
-  padding-top: 50vh;
+  padding-top: 40vh;
   @apply border-2 border-red-600;
 }
 
@@ -84,6 +84,7 @@ body {
   top: 12%;
   left: 50%;
   max-width: 40%;
+  opacity: 0;
 }
 
 .desc-message {
@@ -164,5 +165,8 @@ body {
   }
   .canvas-caption {
     font-size: 2rem;
+  }
+  #scroll-section-2 .desc-message.b {
+    top: 22%;
   }
 }

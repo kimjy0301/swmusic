@@ -12,10 +12,10 @@ const Header = () => {
         </Link>
       </div>
 
-      <div className=" hidden md:flex ">
+      <div className="hidden md:flex ">
         <Link href="/">
           <a>
-            <div className="font-bold text-2xl hover:underline cursor-pointer mx-10 select-none ">
+            <div className="font-bold text-2xl hover:underline cursor-pointer mx-10 select-none">
               HOME
             </div>
           </a>
@@ -31,7 +31,7 @@ const Header = () => {
           <a>
             <div className="font-bold text-2xl hover:underline cursor-pointer mx-10 select-none ">
               CONTACT
-            </div>  
+            </div>
           </a>
         </Link>
       </div>
