@@ -35,10 +35,10 @@ export const init = () => {
         messageC_translateY_out: [0, -20, { start: 0.75, end: 0.8 }],
 
         messageD_opacity_in: [0, 1, { start: 0.8, end: 0.85 }],
-        messageD_opacity_out: [1, 0, { start: 0.9, end: 0.95 }],
+        messageD_opacity_out: [1, 0, { start: 0.9, end: 1 }],
 
         messageD_translateY_in: [20, 0, { start: 0.8, end: 0.85 }],
-        messageD_translateY_out: [0, -20, { start: 0.9, end: 0.95 }],
+        messageD_translateY_out: [0, -20, { start: 0.9, end: 1 }],
       },
     },
     {
@@ -157,6 +157,11 @@ export const init = () => {
     const scrollRatio = currentYOffset / currentSceneHeight;
     switch (currentScene) {
       case 0:
+        const mainVideo = document.querySelector(".main-video");
+
+        requestAnimationFrame(() => {
+          mainVideo.currentTime = mainVideo.duration * scrollRatio;
+        });
         if (scrollRatio <= 0.225) {
           objs.messageA.style.opacity = calcValues(
             values.messageA_opacity_in,

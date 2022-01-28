@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { init } from "../public/js/mainJs";
-
 const MainPage = () => {
   useEffect(() => {
     init();
@@ -8,8 +7,13 @@ const MainPage = () => {
   return (
     <>
       <div id="show-scene-1">
+        <div className="video-container">
+          <video className="main-video" src={"/video/guitar.mp4"}></video>
+        </div>
+
         <section id="scroll-section-0" className="scroll-section">
           <h1>AirMugPro</h1>
+
           <div className="sticky-elem main-message a">
             <p>
               온전히 빠져들게 하는<br></br>최고급 세라믹
