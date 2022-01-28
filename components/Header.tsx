@@ -31,7 +31,7 @@ const Header = () => {
           <a>
             <div className="font-bold text-2xl hover:underline cursor-pointer mx-10 select-none ">
               CONTACT
-            </div>
+            </div>  
           </a>
         </Link>
       </div>
