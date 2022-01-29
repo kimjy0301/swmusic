@@ -14,6 +14,7 @@ export const init = () => {
         messageB: document.querySelector("#scroll-section-0 .main-message.b"),
         messageC: document.querySelector("#scroll-section-0 .main-message.c"),
         messageD: document.querySelector("#scroll-section-0 .main-message.d"),
+        messageVideo: document.querySelector(".main-video"),
       },
       values: {
         messageA_opacity_in: [0, 1, { start: 0.1, end: 0.2 }],
@@ -39,6 +40,8 @@ export const init = () => {
 
         messageD_translateY_in: [20, 0, { start: 0.8, end: 0.85 }],
         messageD_translateY_out: [0, -20, { start: 0.9, end: 1 }],
+
+        messageVideo_translateY_out: [0, -100, { start: 0.9, end: 1 }],
       },
     },
     {
@@ -240,6 +243,11 @@ export const init = () => {
             currentYOffset
           )}%)`;
         }
+
+        objs.messageVideo.style.transform = `translateY(${calcValues(
+          values.messageVideo_translateY_out,
+          currentYOffset
+        )}%)`;
 
         break;
       case 1:
