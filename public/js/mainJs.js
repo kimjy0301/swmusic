@@ -3,8 +3,6 @@ export const init = () => {
   let prevScrollHeight = 0;
   let currentScene = 0;
 
-  const canvas = document.querySelector(".main-video");
-  const context = canvas.getContext("2d");
   const videoImages = [];
   let currentFrame = 0;
   const sceneInfo = [
@@ -19,6 +17,9 @@ export const init = () => {
         messageC: document.querySelector("#scroll-section-0 .main-message.c"),
         messageD: document.querySelector("#scroll-section-0 .main-message.d"),
         messageVideo: document.querySelector(".main-video"),
+        canvas: document.querySelector(".main-video"),
+        context: document.querySelector(".main-video").getContext("2d"),
+        videoImages: [],
       },
       values: {
         messageA_opacity_in: [0, 1, { start: 0.1, end: 0.2 }],
@@ -46,6 +47,9 @@ export const init = () => {
         messageD_translateY_out: [0, -20, { start: 0.9, end: 1 }],
 
         messageVideo_opacity_out: [1, 0, { start: 0.9, end: 1 }],
+
+        videoImageCount: 744,
+        imageSequence: [0, 743],
       },
     },
     {
@@ -102,25 +106,17 @@ export const init = () => {
     },
   ];
 
-  const loadImages = () => {
-    for (let i = 1; i < totalImagesCount + 1; i++) {
+  const loadImages_video1 = () => {
+    for (let i = 1; i < sceneInfo[0].values.videoImageCount + 1; i++) {
       let imgElem = new Image();
       imgElem.src = `/video_img/video (${i}).jpg`;
-      videoImages.push(imgElem);
+      sceneInfo[0].objs.videoImages.push(imgElem);
 
-      imgElem.addEventListener("load", () => {
-        loadedImagesCount++;
-
-        if (loadedImagesCount === 1) {
-          context.drawImage(videoImages[0], 0, 0, canvas.width, canvas.height);
-        }
-      });
+      imgElem.addEventListener("load", (e) => {});
     }
   };
 
   const setLayout = () => {
-    loadImages();
-
     //각 스크롤 섹션 높이 세팅
     for (let i = 0; i < sceneInfo.length; i++) {
       if (sceneInfo[i].sceneType === "sticky") {
@@ -146,14 +142,14 @@ export const init = () => {
     }
     document.body.setAttribute("id", `show-scene-${currentScene}`);
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    context.drawImage(
-      videoImages[currentFrame],
+    sceneInfo[0].objs.canvas.width = window.innerWidth;
+    sceneInfo[0].objs.canvas.height = window.innerHeight;
+    sceneInfo[0].objs.context.drawImage(
+      sceneInfo[0].objs.videoImages[currentFrame],
       0,
       0,
-      canvas.width,
-      canvas.height
+      sceneInfo[0].objs.canvas.width,
+      sceneInfo[0].objs.canvas.height
     );
   };
 
@@ -193,13 +189,15 @@ export const init = () => {
     switch (currentScene) {
       case 0:
         requestAnimationFrame(() => {
-          currentFrame = Math.round((totalImagesCount - 1) * scrollRatio);
-          context.drawImage(
-            videoImages[currentFrame],
+          currentFrame = Math.round(
+            (sceneInfo[0].values.videoImageCount - 1) * scrollRatio
+          );
+          sceneInfo[0].objs.context.drawImage(
+            sceneInfo[0].objs.videoImages[currentFrame],
             0,
             0,
-            canvas.width,
-            canvas.height
+            sceneInfo[0].objs.canvas.width,
+            sceneInfo[0].objs.canvas.height
           );
         });
 
@@ -399,8 +397,19 @@ export const init = () => {
     scrollLoop();
   });
 
-  let loadedImagesCount = 0;
-  let totalImagesCount = 744;
-
+  loadImages_video1();
   setLayout();
+
+  let imgElem = new Image();
+  imgElem.src = `/video_img/video (1).jpg`;
+
+  imgElem.addEventListener("load", () => {
+    sceneInfo[0].objs.context.drawImage(
+      imgElem,
+      0,
+      0,
+      sceneInfo[0].objs.canvas.width,
+      sceneInfo[0].objs.canvas.height
+    );
+  });
 };
