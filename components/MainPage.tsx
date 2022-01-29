@@ -7,13 +7,20 @@ const MainPage = () => {
   return (
     <>
       <div id="show-scene-1">
-        <div className="video-container">
-          <video className="main-video" src={"/video/video2.mp4"}></video>
-        </div>
-
         <section id="scroll-section-0" className="scroll-section">
-          <h1>AirMugPro</h1>
+          <h1 className="relative z-20">AirMugPro</h1>
 
+          {/* <div className="video-container sticky-elem">
+            <video className="main-video" src={"/video/video2.mp4"}></video>
+          </div> */}
+
+          <div className="video-container sticky-elem">
+            <canvas
+              className="main-video"
+              width="1920px"
+              height="1080px"
+            ></canvas>
+          </div>
           <div className="sticky-elem main-message a">
             <p>
               온전히 빠져들게 하는<br></br>최고급 세라믹

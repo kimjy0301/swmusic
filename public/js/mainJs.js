@@ -3,6 +3,10 @@ export const init = () => {
   let prevScrollHeight = 0;
   let currentScene = 0;
 
+  const canvas = document.querySelector(".main-video");
+  const context = canvas.getContext("2d");
+  const videoImages = [];
+
   const sceneInfo = [
     {
       sceneType: "sticky",
@@ -41,7 +45,7 @@ export const init = () => {
         messageD_translateY_in: [20, 0, { start: 0.8, end: 0.85 }],
         messageD_translateY_out: [0, -20, { start: 0.9, end: 1 }],
 
-        messageVideo_translateY_out: [0, -200, { start: 0.85, end: 1 }],
+        messageVideo_opacity_out: [1, 0, { start: 0.9, end: 1 }],
       },
     },
     {
@@ -160,11 +164,11 @@ export const init = () => {
     const scrollRatio = currentYOffset / currentSceneHeight;
     switch (currentScene) {
       case 0:
-        const mainVideo = document.querySelector(".main-video");
-
         requestAnimationFrame(() => {
-          mainVideo.currentTime = mainVideo.duration * scrollRatio;
+          let currentFrame = Math.round((totalImagesCount - 1) * scrollRatio);
+          context.drawImage(videoImages[currentFrame], 0, 0);
         });
+
         if (scrollRatio <= 0.225) {
           objs.messageA.style.opacity = calcValues(
             values.messageA_opacity_in,
@@ -244,10 +248,10 @@ export const init = () => {
           )}%)`;
         }
 
-        objs.messageVideo.style.transform = `translateY(${calcValues(
-          values.messageVideo_translateY_out,
+        objs.messageVideo.style.opacity = `${calcValues(
+          values.messageVideo_opacity_out,
           currentYOffset
-        )}%)`;
+        )}`;
 
         break;
       case 1:
@@ -361,5 +365,25 @@ export const init = () => {
     scrollLoop();
   });
 
+  let loadedImagesCount = 0;
+  let totalImagesCount = 744;
+
+  const loadImages = () => {
+    for (let i = 1; i < totalImagesCount + 1; i++) {
+      let imgElem = new Image();
+      imgElem.src = `/video_img/video (${i}).jpg`;
+      videoImages.push(imgElem);
+
+      imgElem.addEventListener("load", () => {
+        loadedImagesCount++;
+
+        if (loadedImagesCount === 1) {
+          context.drawImage(videoImages[0], 0, 0);
+        }
+      });
+    }
+  };
+
   setLayout();
+  loadImages();
 };
