@@ -41,7 +41,7 @@ export const init = () => {
         messageD_translateY_in: [20, 0, { start: 0.8, end: 0.85 }],
         messageD_translateY_out: [0, -20, { start: 0.9, end: 1 }],
 
-        messageVideo_translateY_out: [0, -100, { start: 0.9, end: 1 }],
+        messageVideo_translateY_out: [0, -200, { start: 0.85, end: 1 }],
       },
     },
     {
