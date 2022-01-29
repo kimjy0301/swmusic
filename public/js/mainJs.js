@@ -6,7 +6,7 @@ export const init = () => {
   const canvas = document.querySelector(".main-video");
   const context = canvas.getContext("2d");
   const videoImages = [];
-
+  let currentFrame = 0;
   const sceneInfo = [
     {
       sceneType: "sticky",
@@ -102,7 +102,25 @@ export const init = () => {
     },
   ];
 
+  const loadImages = () => {
+    for (let i = 1; i < totalImagesCount + 1; i++) {
+      let imgElem = new Image();
+      imgElem.src = `/video_img/video (${i}).jpg`;
+      videoImages.push(imgElem);
+
+      imgElem.addEventListener("load", () => {
+        loadedImagesCount++;
+
+        if (loadedImagesCount === 1) {
+          context.drawImage(videoImages[0], 0, 0, canvas.width, canvas.height);
+        }
+      });
+    }
+  };
+
   const setLayout = () => {
+    loadImages();
+
     //각 스크롤 섹션 높이 세팅
     for (let i = 0; i < sceneInfo.length; i++) {
       if (sceneInfo[i].sceneType === "sticky") {
@@ -127,6 +145,16 @@ export const init = () => {
       }
     }
     document.body.setAttribute("id", `show-scene-${currentScene}`);
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    context.drawImage(
+      videoImages[currentFrame],
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    );
   };
 
   const scrollLoop = () => {
@@ -165,8 +193,14 @@ export const init = () => {
     switch (currentScene) {
       case 0:
         requestAnimationFrame(() => {
-          let currentFrame = Math.round((totalImagesCount - 1) * scrollRatio);
-          context.drawImage(videoImages[currentFrame], 0, 0);
+          currentFrame = Math.round((totalImagesCount - 1) * scrollRatio);
+          context.drawImage(
+            videoImages[currentFrame],
+            0,
+            0,
+            canvas.width,
+            canvas.height
+          );
         });
 
         if (scrollRatio <= 0.225) {
@@ -368,22 +402,5 @@ export const init = () => {
   let loadedImagesCount = 0;
   let totalImagesCount = 744;
 
-  const loadImages = () => {
-    for (let i = 1; i < totalImagesCount + 1; i++) {
-      let imgElem = new Image();
-      imgElem.src = `/video_img/video (${i}).jpg`;
-      videoImages.push(imgElem);
-
-      imgElem.addEventListener("load", () => {
-        loadedImagesCount++;
-
-        if (loadedImagesCount === 1) {
-          context.drawImage(videoImages[0], 0, 0);
-        }
-      });
-    }
-  };
-
   setLayout();
-  loadImages();
 };
