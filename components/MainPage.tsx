@@ -68,6 +68,14 @@ const MainPage = () => {
           </p>
         </section>
         <section id="scroll-section-2" className="scroll-section">
+          <div className="video-container sticky-elem">
+            <canvas
+              className="main-video-2"
+              width="1920"
+              height="1080"
+            ></canvas>
+          </div>
+
           <div className="sticky-elem main-message a">
             <p>
               <small>편안한 촉감</small>

@@ -71,6 +71,10 @@ body {
   margin-bottom: 0.5em;
 }
 
+#scroll-section-2 {
+  color: whitesmoke;
+}
+
 #scroll-section-2 .main-message {
   font-size: 3.5rem;
 }
@@ -147,10 +151,6 @@ body {
 #show-scene-1 #scroll-section-1 .sticky-elem,
 #show-scene-2 #scroll-section-2 .sticky-elem,
 #show-scene-3 #scroll-section-3 .sticky-elem {
-  display: block;
-}
-
-#show-scene-0 .video-container {
   display: block;
 }
 

@@ -72,6 +72,10 @@ export const init = () => {
           "#scroll-section-2 .desc-message .pin"
         ),
         messageC: document.querySelector("#scroll-section-2 .main-message.c"),
+        messageVideo: document.querySelector(".main-video-2"),
+        canvas: document.querySelector(".main-video-2"),
+        context: document.querySelector(".main-video-2").getContext("2d"),
+        videoImages: [],
       },
       values: {
         messageA_opacity_in: [0, 1, { start: 0.05, end: 0.15 }],
@@ -94,6 +98,11 @@ export const init = () => {
 
         messageC_translateY_in: [20, 0, { start: 0.6, end: 0.7 }],
         messageC_translateY_out: [0, -20, { start: 0.75, end: 0.85 }],
+
+        messageVideo_opacity_in: [0, 1, { start: 0, end: 0.5 }],
+        messageVideo_opacity_out: [1, 0, { start: 0.9, end: 1 }],
+        videoImageCount: 401,
+        imageSequence: [0, 400],
       },
     },
     {
@@ -111,6 +120,16 @@ export const init = () => {
       let imgElem = new Image();
       imgElem.src = `/video_img/video (${i}).jpg`;
       sceneInfo[0].objs.videoImages.push(imgElem);
+
+      imgElem.addEventListener("load", (e) => {});
+    }
+  };
+
+  const loadImages_video2 = () => {
+    for (let i = 1; i < sceneInfo[2].values.videoImageCount + 1; i++) {
+      let imgElem = new Image();
+      imgElem.src = `/video3_img/video (${i}).jpg`;
+      sceneInfo[2].objs.videoImages.push(imgElem);
 
       imgElem.addEventListener("load", (e) => {});
     }
@@ -155,6 +174,7 @@ export const init = () => {
 
     const heightRatio = window.innerHeight / 1080;
     sceneInfo[0].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scaleY(${heightRatio})`;
+    sceneInfo[2].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scaleY(${heightRatio})`;
   };
 
   const scrollLoop = () => {
@@ -293,6 +313,19 @@ export const init = () => {
       case 1:
         break;
       case 2:
+        requestAnimationFrame(() => {
+          currentFrame = Math.round(
+            (sceneInfo[2].values.videoImageCount - 1) * scrollRatio
+          );
+          sceneInfo[2].objs.context.drawImage(
+            sceneInfo[2].objs.videoImages[currentFrame],
+            0,
+            0,
+            sceneInfo[2].objs.canvas.width,
+            sceneInfo[2].objs.canvas.height
+          );
+        });
+
         if (scrollRatio <= 0.175) {
           objs.messageA.style.opacity = calcValues(
             values.messageA_opacity_in,
@@ -361,6 +394,18 @@ export const init = () => {
           )}%)`;
         }
 
+        if (scrollRatio <= 0.5) {
+          objs.messageVideo.style.opacity = calcValues(
+            values.messageVideo_opacity_in,
+            currentYOffset
+          );
+        } else {
+          objs.messageVideo.style.opacity = calcValues(
+            values.messageVideo_opacity_out,
+            currentYOffset
+          );
+        }
+
         break;
       case 3:
         break;
@@ -402,6 +447,7 @@ export const init = () => {
   });
 
   loadImages_video1();
+  loadImages_video2();
   setLayout();
 
   let imgElem = new Image();
@@ -414,6 +460,19 @@ export const init = () => {
       0,
       sceneInfo[0].objs.canvas.width,
       sceneInfo[0].objs.canvas.height
+    );
+  });
+
+  let imgElem2 = new Image();
+  imgElem2.src = `/video3_img/video (1).jpg`;
+
+  imgElem2.addEventListener("load", () => {
+    sceneInfo[2].objs.context.drawImage(
+      imgElem2,
+      0,
+      0,
+      sceneInfo[2].objs.canvas.width,
+      sceneInfo[2].objs.canvas.height
     );
   });
 };
