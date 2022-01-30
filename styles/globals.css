@@ -77,6 +77,7 @@ body {
 
 #scroll-section-2 .main-message {
   font-size: 3.5rem;
+  opacity: 0;
 }
 
 #scroll-section-2 .desc-message.b {
@@ -145,6 +146,10 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
+}
+
+.main-video {
+  opacity: 0;
 }
 
 #show-scene-0 #scroll-section-0 .sticky-elem,
