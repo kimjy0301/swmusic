@@ -142,15 +142,19 @@ export const init = () => {
     }
     document.body.setAttribute("id", `show-scene-${currentScene}`);
 
-    sceneInfo[0].objs.canvas.width = window.innerWidth;
-    sceneInfo[0].objs.canvas.height = window.innerHeight;
-    sceneInfo[0].objs.context.drawImage(
-      sceneInfo[0].objs.videoImages[currentFrame],
-      0,
-      0,
-      sceneInfo[0].objs.canvas.width,
-      sceneInfo[0].objs.canvas.height
-    );
+    // width, height 를 조절해서 canvas 사이즈 바꾸는 방법
+    // sceneInfo[0].objs.canvas.width = window.innerWidth;
+    // sceneInfo[0].objs.canvas.height = window.innerHeight;
+    // sceneInfo[0].objs.context.drawImage(
+    //   sceneInfo[0].objs.videoImages[currentFrame],
+    //   0,
+    //   0,
+    //   sceneInfo[0].objs.canvas.width,
+    //   sceneInfo[0].objs.canvas.height
+    // );
+
+    const heightRatio = window.innerHeight / 1080;
+    sceneInfo[0].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scaleY(${heightRatio})`;
   };
 
   const scrollLoop = () => {

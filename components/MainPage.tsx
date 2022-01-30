@@ -8,18 +8,14 @@ const MainPage = () => {
     <>
       <div id="show-scene-1">
         <section id="scroll-section-0" className="scroll-section">
-          <h1 className="relative z-20">AirMugPro</h1>
+          <h1 className="relative z-20">SAMWOO Music</h1>
 
           {/* <div className="video-container sticky-elem">
             <video className="main-video" src={"/video/video2.mp4"}></video>
           </div> */}
 
           <div className="video-container sticky-elem">
-            <canvas
-              className="main-video"
-              width="1920px"
-              height="1080px"
-            ></canvas>
+            <canvas className="main-video" width="1920" height="1080"></canvas>
           </div>
           <div className="sticky-elem main-message a">
             <p>
