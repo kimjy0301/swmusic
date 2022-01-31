@@ -159,6 +159,10 @@ body {
   display: block;
 }
 
+.catalog-layout {
+  width: 20vw;
+}
+
 @media (min-width: 1024px) {
   .catalog {
     width: 40vw /* 384px */;
@@ -202,5 +206,8 @@ body {
     width: 100%;
     z-index: 1;
     display: none;
+  }
+  .catalog-layout {
+    width: 18rem;
   }
 }

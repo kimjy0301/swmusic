@@ -10,17 +10,8 @@ import { animated, useSpring } from "react-spring";
 import MainPage from "../components/MainPage";
 
 export const getStaticProps = async () => {
-  const { base64, img } = await getPlaiceholder(
-    "http://146.56.147.155/images/2.JPG"
-  );
-
   return {
-    props: {
-      imageProps: {
-        ...img,
-        blurDataURL: base64,
-      },
-    },
+    props: {},
   };
 };
 

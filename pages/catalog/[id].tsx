@@ -43,7 +43,7 @@ export async function getStaticPaths() {
 }
 export const getStaticProps: GetStaticProps = async (context) => {
   const plaiceHolder1 = await getPlaiceholder(
-    `http://146.56.147.155/images/${context.params?.id}.JPG`
+    `http://146.56.147.155/images/${context.params?.id}.jpg`
   );
 
   const dataPath: string | string[] | undefined = context.params?.id;
@@ -53,7 +53,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   }
 
   const plaiceHolder2 = await getPlaiceholder(
-    `http://146.56.147.155/images/${pagenum}.JPG`
+    `http://146.56.147.155/images/${pagenum}.jpg`
   );
   return {
     props: {
