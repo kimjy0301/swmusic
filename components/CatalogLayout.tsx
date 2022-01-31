@@ -18,7 +18,7 @@ const CatalogLayout = (props: any) => {
   const styles3 = useSpring({
     opacity: foldedMenu ? 0.7 : 0.8,
     width: foldedMenu ? 250 : 250,
-    x: foldedMenu ? -260 : 0,
+    x: foldedMenu ? -253 : 0,
   });
   const transitions = useTransition(show, {
     from: { opacity: 0 },
@@ -35,10 +35,10 @@ const CatalogLayout = (props: any) => {
               <animated.div>
                 <animated.div
                   style={{ translateX: styles3.x }}
-                  className="absolute border-r-1 border-b-2 border-gray-300 bg-slate-100/95 left-0 top-16 catalog-layout rounded shadow-lg text-sm lg:text-lg h-5/6 mt-2 text-center flex items-center justify-center overflow-y-auto scroll-smooth"
+                  className="absolute border-r-1 border-b-2 border-gray-300 bg-slate-100/95 left-0 top-16 rounded shadow-lg text-sm lg:text-lg h-5/6 mt-2 text-center flex items-center justify-center catalog-layout"
                 >
                   <>
-                    <div className="flex flex-col items-center h-full">
+                    <div className="flex flex-col items-center h-full  overflow-y-auto scroll-smooth ">
                       <Link passHref href="/catalog/1">
                         <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
                           <div>BLISTER PACKING OR VINLY PACKING</div>
@@ -139,7 +139,7 @@ const CatalogLayout = (props: any) => {
                   </>
 
                   <div
-                    className="right-0 h-full border-l-2 flex justify-center items-center border-gray-200 cursor-pointer"
+                    className="right-0 h-full border-l-2 flex justify-center items-center border-gray-200 cursor-pointer w-10"
                     onClick={() => {
                       setFoldedMenu(!foldedMenu);
                     }}
