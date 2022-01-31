@@ -35,7 +35,7 @@ const CatalogLayout = (props: any) => {
               <animated.div>
                 <animated.div
                   style={{ translateX: styles3.x }}
-                  className="absolute border-r-2 border-b-2 min-w-min border-gray-300 bg-slate-100/95 left-0 top-16 catalog-layout rounded shadow-lg text-sm lg:text-lg h-5/6 mt-2 text-center flex items-center justify-center overflow-y-auto"
+                  className="absolute border-r-2 border-b-2 border-gray-300 bg-slate-100/95 left-0 top-16 catalog-layout rounded shadow-lg text-sm lg:text-lg h-5/6 mt-2 text-center flex items-center justify-center overflow-y-auto"
                 >
                   <>
                     <div className="flex flex-col items-center justify-center">

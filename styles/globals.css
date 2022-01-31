@@ -161,6 +161,7 @@ body {
 
 .catalog-layout {
   width: 20vw;
+  min-width: 290px;
 }
 
 @media (min-width: 1024px) {
