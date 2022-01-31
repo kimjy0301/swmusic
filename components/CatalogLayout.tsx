@@ -35,30 +35,102 @@ const CatalogLayout = (props: any) => {
               <animated.div>
                 <animated.div
                   style={{ translateX: styles3.x }}
-                  className="absolute border-r-1 border-b-2 border-gray-300 bg-slate-100/95 left-0 top-16 catalog-layout rounded shadow-lg text-sm lg:text-lg h-5/6 mt-2 text-center flex items-center justify-center overflow-y-auto"
+                  className="absolute border-r-1 border-b-2 border-gray-300 bg-slate-100/95 left-0 top-16 catalog-layout rounded shadow-lg text-sm lg:text-lg h-5/6 mt-2 text-center flex items-center justify-center overflow-y-auto scroll-smooth"
                 >
                   <>
-                    <div className="flex flex-col items-center justify-center">
+                    <div className="flex flex-col items-center h-full">
                       <Link passHref href="/catalog/1">
-                        <div className="mt-3 px-2 hover:font-bold cursor-pointer w-full ">
+                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
                           <div>BLISTER PACKING OR VINLY PACKING</div>
                           <div className="text-sm text-right">P119 ~ 130</div>
                         </div>
                       </Link>
                       <Link passHref href="/catalog/2">
-                        <div className="mt-3 px-2 hover:font-bold cursor-pointer w-full ">
+                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
                           <div>ACCESSORIES</div>
                           <div className="text-sm text-right">P30 ~ 140</div>
                         </div>
                       </Link>
                       <Link passHref href="/catalog/3">
-                        <div className="mt-3 px-2 hover:font-bold cursor-pointer w-full ">
+                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
                           <div>BLISTER PACKING OR VINLY PACKING</div>
                           <div className="text-sm text-right">P149 ~ 160</div>
                         </div>
                       </Link>
                       <Link passHref href="/catalog/4">
-                        <div className="mt-3 px-2 hover:font-bold cursor-pointer w-full ">
+                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
+                          <div>MACHINE HEAD OR TUNING KEY</div>
+                          <div className="text-sm text-right">P179 ~ 180</div>
+                        </div>
+                      </Link>
+                      <Link passHref href="/catalog/1">
+                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
+                          <div>BLISTER PACKING OR VINLY PACKING</div>
+                          <div className="text-sm text-right">P119 ~ 130</div>
+                        </div>
+                      </Link>
+                      <Link passHref href="/catalog/2">
+                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
+                          <div>ACCESSORIES</div>
+                          <div className="text-sm text-right">P30 ~ 140</div>
+                        </div>
+                      </Link>
+                      <Link passHref href="/catalog/3">
+                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
+                          <div>BLISTER PACKING OR VINLY PACKING</div>
+                          <div className="text-sm text-right">P149 ~ 160</div>
+                        </div>
+                      </Link>
+                      <Link passHref href="/catalog/4">
+                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
+                          <div>MACHINE HEAD OR TUNING KEY</div>
+                          <div className="text-sm text-right">P179 ~ 180</div>
+                        </div>
+                      </Link>
+                      <Link passHref href="/catalog/1">
+                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
+                          <div>BLISTER PACKING OR VINLY PACKING</div>
+                          <div className="text-sm text-right">P119 ~ 130</div>
+                        </div>
+                      </Link>
+                      <Link passHref href="/catalog/2">
+                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
+                          <div>ACCESSORIES</div>
+                          <div className="text-sm text-right">P30 ~ 140</div>
+                        </div>
+                      </Link>
+                      <Link passHref href="/catalog/3">
+                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
+                          <div>BLISTER PACKING OR VINLY PACKING</div>
+                          <div className="text-sm text-right">P149 ~ 160</div>
+                        </div>
+                      </Link>
+                      <Link passHref href="/catalog/4">
+                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
+                          <div>MACHINE HEAD OR TUNING KEY</div>
+                          <div className="text-sm text-right">P179 ~ 180</div>
+                        </div>
+                      </Link>
+                      <Link passHref href="/catalog/1">
+                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
+                          <div>BLISTER PACKING OR VINLY PACKING</div>
+                          <div className="text-sm text-right">P119 ~ 130</div>
+                        </div>
+                      </Link>
+                      <Link passHref href="/catalog/2">
+                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
+                          <div>ACCESSORIES</div>
+                          <div className="text-sm text-right">P30 ~ 140</div>
+                        </div>
+                      </Link>
+                      <Link passHref href="/catalog/3">
+                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
+                          <div>BLISTER PACKING OR VINLY PACKING</div>
+                          <div className="text-sm text-right">P149 ~ 160</div>
+                        </div>
+                      </Link>
+                      <Link passHref href="/catalog/4">
+                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
                           <div>MACHINE HEAD OR TUNING KEY</div>
                           <div className="text-sm text-right">P179 ~ 180</div>
                         </div>

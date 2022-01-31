@@ -15,6 +15,20 @@ body {
   @apply overflow-x-hidden;
 }
 
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eeeeee;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#5e5e5f, #656566, #5e5e5f);
+  border-radius: 5px;
+}
+
 .bg-header {
   background-color: #0099ff;
 }
@@ -162,6 +176,12 @@ body {
 .catalog-layout {
   width: 20vw;
   min-width: 290px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.catalog-layout::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
 }
 
 @media (min-width: 1024px) {
@@ -210,5 +230,8 @@ body {
   }
   .catalog-layout {
     width: 18rem;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
   }
 }
