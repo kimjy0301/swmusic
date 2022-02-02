@@ -111,6 +111,11 @@ export const init = () => {
       scrollHeight: 0,
       objs: {
         container: document.querySelector("#scroll-section-3"),
+        canvanCaption: document.querySelector(".canvas-caption"),
+        canvas: document.querySelector(".image-blend-canvas"),
+        context: document.querySelector(".image-blend-canvas").getContext("2d"),
+        imagesPath: ["/image/image1.jpg", "/image/image1.jpg"],
+        canvasImages: [],
       },
     },
   ];
@@ -131,6 +136,15 @@ export const init = () => {
       imgElem.src = `/video3_img/video (${i}).jpg`;
       sceneInfo[2].objs.videoImages.push(imgElem);
 
+      imgElem.addEventListener("load", (e) => {});
+    }
+  };
+
+  const loadCanvasImages = () => {
+    for (let i = 1; i < sceneInfo[3].objs.imagesPath.length + 1; i++) {
+      let imgElem = new Image();
+      imgElem.src = sceneInfo[3].objs.imagesPath[i];
+      sceneInfo[3].objs.canvasImages.push(imgElem);
       imgElem.addEventListener("load", (e) => {});
     }
   };
@@ -408,6 +422,19 @@ export const init = () => {
 
         break;
       case 3:
+        const widthRatio = window.innerWidth / objs.canvas.width;
+        const heightRatio = window.innerHeight / objs.canvas.height;
+
+        let canvasScaleRatio;
+        if (widthRatio <= heightRatio) {
+          canvasScaleRatio = heightRatio;
+        } else {
+          canvasScaleRatio = widthRatio;
+        }
+
+        objs.canvas.style.transform = `scale(${canvasScaleRatio})`;
+        objs.context.drawImage(objs.canvasImages[0], 0, 0);
+
         break;
     }
   };
@@ -448,6 +475,7 @@ export const init = () => {
 
   loadImages_video1();
   loadImages_video2();
+  loadCanvasImages();
   setLayout();
 
   let imgElem = new Image();

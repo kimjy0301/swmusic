@@ -108,6 +108,11 @@ const MainPage = () => {
             optio harum eligendi ab dolores laboriosam doloremque rerum unde
             aperiam?
           </p>
+          <canvas
+            className="image-blend-canvas"
+            width={"1920"}
+            height={1080}
+          ></canvas>
           <div className="canvas-caption">
             canvas caption Lorem ipsum dolor sit amet consectetur adipisicing
             elit. Inventore velit dolore earum eaque quisquam deleniti, soluta

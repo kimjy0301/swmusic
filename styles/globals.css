@@ -41,6 +41,7 @@ body {
   padding-top: 40vh;
   z-index: 10;
   position: relative;
+  width: 100vw;
 }
 
 #scroll-section-0 h1 {
@@ -183,7 +184,14 @@ body {
 .catalog-layout::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera*/
 }
-
+#scroll-section-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.image-blend-canvas {
+  @apply bg-blue-400;
+}
 @media (min-width: 1024px) {
   .catalog {
     width: 40vw /* 384px */;
