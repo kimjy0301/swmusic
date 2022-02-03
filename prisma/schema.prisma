@@ -22,6 +22,7 @@ model Catalog {
 
 model Content{
   id Int @id @default(autoincrement())
+  name String
   startPage Int
   endPage Int
   catalog Catalog @relation(fields: [catalogId], references: [id])
@@ -30,6 +31,7 @@ model Content{
 
 model Page{
   id Int @id @default(autoincrement())
+  pageNumber Int
   ip String
   filePath String
   catalog Catalog @relation(fields: [catalogId], references: [id])
