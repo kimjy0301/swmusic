@@ -35,8 +35,8 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return getLayout(
     <>
       {isLoading ? (
-        <div className="h-screen w-screen flex justify-center items-center text-3xl">
-          Loading...first-letter:
+        <div className="h-screen w-screen flex justify-center items-center text-xl lg:text-3xl">
+          Loading...
         </div>
       ) : (
         <BaseLayout>
