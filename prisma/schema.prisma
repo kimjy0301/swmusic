@@ -9,3 +9,30 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+
+
+model Catalog {
+  id Int @id @default(autoincrement())
+  name String 
+  created DateTime @default(now())
+  contents Content[]
+  pages Page[]
+  }
+
+model Content{
+  id Int @id @default(autoincrement())
+  startPage Int
+  endPage Int
+  catalog Catalog @relation(fields: [catalogId], references: [id])
+  catalogId Int 
+  }
+
+model Page{
+  id Int @id @default(autoincrement())
+  ip String
+  filePath String
+  catalog Catalog @relation(fields: [catalogId], references: [id])
+  catalogId Int 
+  tag String  
+  }
