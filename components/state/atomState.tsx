@@ -10,4 +10,9 @@ const countState = atom({
   default: 0,
 });
 
-export { categoryNaviState, countState };
+const isLoadingState = atom({
+  key: "isLoadingState", // unique ID (with respect to other atoms/selectors)
+  default: false, // default value (aka initial value)
+});
+
+export { categoryNaviState, countState, isLoadingState };

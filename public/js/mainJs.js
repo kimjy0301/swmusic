@@ -192,30 +192,34 @@ export const init = () => {
   };
 
   const scrollLoop = () => {
-    let currentSceneChange = false;
-    prevScrollHeight = 0;
+    const mainSection = document.querySelector(".scroll-section");
 
-    for (let i = 0; i < currentScene; i++) {
-      prevScrollHeight += sceneInfo[i].scrollHeight;
+    if (mainSection) {
+      let currentSceneChange = false;
+      prevScrollHeight = 0;
+
+      for (let i = 0; i < currentScene; i++) {
+        prevScrollHeight += sceneInfo[i].scrollHeight;
+      }
+
+      if (yOffset > prevScrollHeight + sceneInfo[currentScene].scrollHeight) {
+        currentScene++;
+        currentSceneChange = true;
+      }
+
+      if (yOffset < prevScrollHeight) {
+        if (currentScene === 0) return;
+        currentScene--;
+        currentSceneChange = true;
+      }
+
+      if (currentSceneChange) {
+        document.body.setAttribute("id", `show-scene-${currentScene}`);
+      }
+
+      if (currentSceneChange) return;
+      playAnimation();
     }
-
-    if (yOffset > prevScrollHeight + sceneInfo[currentScene].scrollHeight) {
-      currentScene++;
-      currentSceneChange = true;
-    }
-
-    if (yOffset < prevScrollHeight) {
-      if (currentScene === 0) return;
-      currentScene--;
-      currentSceneChange = true;
-    }
-
-    if (currentSceneChange) {
-      document.body.setAttribute("id", `show-scene-${currentScene}`);
-    }
-
-    if (currentSceneChange) return;
-    playAnimation();
   };
 
   const playAnimation = () => {

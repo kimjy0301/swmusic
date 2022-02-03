@@ -4,8 +4,7 @@ import Layout from "../components/Layout";
 import { animated, Transition } from "react-spring";
 import { useRouter } from "next/router";
 import { NextPage } from "next";
-import { ReactElement, ReactNode } from "react";
-import { RecoilRoot } from "recoil";
+import { ReactElement, ReactNode, useEffect, useState } from "react";
 import BaseLayout from "../components/BaseLayout";
 
 type NextPageWithLayout = NextPage & {
@@ -15,7 +14,14 @@ type NextPageWithLayout = NextPage & {
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
+
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, [isLoading, setIsLoading]);
+
   const getLayout = Component.getLayout ?? ((page) => page);
   const router = useRouter();
   const items = [
@@ -27,24 +33,30 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   ];
 
   return getLayout(
-    <BaseLayout>
-      <Layout>
-        <Transition
-          items={items}
-          keys={(items: any) => items.id}
-          from={{ opacity: 0 }}
-          initial={{ opacity: 0 }}
-          enter={{ opacity: 1, x: 0 }}
-          leave={{ opacity: 0, x: 500, position: "absolute" }}
-        >
-          {(styles, { pageProps, Component }) => (
-            <animated.div style={{ ...styles, width: "100%" }}>
-              <Component {...pageProps} />
-            </animated.div>
-          )}
-        </Transition>
-      </Layout>
-    </BaseLayout>
+    <>
+      {isLoading ? (
+        <h1>loading</h1>
+      ) : (
+        <BaseLayout>
+          <Layout>
+            <Transition
+              items={items}
+              keys={(items: any) => items.id}
+              from={{ opacity: 0 }}
+              initial={{ opacity: 0 }}
+              enter={{ opacity: 1, x: 0 }}
+              leave={{ opacity: 0, x: 500, position: "absolute" }}
+            >
+              {(styles, { pageProps, Component }) => (
+                <animated.div style={{ ...styles, width: "100%" }}>
+                  <Component {...pageProps} />
+                </animated.div>
+              )}
+            </Transition>
+          </Layout>
+        </BaseLayout>
+      )}
+    </>
   );
 }
 
