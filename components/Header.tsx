@@ -49,7 +49,7 @@ const Header = () => {
               </div>
             </a>
           </Link>
-          <Link href="/catalog/3">
+          <Link href="/catalog/1/2">
             <a>
               <div className="font-bold text-2xl hover:underline cursor-pointer mx-10 select-none ">
                 CATALOG
@@ -73,7 +73,7 @@ const Header = () => {
               </div>
             </a>
           </Link>
-          <Link href="/catalog/3">
+          <Link href="/catalog/1/2">
             <a>
               <div className="font-bold text-sm hover:underline cursor-pointer mx-2 select-none ">
                 CATALOG

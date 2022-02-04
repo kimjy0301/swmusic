@@ -1,19 +1,25 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { animated, useSpring, useTransition } from "react-spring";
-import { atom, useRecoilState } from "recoil";
-import { categoryNaviState, countState } from "./state/atomState";
+import { useRecoilState } from "recoil";
+import useSWR from "swr";
+import { content } from "./publicInterface";
+import { categoryNaviState } from "./state/atomState";
 
-const CatalogLayout = (props: any) => {
+const CatalogLayout = ({ children }: any) => {
+  const router = useRouter();
+
+  const { catalogid } = router.query;
+
+  const fetcher = (url: any) => fetch(url).then((r) => r.json());
+  const { data, error } = useSWR(`/api/catalog/${catalogid}`, fetcher);
+
+  const contents: content[] = data?.contents;
+
   const [show, setShow] = useRecoilState(categoryNaviState);
 
   const [foldedMenu, setFoldedMenu] = useState(false);
-
-  useEffect(() => {
-    if (show == false) {
-      setShow(true);
-    }
-  }, [show, setShow]);
 
   const styles3 = useSpring({
     opacity: foldedMenu ? 0.7 : 0.8,
@@ -25,161 +31,93 @@ const CatalogLayout = (props: any) => {
     enter: { opacity: 1 },
   });
 
+  useEffect(() => {
+    if (show == false) {
+      setShow(true);
+    }
+  }, [show, setShow]);
+
   return (
     <>
-      {props.children}
-      {transitions(
-        (styles, item) =>
-          item && (
-            <animated.div style={styles}>
-              <animated.div>
-                <animated.div
-                  style={{ translateX: styles3.x }}
-                  className="absolute border-r-1 border-b-2 border-gray-300 bg-slate-100/95 left-0 top-16 rounded shadow-lg text-sm lg:text-lg h-5/6 mt-2 text-center flex items-center justify-center catalog-layout"
-                >
-                  <>
-                    <div className="flex flex-col items-center h-full  overflow-y-auto scroll-smooth ">
-                      <Link passHref href="/catalog/1">
-                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
-                          <div>BLISTER PACKING OR VINLY PACKING</div>
-                          <div className="text-sm text-right">P119 ~ 130</div>
-                        </div>
-                      </Link>
-                      <Link passHref href="/catalog/2">
-                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
-                          <div>ACCESSORIES</div>
-                          <div className="text-sm text-right">P30 ~ 140</div>
-                        </div>
-                      </Link>
-                      <Link passHref href="/catalog/3">
-                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
-                          <div>BLISTER PACKING OR VINLY PACKING</div>
-                          <div className="text-sm text-right">P149 ~ 160</div>
-                        </div>
-                      </Link>
-                      <Link passHref href="/catalog/4">
-                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
-                          <div>MACHINE HEAD OR TUNING KEY</div>
-                          <div className="text-sm text-right">P179 ~ 180</div>
-                        </div>
-                      </Link>
-                      <Link passHref href="/catalog/1">
-                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
-                          <div>BLISTER PACKING OR VINLY PACKING</div>
-                          <div className="text-sm text-right">P119 ~ 130</div>
-                        </div>
-                      </Link>
-                      <Link passHref href="/catalog/2">
-                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
-                          <div>ACCESSORIES</div>
-                          <div className="text-sm text-right">P30 ~ 140</div>
-                        </div>
-                      </Link>
-                      <Link passHref href="/catalog/3">
-                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
-                          <div>BLISTER PACKING OR VINLY PACKING</div>
-                          <div className="text-sm text-right">P149 ~ 160</div>
-                        </div>
-                      </Link>
-                      <Link passHref href="/catalog/4">
-                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
-                          <div>MACHINE HEAD OR TUNING KEY</div>
-                          <div className="text-sm text-right">P179 ~ 180</div>
-                        </div>
-                      </Link>
-                      <Link passHref href="/catalog/1">
-                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
-                          <div>BLISTER PACKING OR VINLY PACKING</div>
-                          <div className="text-sm text-right">P119 ~ 130</div>
-                        </div>
-                      </Link>
-                      <Link passHref href="/catalog/2">
-                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
-                          <div>ACCESSORIES</div>
-                          <div className="text-sm text-right">P30 ~ 140</div>
-                        </div>
-                      </Link>
-                      <Link passHref href="/catalog/3">
-                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
-                          <div>BLISTER PACKING OR VINLY PACKING</div>
-                          <div className="text-sm text-right">P149 ~ 160</div>
-                        </div>
-                      </Link>
-                      <Link passHref href="/catalog/4">
-                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
-                          <div>MACHINE HEAD OR TUNING KEY</div>
-                          <div className="text-sm text-right">P179 ~ 180</div>
-                        </div>
-                      </Link>
-                      <Link passHref href="/catalog/1">
-                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
-                          <div>BLISTER PACKING OR VINLY PACKING</div>
-                          <div className="text-sm text-right">P119 ~ 130</div>
-                        </div>
-                      </Link>
-                      <Link passHref href="/catalog/2">
-                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
-                          <div>ACCESSORIES</div>
-                          <div className="text-sm text-right">P30 ~ 140</div>
-                        </div>
-                      </Link>
-                      <Link passHref href="/catalog/3">
-                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
-                          <div>BLISTER PACKING OR VINLY PACKING</div>
-                          <div className="text-sm text-right">P149 ~ 160</div>
-                        </div>
-                      </Link>
-                      <Link passHref href="/catalog/4">
-                        <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
-                          <div>MACHINE HEAD OR TUNING KEY</div>
-                          <div className="text-sm text-right">P179 ~ 180</div>
-                        </div>
-                      </Link>
-                    </div>
-                  </>
+      {children}
 
-                  <div
-                    className="right-0 h-full border-l-2 flex justify-center items-center border-gray-200 cursor-pointer w-10"
-                    onClick={() => {
-                      setFoldedMenu(!foldedMenu);
-                    }}
-                  >
-                    {foldedMenu ? (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-gray-700"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
+      {contents ? (
+        <>
+          {transitions(
+            (styles, item) =>
+              item && (
+                <animated.div style={styles}>
+                  <animated.div>
+                    <animated.div
+                      style={{ translateX: styles3.x }}
+                      className="absolute border-r-1 border-b-2 border-gray-300 bg-slate-100/95 left-0 top-16 rounded shadow-lg text-sm lg:text-lg mt-2 text-center flex items-center justify-center catalog-layout "
+                    >
+                      <div className="flex flex-col items-center h-full  overflow-y-auto scroll-smooth ">
+                        {contents.map((i, key) => {
+                          return (
+                            <Link
+                              key={key}
+                              passHref
+                              href={`/catalog/${i.catalogId}/${i.startPage}`}
+                            >
+                              <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
+                                <div>{i.name}</div>
+                                <div className="text-sm text-right">
+                                  {`P${i.startPage}`} ~ {`P${i.endPage}`}
+                                </div>
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                      <div
+                        className="right-0 h-full border-l-2 flex justify-center items-center border-gray-200 cursor-pointer w-10"
+                        onClick={() => {
+                          setFoldedMenu(!foldedMenu);
+                        }}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M13 5l7 7-7 7M5 5l7 7-7 7"
-                        />
-                      </svg>
-                    ) : (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-gray-700"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M11 19l-7-7 7-7m8 14l-7-7 7-7"
-                        />
-                      </svg>
-                    )}
-                  </div>
+                        {foldedMenu ? (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6 text-gray-700"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M13 5l7 7-7 7M5 5l7 7-7 7"
+                            />
+                          </svg>
+                        ) : (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6 text-gray-700"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M11 19l-7-7 7-7m8 14l-7-7 7-7"
+                            />
+                          </svg>
+                        )}
+                      </div>
+                    </animated.div>
+                  </animated.div>
                 </animated.div>
-              </animated.div>
-            </animated.div>
-          )
+              )
+          )}
+        </>
+      ) : (
+        <>
+          <div>loading</div>
+        </>
       )}
     </>
   );

@@ -15,7 +15,7 @@ datasource db {
 model Catalog {
   id Int @id @default(autoincrement())
   name String 
-  created DateTime @default(now())
+  created String
   contents Content[]
   pages Page[]
   }

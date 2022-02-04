@@ -1,72 +1,87 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { getPlaiceholder } from "plaiceholder";
 import { ReactElement } from "react";
 import { animated, Transition } from "react-spring";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
-import BaseLayout from "../../components/BaseLayout";
-import CatalogLayout from "../../components/CatalogLayout";
+import BaseLayout from "../../../components/BaseLayout";
+import CatalogLayout from "../../../components/CatalogLayout";
+
+import { PrismaClient } from "@prisma/client";
+import { catalog, page } from "../../../components/publicInterface";
+
 export async function getStaticPaths() {
+  const prisma = new PrismaClient();
+
+  const catalogs: catalog[] = await prisma.catalog.findMany({
+    include: { pages: true },
+  });
+
+  let paths = [];
+
+  for (let i = 0; i < catalogs.length; i++) {
+    const forCatalog: catalog = catalogs[i];
+
+    if (forCatalog.pages) {
+      for (let j = 0; j < forCatalog.pages.length; j++) {
+        let tmpPath = {
+          params: {
+            catalogid: forCatalog.pages[j].catalogId.toString(),
+            id: forCatalog.pages[j].pageNumber.toString(),
+          },
+        };
+
+        paths.push(tmpPath);
+      }
+    }
+  }
+
   return {
-    paths: [
-      {
-        params: {
-          id: "1",
-        },
-      },
-      {
-        params: {
-          id: "2",
-        },
-      },
-      {
-        params: {
-          id: "3",
-        },
-      },
-      {
-        params: {
-          id: "4",
-        },
-      },
-      {
-        params: {
-          id: "5",
-        },
-      },
-    ],
+    paths,
     fallback: false,
   };
 }
 export const getStaticProps: GetStaticProps = async (context) => {
-  const plaiceHolder1 = await getPlaiceholder(
-    `http://146.56.147.155/images/${context.params?.id}.jpg`
-  );
+  const catalogId = context.params?.catalogid;
+  const id = context.params?.id;
 
-  const dataPath: string | string[] | undefined = context.params?.id;
-  let pagenum;
-  if (typeof dataPath == "string") {
-    pagenum = parseInt(dataPath) + 1;
+  const prisma = new PrismaClient();
+
+  if (typeof id === "string" && typeof catalogId === "string") {
+    let pageId: number = parseInt(id);
+    let pCatalogId: number = parseInt(catalogId);
+
+    const page: page | null = await prisma.page.findFirst({
+      where: { pageNumber: pageId, catalogId: pCatalogId },
+    });
+    const page2: page | null = await prisma.page.findFirst({
+      where: { pageNumber: pageId + 1, catalogId: pCatalogId },
+    });
+
+    const plaiceHolder1 = await getPlaiceholder(
+      `http://${page?.ip}${page?.filePath}`
+    );
+
+    const plaiceHolder2 = await getPlaiceholder(
+      `http://${page2?.ip}${page2?.filePath}`
+    );
+    return {
+      props: {
+        imageProps: {
+          ...plaiceHolder1.img,
+          blurDataURL: plaiceHolder1.base64,
+        },
+        imageProps2: {
+          ...plaiceHolder2.img,
+          blurDataURL: plaiceHolder2.base64,
+        },
+      },
+    };
+  } else {
+    return { props: {} };
   }
-
-  const plaiceHolder2 = await getPlaiceholder(
-    `http://146.56.147.155/images/${pagenum}.jpg`
-  );
-  return {
-    props: {
-      imageProps: {
-        ...plaiceHolder1.img,
-        blurDataURL: plaiceHolder1.base64,
-      },
-      imageProps2: {
-        ...plaiceHolder2.img,
-        blurDataURL: plaiceHolder2.base64,
-      },
-    },
-  };
 };
 
 const CatalogIndex = ({ imageProps, imageProps2 }: any) => {

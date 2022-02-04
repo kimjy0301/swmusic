@@ -1,28 +1,17 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { getPlaiceholder } from "plaiceholder";
-import Link from "next/link";
-import { atom, useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import { categoryNaviState, countState } from "../components/state/atomState";
-import { animated, useSpring } from "react-spring";
 import MainPage from "../components/MainPage";
 
-export const getStaticProps = async () => {
-  return {
-    props: {},
-  };
-};
+interface catalog {
+  id: number;
+  name: string;
+  created: string;
+}
 
-const Home: NextPage = ({ imageProps }: any) => {
+const Home: NextPage = ({ catalogs }: any) => {
   const [show, setShow] = useRecoilState(categoryNaviState);
-
-  const [countnumber, api] = useSpring(() => ({
-    number: 0,
-    config: { mass: 5, tension: 350, friction: 40 },
-  }));
-  const count = useRecoilValue(countState);
   setShow(false);
   return (
     <div className="">
@@ -33,22 +22,6 @@ const Home: NextPage = ({ imageProps }: any) => {
       </Head>
       <div className="flex flex-col justify-center items-center">
         <MainPage></MainPage>
-        {/* <Link href="/catalog/3">Catalog 1</Link>
-        <Link href="/catalog/1">Catalog 2</Link>
-        <h1>
-          <h1>{`show=${show} / count=${count}`}</h1>
-        </h1>
-
-        <h6>testsetsetstsetsetsetsetsetsetsetsetsetset</h6>
-        <animated.div>{countnumber.number}</animated.div>
-
-        <div
-          onMouseEnter={() => api.start({ number: 1000 })}
-          onMouseOut={() => api.stop()}
-          className="rounded p-3 bg-red-200 cursor-pointer hover:bg-red-300"
-        >
-          Hover me
-        </div> */}
       </div>
     </div>
   );

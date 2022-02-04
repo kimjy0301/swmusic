@@ -179,6 +179,7 @@ body {
   min-width: 290px;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  height: 83.333333%;
 }
 
 .catalog-layout::-webkit-scrollbar {
