@@ -80,7 +80,7 @@ const CatalogLayout = ({ children }: any) => {
                       </>
                     ) : (
                       <>
-                        <div className="self-center flex items-center justify-center">
+                        <div className="self-center flex items-center justify-center h-full">
                           Loading...
                         </div>
                       </>
