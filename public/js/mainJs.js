@@ -3,7 +3,6 @@ export const init = () => {
   let prevScrollHeight = 0;
   let currentScene = 0;
 
-  const videoImages = [];
   let currentFrame = 0;
   const sceneInfo = [
     {
@@ -141,7 +140,7 @@ export const init = () => {
   };
 
   const loadCanvasImages = () => {
-    for (let i = 1; i < sceneInfo[3].objs.imagesPath.length + 1; i++) {
+    for (let i = 0; i < sceneInfo[3].objs.imagesPath.length; i++) {
       let imgElem = new Image();
       imgElem.src = sceneInfo[3].objs.imagesPath[i];
       sceneInfo[3].objs.canvasImages.push(imgElem);

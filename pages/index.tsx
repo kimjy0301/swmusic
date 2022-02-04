@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useRecoilState } from "recoil";
 import { categoryNaviState, countState } from "../components/state/atomState";
 import MainPage from "../components/MainPage";
+import { useEffect } from "react";
 
 interface catalog {
   id: number;
@@ -12,7 +13,9 @@ interface catalog {
 
 const Home: NextPage = ({ catalogs }: any) => {
   const [show, setShow] = useRecoilState(categoryNaviState);
-  setShow(false);
+  useEffect(() => {
+    setShow(false);
+  }, [setShow]);
   return (
     <div className="">
       <Head>

@@ -9,9 +9,11 @@ import { categoryNaviState } from "./state/atomState";
 
 const CatalogLayout = ({ children }: any) => {
   const router = useRouter();
-
-  const { catalogid } = router.query;
-
+  const { catalogid, id } = router.query;
+  let numId = 0;
+  if (id && typeof id === "string") {
+    numId = parseInt(id);
+  }
   const fetcher = (url: any) => fetch(url).then((r) => r.json());
   const { data, error } = useSWR(`/api/catalog/${catalogid}`, fetcher);
 
@@ -40,19 +42,19 @@ const CatalogLayout = ({ children }: any) => {
   return (
     <>
       {children}
-
-      {contents ? (
-        <>
-          {transitions(
-            (styles, item) =>
-              item && (
-                <animated.div style={styles}>
-                  <animated.div>
-                    <animated.div
-                      style={{ translateX: styles3.x }}
-                      className="absolute border-r-1 border-b-2 border-gray-300 bg-slate-100/95 left-0 top-16 rounded shadow-lg text-sm lg:text-lg mt-2 text-center flex items-center justify-center catalog-layout "
-                    >
-                      <div className="flex flex-col items-center h-full  overflow-y-auto scroll-smooth ">
+      {transitions(
+        (styles, item) =>
+          item && (
+            <animated.div style={styles}>
+              <animated.div>
+                <animated.div
+                  style={{ translateX: styles3.x }}
+                  className="absolute border-r-1 border-b-2 border-gray-300 bg-slate-100/95 left-0 top-16 rounded shadow-lg text-sm lg:text-lg mt-2 text-center flex items-center justify-center catalog-layout "
+                >
+                  <div className="flex flex-col items-center h-full  overflow-y-auto scroll-smooth ">
+                    <input id="name" type="text" placeholder="Search" />
+                    {contents ? (
+                      <>
                         {contents.map((i, key) => {
                           return (
                             <Link
@@ -60,7 +62,11 @@ const CatalogLayout = ({ children }: any) => {
                               passHref
                               href={`/catalog/${i.catalogId}/${i.startPage}`}
                             >
-                              <div className="my-3 px-2 hover:font-bold cursor-pointer w-full ">
+                              <div
+                                className={`my-3 px-2 hover:font-bold cursor-pointer w-full ${
+                                  numId === i.startPage ? "bg-gray-300" : ""
+                                }`}
+                              >
                                 <div>{i.name}</div>
                                 <div className="text-sm text-right">
                                   {`P${i.startPage}`} ~ {`P${i.endPage}`}
@@ -69,55 +75,55 @@ const CatalogLayout = ({ children }: any) => {
                             </Link>
                           );
                         })}
-                      </div>
-                      <div
-                        className="right-0 h-full border-l-2 flex justify-center items-center border-gray-200 cursor-pointer w-10"
-                        onClick={() => {
-                          setFoldedMenu(!foldedMenu);
-                        }}
+                      </>
+                    ) : (
+                      <>
+                        <div>loading</div>
+                      </>
+                    )}
+                  </div>
+                  <div
+                    className="right-0 h-full border-l-2 flex justify-center items-center border-gray-200 cursor-pointer w-10"
+                    onClick={() => {
+                      setFoldedMenu(!foldedMenu);
+                    }}
+                  >
+                    {foldedMenu ? (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6 text-gray-700"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
                       >
-                        {foldedMenu ? (
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6 text-gray-700"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M13 5l7 7-7 7M5 5l7 7-7 7"
-                            />
-                          </svg>
-                        ) : (
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6 text-gray-700"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M11 19l-7-7 7-7m8 14l-7-7 7-7"
-                            />
-                          </svg>
-                        )}
-                      </div>
-                    </animated.div>
-                  </animated.div>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M13 5l7 7-7 7M5 5l7 7-7 7"
+                        />
+                      </svg>
+                    ) : (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6 text-gray-700"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M11 19l-7-7 7-7m8 14l-7-7 7-7"
+                        />
+                      </svg>
+                    )}
+                  </div>
                 </animated.div>
-              )
-          )}
-        </>
-      ) : (
-        <>
-          <div>loading</div>
-        </>
+              </animated.div>
+            </animated.div>
+          )
       )}
     </>
   );
