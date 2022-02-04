@@ -8,13 +8,11 @@ import { animated, Transition } from "react-spring";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 import BaseLayout from "../../../components/BaseLayout";
 import CatalogLayout from "../../../components/CatalogLayout";
+import { prisma } from "../../../components/client";
 
-import { PrismaClient } from "@prisma/client";
 import { catalog, page } from "../../../components/publicInterface";
 
 export async function getStaticPaths() {
-  const prisma = new PrismaClient();
-
   const catalogs: catalog[] = await prisma.catalog.findMany({
     include: { pages: true },
   });
@@ -47,8 +45,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const catalogId = context.params?.catalogid;
   const id = context.params?.id;
 
-  const prisma = new PrismaClient();
-
   if (typeof id === "string" && typeof catalogId === "string") {
     let pageId: number = parseInt(id);
     let pCatalogId: number = parseInt(catalogId);
@@ -64,9 +60,15 @@ export const getStaticProps: GetStaticProps = async (context) => {
       `http://${page?.ip}${page?.filePath}`
     );
 
-    const plaiceHolder2 = await getPlaiceholder(
-      `http://${page2?.ip}${page2?.filePath}`
-    );
+    let plaiceHolder2;
+    if (page2) {
+      plaiceHolder2 = await getPlaiceholder(
+        `http://${page2?.ip}${page2?.filePath}`
+      );
+    } else {
+      plaiceHolder2 = { img: null, base64: null };
+    }
+
     return {
       props: {
         imageProps: {
@@ -126,9 +128,15 @@ const CatalogIndex = ({ imageProps, imageProps2 }: any) => {
                     <div className="relative catalog flex">
                       <Image {...imageProps} alt="test" placeholder={"blur"} />
                     </div>
-                    <div className="relative catalog hidden lg:flex">
-                      <Image {...imageProps2} alt="test" placeholder={"blur"} />
-                    </div>
+                    {imageProps2.blurDataURL && (
+                      <div className="relative catalog hidden lg:flex">
+                        <Image
+                          {...imageProps2}
+                          alt="test"
+                          placeholder={"blur"}
+                        />
+                      </div>
+                    )}
                   </TransformComponent>
                 </TransformWrapper>
               </div>
