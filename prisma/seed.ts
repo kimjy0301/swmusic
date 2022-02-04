@@ -13,27 +13,27 @@ interface page {
 async function main() {
   const dataList: page[] = [];
 
-  for (let i = 1; i < 314; i++) {
-    let pageData: page = {
-      ip: "146.56.147.155",
-      filePath: `/images/${i.toString()}.jpg`,
-      catalogId: 1,
-      tag: "",
-      pageNumber: i,
-    };
-    dataList.push(pageData);
-  }
-
-  // for (let i = 1; i < 25; i++) {
+  // for (let i = 1; i < 314; i++) {
   //   let pageData: page = {
   //     ip: "146.56.147.155",
-  //     filePath: `/images/2022New/${i.toString()}.jpg`,
-  //     catalogId: 2,
+  //     filePath: `/images/${i.toString()}.jpg`,
+  //     catalogId: 1,
   //     tag: "",
   //     pageNumber: i,
   //   };
   //   dataList.push(pageData);
   // }
+
+  for (let i = 1; i < 25; i++) {
+    let pageData: page = {
+      ip: "146.56.147.155",
+      filePath: `/images/2022New/${i.toString()}.jpg`,
+      catalogId: 2,
+      tag: "",
+      pageNumber: i,
+    };
+    dataList.push(pageData);
+  }
 
   await prisma.page.createMany({ data: dataList });
 

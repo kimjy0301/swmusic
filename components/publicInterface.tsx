@@ -2,6 +2,8 @@ export interface catalog {
   id: number;
   name: string;
   created: string;
+  startPage: number;
+  endPage: number;
   pages: page[] | undefined;
 }
 

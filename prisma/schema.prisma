@@ -17,6 +17,8 @@ model Catalog {
   name String 
   created String
   contents Content[]
+  startPage Int
+  endPage Int
   pages Page[]
   }
 

@@ -64,7 +64,9 @@ const CatalogLayout = ({ children }: any) => {
                             >
                               <div
                                 className={`my-3 px-2 hover:bg-gray-200 cursor-pointer w-full transition-all duration-100  ${
-                                  numId === i.startPage ? "font-bold" : ""
+                                  numId >= i.startPage && numId <= i.endPage
+                                    ? "font-bold"
+                                    : ""
                                 }`}
                               >
                                 <div>{i.name}</div>

@@ -49,12 +49,30 @@ export const getStaticProps: GetStaticProps = async (context) => {
     let pageId: number = parseInt(id);
     let pCatalogId: number = parseInt(catalogId);
 
+    const nowCatalog = await prisma.catalog.findFirst({
+      where: { id: pCatalogId },
+    });
+
+    let prev = false;
+    let next = false;
+
     const page: page | null = await prisma.page.findFirst({
       where: { pageNumber: pageId, catalogId: pCatalogId },
     });
     const page2: page | null = await prisma.page.findFirst({
       where: { pageNumber: pageId + 1, catalogId: pCatalogId },
     });
+
+    if (nowCatalog?.startPage === pageId) {
+      prev = false;
+    } else {
+      prev = true;
+    }
+    if (nowCatalog?.endPage === pageId) {
+      next = false;
+    } else {
+      next = true;
+    }
 
     const plaiceHolder1 = await getPlaiceholder(
       `http://${page?.ip}${page?.filePath}`
@@ -79,6 +97,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
           ...plaiceHolder2.img,
           blurDataURL: plaiceHolder2.base64,
         },
+        pageProps: {
+          prev,
+          next,
+          nowPage: pageId,
+        },
       },
     };
   } else {
@@ -86,13 +109,22 @@ export const getStaticProps: GetStaticProps = async (context) => {
   }
 };
 
-const CatalogIndex = ({ imageProps, imageProps2 }: any) => {
+const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
   const router = useRouter();
   const items = [
     {
       id: router.asPath,
     },
   ];
+
+  const onClickPrev = () => {
+    const nowPage = pageProps.nowPage;
+    router.push(`/catalog/1/${nowPage - 1}`);
+  };
+  const onClickNext = () => {
+    const nowPage = pageProps.nowPage;
+    router.push(`/catalog/1/${nowPage + 1}`);
+  };
 
   return (
     <>
@@ -140,16 +172,29 @@ const CatalogIndex = ({ imageProps, imageProps2 }: any) => {
                   </TransformComponent>
                 </TransformWrapper>
               </div>
+              <div className="flex mt-2 justify-between">
+                {pageProps.prev && (
+                  <div
+                    onClick={onClickPrev}
+                    className="cursor-pointer bg-blue-500 rounded px-2 text-white hover:bg-blue-400 transition-all duration-200 self-start"
+                  >
+                    Prev
+                  </div>
+                )}
+
+                <div></div>
+                {pageProps.next && (
+                  <div
+                    onClick={onClickNext}
+                    className="cursor-pointer bg-blue-500 rounded px-2 text-white hover:bg-blue-400 transition-all duration-200 self-end"
+                  >
+                    Next
+                  </div>
+                )}
+              </div>
             </animated.div>
           )}
         </Transition>
-        {/* <div className="relative">
-          <Link href="/catalog/1">Catalog 1</Link>
-          <Link href="/catalog/2">Catalog 2</Link>
-          <Link href="/catalog/3">Catalog 3</Link>
-          <Link href="/catalog/4">Catalog 4</Link>
-          <Link href="/catalog/5">Catalog 5</Link>
-        </div> */}
       </div>
     </>
   );
