@@ -36,6 +36,7 @@ body {
 .catalog {
   width: 100%;
   max-width: 330px;
+  min-width: 330px;
 }
 
 .scroll-section {
