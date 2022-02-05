@@ -157,18 +157,18 @@ const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
               <div className="flex">
                 <TransformWrapper>
                   <TransformComponent>
-                    <div className=" catalog flex">
+                    <div className="relative catalog flex">
                       <Image
-                        width={1320}
                         {...imageProps}
                         alt="test"
                         placeholder={"blur"}
+                        quality={90}
                       />
                     </div>
                     {imageProps2.blurDataURL && (
-                      <div className=" catalog hidden lg:flex">
+                      <div className="relative catalog hidden lg:flex">
                         <Image
-                          width={1320}
+                          quality={90}
                           {...imageProps2}
                           alt="test"
                           placeholder={"blur"}
