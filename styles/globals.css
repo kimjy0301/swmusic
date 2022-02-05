@@ -34,7 +34,8 @@ body {
 }
 
 .catalog {
-  width: 80vw;
+  width: 100%;
+  max-width: 330px;
 }
 
 .scroll-section {

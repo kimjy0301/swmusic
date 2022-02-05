@@ -14,6 +14,7 @@
     "@prisma/client": "^3.9.1",
     "@react-spring/types": "^9.4.2",
     "@tanem/react-nprogress": "^4.0.5",
+    "lozad": "^1.16.0",
     "next": "12.0.8",
     "plaiceholder": "^2.2.0",
     "react": "17.0.2",

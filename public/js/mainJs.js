@@ -1,3 +1,7 @@
+// import lozad from "lozad";
+// const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+// observer.observe();
+
 export const init = () => {
   let yOffset = 0;
   let prevScrollHeight = 0;
