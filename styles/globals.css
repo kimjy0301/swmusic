@@ -33,14 +33,6 @@ body {
   background-color: #0099ff;
 }
 
-.catalog {
-  width: 330px;
-  max-width: 330px;
-  min-width: 330px;
-  max-height: 775;
-  height: 464px;
-}
-
 .scroll-section {
   padding-top: 40vh;
   z-index: 10;
@@ -194,9 +186,23 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.image-blend-canvas {
-  @apply bg-blue-400;
+
+.catalog {
+  width: 660px;
+  max-width: 660px;
+  min-width: 330px;
+  max-height: 928px;
+  height: 928px;
 }
+
+.catalog-mobile {
+  width: 330px;
+  max-width: 330px;
+  min-width: 330px;
+  max-height: 464px;
+  height: 464px;
+}
+
 @media (min-width: 1024px) {
   .catalog {
     height: 775px;
