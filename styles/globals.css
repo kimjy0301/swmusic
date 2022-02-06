@@ -34,9 +34,11 @@ body {
 }
 
 .catalog {
-  width: 100%;
+  width: 330px;
   max-width: 330px;
   min-width: 330px;
+  max-height: 775;
+  height: 464px;
 }
 
 .scroll-section {
@@ -197,9 +199,10 @@ body {
 }
 @media (min-width: 1024px) {
   .catalog {
-    width: 40vw /* 384px */;
+    height: 775px;
+    width: 550px /* 384px */;
     max-width: 550px;
-    min-width: 450px;
+    max-height: 775px;
   }
   #scroll-section-0 h1 {
     font-size: 9vw;

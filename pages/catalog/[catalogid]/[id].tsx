@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { getPlaiceholder } from "plaiceholder";
-import { ReactElement } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import { animated, Transition } from "react-spring";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 import BaseLayout from "../../../components/BaseLayout";
@@ -110,6 +110,16 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
+  const [initialScale, setInitailScale] = useState(1);
+
+  console.log(initialScale);
+  useEffect(() => {
+    if (window.innerWidth < 1024) {
+      console.log(window.innerWidth);
+      setInitailScale(1.5);
+    }
+  }, [initialScale, setInitailScale]);
+
   const router = useRouter();
   const items = [
     {
@@ -155,20 +165,20 @@ const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
               }}
             >
               <div className="flex">
-                <TransformWrapper>
+                <TransformWrapper initialScale={initialScale}>
                   <TransformComponent>
-                    <div className="relative catalog flex">
+                    <div className="relative catalog flex border-2">
                       <Image
                         {...imageProps}
                         alt="test"
                         placeholder={"blur"}
-                        quality={90}
+                        quality={75}
                       />
                     </div>
                     {imageProps2.blurDataURL && (
                       <div className="relative catalog hidden lg:flex">
                         <Image
-                          quality={90}
+                          quality={75}
                           {...imageProps2}
                           alt="test"
                           placeholder={"blur"}
