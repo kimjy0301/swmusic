@@ -193,6 +193,7 @@ body {
   min-width: 330px;
   max-height: 928px;
   height: 928px;
+  opacity: 0;
 }
 
 .catalog-mobile {
@@ -209,6 +210,7 @@ body {
     width: 550px /* 384px */;
     max-width: 550px;
     max-height: 775px;
+    opacity: 1;
   }
   #scroll-section-0 h1 {
     font-size: 9vw;
