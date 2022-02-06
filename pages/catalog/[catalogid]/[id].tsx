@@ -7,6 +7,7 @@ import { ReactElement, useEffect, useState } from "react";
 import { animated, Transition } from "react-spring";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 import BaseLayout from "../../../components/BaseLayout";
+import CatalogImage from "../../../components/CatalogImage";
 import CatalogLayout from "../../../components/CatalogLayout";
 import { prisma } from "../../../components/client";
 
@@ -111,31 +112,17 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
   const [mobile, setMobile] = useState(false);
-
-  useEffect(() => {
-    if (window.innerWidth < 1024) {
-      const catalogEle: HTMLBaseElement | null =
-        document.querySelector(".catalog");
-
-      if (catalogEle) {
-        catalogEle.style.width = "330px";
-        catalogEle.style.maxWidth = "330px";
-        catalogEle.style.minWidth = "330px";
-
-        catalogEle.style.maxHeight = "464px";
-        catalogEle.style.height = "464px";
-      }
-
-      setMobile(true);
-    }
-  }, [mobile, setMobile]);
-
   const router = useRouter();
   const items = [
     {
       id: router.asPath,
     },
   ];
+  useEffect(() => {
+    if (window.innerWidth < 1024) {
+      setMobile(true);
+    }
+  }, [mobile, setMobile]);
 
   const onClickPrev = () => {
     const nowPage = pageProps.nowPage;
@@ -175,30 +162,11 @@ const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
               }}
             >
               <div className="flex">
-                <TransformWrapper initialScale={mobile ? 1.5 : 1}>
-                  <TransformComponent>
-                    <div className="relative catalog">
-                      <Image
-                        {...imageProps}
-                        alt="test"
-                        placeholder={"blur"}
-                        quality={75}
-                        layout={"intrinsic"}
-                      />
-                    </div>
-                    {imageProps2.blurDataURL && (
-                      <div className="relative catalog hidden lg:block">
-                        <Image
-                          quality={75}
-                          {...imageProps2}
-                          alt="test"
-                          placeholder={"blur"}
-                          layout={"intrinsic"}
-                        />
-                      </div>
-                    )}
-                  </TransformComponent>
-                </TransformWrapper>
+                <CatalogImage
+                  imageProps={imageProps}
+                  imageProps2={imageProps2}
+                  mobile
+                ></CatalogImage>
               </div>
               <div className="flex mt-2 justify-between">
                 {pageProps.prev && (
