@@ -110,15 +110,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
-  const [initialScale, setInitailScale] = useState(1);
+  const [mobile, setMobile] = useState(false);
 
-  console.log(initialScale);
   useEffect(() => {
     if (window.innerWidth < 1024) {
-      console.log(window.innerWidth);
-      setInitailScale(1.5);
+      setMobile(true);
     }
-  }, [initialScale, setInitailScale]);
+  }, [mobile, setMobile]);
 
   const router = useRouter();
   const items = [
@@ -165,23 +163,25 @@ const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
               }}
             >
               <div className="flex">
-                <TransformWrapper initialScale={initialScale}>
+                <TransformWrapper initialScale={mobile ? 1.5 : 1}>
                   <TransformComponent>
-                    <div className="relative catalog flex border-2">
+                    <div className="relative catalog">
                       <Image
                         {...imageProps}
                         alt="test"
                         placeholder={"blur"}
                         quality={75}
+                        layout={"responsive"}
                       />
                     </div>
                     {imageProps2.blurDataURL && (
-                      <div className="relative catalog hidden lg:flex">
+                      <div className="relative catalog hidden lg:block">
                         <Image
                           quality={75}
                           {...imageProps2}
                           alt="test"
                           placeholder={"blur"}
+                          layout={"responsive"}
                         />
                       </div>
                     )}
