@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { RecoilRoot } from "recoil";
+import Footer from "./Footer";
 import Header from "./Header";
 
 const Layout = (props: any) => {
@@ -20,7 +21,7 @@ const Layout = (props: any) => {
           {props.children}
         </div>
 
-        <div className="footer bg-blue-400">Footer</div>
+        <Footer></Footer>
       </div>
     </>
   );
