@@ -15,7 +15,7 @@ import { catalog, page } from "../../../components/publicInterface";
 
 export async function getStaticPaths() {
   const catalogs: catalog[] = await prisma.catalog.findMany({
-    include: { pages: true },
+    include: { pages: { orderBy: { pageNumber: "asc" } } },
   });
 
   let paths = [];
@@ -165,7 +165,7 @@ const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
                 <CatalogImage
                   imageProps={imageProps}
                   imageProps2={imageProps2}
-                  mobile
+                  mobile={mobile}
                 ></CatalogImage>
               </div>
               <div className="flex mt-2 justify-between">

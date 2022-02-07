@@ -8,7 +8,7 @@ export default async function handle(req: any, res: any) {
   const numId: number = parseInt(id);
   const catalogs = await prisma.catalog.findUnique({
     where: { id: numId },
-    include: { contents: true },
+    include: { contents: { orderBy: { startPage: "asc" } } },
   });
   res.json(catalogs);
 }

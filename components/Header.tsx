@@ -13,6 +13,10 @@ const Header = () => {
   useEffect(() => {
     const handleStart = () => {
       setLoadingState(true);
+
+      setTimeout(() => {
+        setLoadingState(false);
+      }, 5000);
     };
 
     const handleStop = () => {
