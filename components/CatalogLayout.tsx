@@ -63,7 +63,7 @@ const CatalogLayout = ({ children }: any) => {
                               href={`/catalog/${i.catalogId}/${i.startPage}`}
                             >
                               <div
-                                className={`my-3 px-2 hover:bg-gray-200 cursor-pointer w-auto transition-all duration-100  ${
+                                className={`my-3 px-2 hover:bg-gray-200 cursor-pointer w-full transition-all duration-100  ${
                                   numId >= i.startPage && numId <= i.endPage
                                     ? "font-bold"
                                     : ""
