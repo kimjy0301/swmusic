@@ -11,6 +11,7 @@
     "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.4.0",
     "@prisma/client": "^3.9.1",
     "@react-spring/types": "^9.4.2",
     "@tanem/react-nprogress": "^4.0.5",

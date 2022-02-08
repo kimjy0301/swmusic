@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { categoryNaviState } from "../../components/state/atomState";
 import { useForm, SubmitHandler } from "react-hook-form";
+import emailjs from "@emailjs/browser";
 
 type Inputs = {
   email: string;
@@ -23,6 +24,22 @@ const Contact = () => {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
+
+    emailjs
+      .send(
+        "service_0qov1rn",
+        "template_8wh6qfp",
+        data,
+        "user_iLCRL9p3HZ7CUrsE7niKg"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
