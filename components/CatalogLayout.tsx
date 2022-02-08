@@ -51,9 +51,9 @@ const CatalogLayout = ({ children }: any) => {
                   style={{ translateX: styles3.x }}
                   className="absolute border-r-1 border-b-2 border-gray-300 bg-slate-100/95 left-0 top-16 rounded shadow-lg text-sm lg:text-lg mt-2 text-center flex items-center justify-center catalog-layout "
                 >
-                  <div className="flex flex-col items-center h-full  overflow-y-auto scroll-smooth overflow-x-hidden">
-                    <input id="name" type="text" placeholder="Search" />
-                    {contents ? (
+                  {contents ? (
+                    <div className="flex flex-col items-center h-full  overflow-y-auto scroll-smooth overflow-x-hidden">
+                      <input id="name" type="text" placeholder="Search" />
                       <>
                         {contents.map((i, key) => {
                           return (
@@ -63,7 +63,7 @@ const CatalogLayout = ({ children }: any) => {
                               href={`/catalog/${i.catalogId}/${i.startPage}`}
                             >
                               <div
-                                className={`my-3 px-2 hover:bg-gray-200 cursor-pointer w-full transition-all duration-100  ${
+                                className={`my-3 px-2 hover:bg-gray-200 cursor-pointer w-auto transition-all duration-100  ${
                                   numId >= i.startPage && numId <= i.endPage
                                     ? "font-bold"
                                     : ""
@@ -78,14 +78,14 @@ const CatalogLayout = ({ children }: any) => {
                           );
                         })}
                       </>
-                    ) : (
-                      <>
-                        <div className="self-center flex items-center justify-center h-full">
-                          Loading...
-                        </div>
-                      </>
-                    )}
-                  </div>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="my-3 px-2 w-full flex items-center justify-center h-full">
+                        Loading...
+                      </div>
+                    </>
+                  )}
                   <div
                     className="right-0 h-full border-l-2 flex justify-center items-center border-gray-200 cursor-pointer w-10"
                     onClick={() => {
