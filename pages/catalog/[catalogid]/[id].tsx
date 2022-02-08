@@ -102,6 +102,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
           prev,
           next,
           nowPage: pageId,
+          nowCatalog: pCatalogId,
         },
       },
     };
@@ -126,11 +127,13 @@ const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
 
   const onClickPrev = () => {
     const nowPage = pageProps.nowPage;
-    router.push(`/catalog/1/${nowPage - 1}`);
+    const nowCatalog = pageProps.nowCatalog;
+    router.push(`/catalog/${nowCatalog}/${nowPage - 1}`);
   };
   const onClickNext = () => {
     const nowPage = pageProps.nowPage;
-    router.push(`/catalog/1/${nowPage + 1}`);
+    const nowCatalog = pageProps.nowCatalog;
+    router.push(`/catalog/${nowCatalog}/${nowPage + 1}`);
   };
 
   return (

@@ -8,8 +8,6 @@ const CatalogImage = ({ imageProps, imageProps2, mobile }: any) => {
       const catalogEle: HTMLBaseElement | null =
         document.querySelector(".catalog");
 
-      console.log(catalogEle);
-
       if (catalogEle) {
         catalogEle.style.width = "330px";
         catalogEle.style.maxWidth = "330px";

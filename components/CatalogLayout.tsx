@@ -51,7 +51,7 @@ const CatalogLayout = ({ children }: any) => {
                   style={{ translateX: styles3.x }}
                   className="absolute border-r-1 border-b-2 border-gray-300 bg-slate-100/95 left-0 top-16 rounded shadow-lg text-sm lg:text-lg mt-2 text-center flex items-center justify-center catalog-layout "
                 >
-                  <div className="flex flex-col items-center h-full  overflow-y-auto scroll-smooth ">
+                  <div className="flex flex-col items-center h-full  overflow-y-auto scroll-smooth overflow-x-hidden">
                     <input id="name" type="text" placeholder="Search" />
                     {contents ? (
                       <>
