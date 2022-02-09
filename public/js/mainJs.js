@@ -444,6 +444,7 @@ export const init = () => {
         }
 
         objs.canvas.style.transform = `scale(${canvasScaleRatio})`;
+        objs.context.clearRect(0, 0, objs.canvas.width, objs.canvas.height);
         objs.context.drawImage(objs.canvasImages[0], 0, 0);
 
         const recalculatedInnerWidth = window.innerWidth / canvasScaleRatio;
@@ -456,18 +457,32 @@ export const init = () => {
           values.rect1X[0] + recalculatedInnerWidth - whiteRectWidth;
         values.rect2X[1] = values.rect2X[0] + whiteRectWidth;
 
+        values.rect1X[2].start =
+          (objs.canvas.offsetTop - recalculatedInnerHeight) /
+          currentSceneHeight;
+        values.rect2X[2].start =
+          (objs.canvas.offsetTop - recalculatedInnerHeight) /
+          currentSceneHeight;
+        values.rect1X[2].end =
+          values.rect1X[2].start + recalculatedInnerHeight / currentSceneHeight;
+        values.rect2X[2].end =
+          values.rect2X[2].start + recalculatedInnerHeight / currentSceneHeight;
+
+        objs.context.fillStyle = "#F1F5F9";
+
         objs.context.fillRect(
-          values.rect1X[0],
+          calcValues(values.rect1X, currentYOffset),
           0,
           parseInt(whiteRectWidth),
           recalculatedInnerHeight
         );
         objs.context.fillRect(
-          values.rect2X[0],
+          calcValues(values.rect2X, currentYOffset),
           0,
           parseInt(whiteRectWidth),
           recalculatedInnerHeight
         );
+
         break;
     }
   };
