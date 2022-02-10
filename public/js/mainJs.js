@@ -433,7 +433,7 @@ export const init = () => {
 
         break;
       case 3:
-        const widthRatio = window.innerWidth / objs.canvas.width;
+        const widthRatio = document.body.offsetWidth / objs.canvas.width;
         const heightRatio = window.innerHeight / objs.canvas.height;
 
         let canvasScaleRatio;
@@ -444,7 +444,7 @@ export const init = () => {
         }
 
         objs.canvas.style.transform = `scale(${canvasScaleRatio})`;
-        objs.context.clearRect(0, 0, objs.canvas.width, objs.canvas.height);
+        // objs.context.clearRect(0, 0, objs.canvas.width, objs.canvas.height);
         objs.context.drawImage(objs.canvasImages[0], 0, 0);
 
         const recalculatedInnerWidth = window.innerWidth / canvasScaleRatio;
