@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { animated, useSpring } from "react-spring";
 import { useRecoilState } from "recoil";
 import logo from "../public/logo.png";
 import { ProgressBar } from "./progress/ProgressBar";
@@ -9,6 +10,14 @@ import { isLoadingState } from "./state/atomState";
 const Header = () => {
   const [LoadingState, setLoadingState] = useRecoilState(isLoadingState);
   const router = useRouter();
+  const [showDropMenu, setShowDropMenu] = useState(false);
+  const [showCatalog, setShowCatalog] = useState(true);
+
+  const styles3 = useSpring({
+    opacity: showDropMenu ? 1 : 0,
+    height: showDropMenu ? 0 : -100,
+    x: showDropMenu ? 0 : 200,
+  });
 
   useEffect(() => {
     const handleStart = () => {
@@ -45,52 +54,122 @@ const Header = () => {
           </Link>
         </div>
 
-        <div className="hidden md:flex ">
-          <Link href="/">
-            <a>
-              <div className="font-bold text-2xl hover:underline cursor-pointer mx-10 select-none">
-                HOME
-              </div>
-            </a>
+        <div className="hidden md:flex h-full justify-center items-center">
+          <Link passHref href="/">
+            <div className="font-bold text-2xl border-b-4 border-transparent hover:text-blue-400 hover:border-blue-400 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150">
+              HOME
+            </div>
           </Link>
-          <Link href="/catalog/1/2">
-            <a>
-              <div className="font-bold text-2xl hover:underline cursor-pointer mx-10 select-none ">
+          <Link passHref href="/catalog/1/0">
+            <div
+              className="h-full relative"
+              onMouseLeave={() => setShowDropMenu(false)}
+            >
+              <div
+                onMouseOver={() => setShowDropMenu(true)}
+                className="font-bold text-2xl border-b-4 border-transparent hover:text-blue-400 hover:border-blue-400 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150 "
+              >
                 CATALOG
               </div>
-            </a>
+
+              <animated.div
+                style={{
+                  opacity: styles3.opacity,
+                }}
+              >
+                <div className="flex flex-col bg-white/90 items-center justify-center rounded-b-lg shadow-lg">
+                  <Link passHref href="/catalog/2/1">
+                    <div className="cursor-pointer select-none my-2 hover:text-blue-400 transition-all duration-150">
+                      2022 New Items
+                    </div>
+                  </Link>
+                  <Link passHref href="/catalog/1/0">
+                    <div className="cursor-pointer select-none my-2 hover:text-blue-400 transition-all duration-150">
+                      Main Catalog
+                    </div>
+                  </Link>
+                </div>
+              </animated.div>
+            </div>
           </Link>
-          <Link href="/contact">
-            <a>
-              <div className="font-bold text-2xl hover:underline cursor-pointer mx-10 select-none ">
-                CONTACT
-              </div>
-            </a>
+          <Link passHref href="/contact">
+            <div className="font-bold text-2xl border-b-4 border-transparent hover:text-blue-400 hover:border-blue-400 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150 ">
+              CONTACT
+            </div>
           </Link>
         </div>
 
-        <div className="flex md:hidden ">
-          <Link href="/">
-            <a>
-              <div className="font-bold text-sm hover:underline cursor-pointer mx-2 select-none ">
-                HOME
-              </div>
-            </a>
-          </Link>
-          <Link href="/catalog/1/2">
-            <a>
-              <div className="font-bold text-sm hover:underline cursor-pointer mx-2 select-none ">
+        <div className="flex md:hidden px-3 flex-col">
+          <div className="h-16 flex item justify-center items-center">
+            <svg
+              onClick={() => setShowDropMenu(!showDropMenu)}
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-8 w-8 cursor-pointer select-none text-blue-400 block"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </div>
+
+          {showDropMenu && (
+            <animated.div
+              style={{
+                opacity: styles3.opacity,
+                translateX: styles3.x,
+              }}
+              className="w-44 absolute right-0 top-16 flex flex-col bg-white/90 items-end justify-center rounded-b-lg shadow-lg pr-5"
+            >
+              <Link href="/">
+                <a>
+                  <div className="font-bold my-3 text-lg hover:border-b-4 border-blue-400 h-full cursor-pointer mx-2 select-none ">
+                    HOME
+                  </div>
+                </a>
+              </Link>
+              <div
+                onClick={() => setShowCatalog(!showCatalog)}
+                className="font-bold my-3 text-lg hover:border-b-4 border-blue-400 h-full cursor-pointer mx-2 select-none "
+              >
                 CATALOG
               </div>
-            </a>
-          </Link>
-          <Link href="/contact">
-            <a>
-              <div className="font-bold text-sm hover:underline cursor-pointer mx-2 select-none ">
-                CONTACT
-              </div>
-            </a>
-          </Link>
+              {showCatalog && (
+                <>
+                  <div className="text-right w-full">
+                    <Link href="/catalog/2/1">
+                      <a>
+                        <div className="font-semibold my-3 hover:text-blue-400 border-blue-400 h-full cursor-pointer mx-2 select-none ">
+                          2022 New Items
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
+                  <div className="text-right w-full">
+                    <Link href="/catalog/1/0">
+                      <a>
+                        <div className="font-semibold my-3 hover:text-blue-400 border-blue-400 h-full cursor-pointer mx-2 select-none ">
+                          Main Catalog
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
+                </>
+              )}
+              <Link href="/contact">
+                <a>
+                  <div className="font-bold my-3 text-lg hover:border-b-4 border-blue-400 h-full cursor-pointer mx-2 select-none ">
+                    CONTACT
+                  </div>
+                </a>
+              </Link>
+            </animated.div>
+          )}
         </div>
       </div>
       <ProgressBar isAnimating={LoadingState}></ProgressBar>

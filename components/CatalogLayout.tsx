@@ -52,7 +52,7 @@ const CatalogLayout = ({ children }: any) => {
                   className="absolute border-r-1 border-b-2 border-gray-300 bg-slate-100/95 left-0 top-16 rounded shadow-lg text-sm lg:text-lg mt-2 text-center flex items-center justify-center catalog-layout "
                 >
                   {contents ? (
-                    <div className="flex flex-col items-center h-full  overflow-y-auto scroll-smooth overflow-x-hidden">
+                    <div className="flex flex-col items-center h-full  overflow-y-auto scroll-smooth overflow-x-hidden w-full">
                       <input id="name" type="text" placeholder="Search" />
                       <>
                         {contents.map((i, key) => {
@@ -63,9 +63,9 @@ const CatalogLayout = ({ children }: any) => {
                               href={`/catalog/${i.catalogId}/${i.startPage}`}
                             >
                               <div
-                                className={`my-3 px-2 hover:bg-gray-200 cursor-pointer w-full transition-all duration-100  ${
+                                className={`my-3 px-2 hover:bg-blue-400 hover:text-white cursor-pointer w-full transition-all duration-100  ${
                                   numId >= i.startPage && numId <= i.endPage
-                                    ? "font-bold"
+                                    ? "bg-blue-400 text-white "
                                     : ""
                                 }`}
                               >
