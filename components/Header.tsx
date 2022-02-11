@@ -104,7 +104,7 @@ const Header = () => {
             <svg
               onClick={() => setShowDropMenu(!showDropMenu)}
               xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8 cursor-pointer select-none text-blue-400 block"
+              className="h-8 w-8 cursor-pointer select-none text-gray-800 block"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
