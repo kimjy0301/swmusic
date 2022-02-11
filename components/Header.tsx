@@ -11,12 +11,17 @@ const Header = () => {
   const [LoadingState, setLoadingState] = useRecoilState(isLoadingState);
   const router = useRouter();
   const [showDropMenu, setShowDropMenu] = useState(false);
-  const [showCatalog, setShowCatalog] = useState(true);
+  const [showCatalog, setShowCatalog] = useState(false);
 
   const styles3 = useSpring({
     opacity: showDropMenu ? 1 : 0,
     height: showDropMenu ? 0 : -100,
     x: showDropMenu ? 0 : 200,
+  });
+  const styles4 = useSpring({
+    opacity: showCatalog ? 1 : 0,
+    height: showCatalog ? 0 : -100,
+    x: showCatalog ? 0 : 200,
   });
 
   useEffect(() => {
@@ -45,7 +50,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="w-screen flex justify-between h-16 items-center bg-white/90 fixed top-0 z-50 min-w-min ">
+      <div className="w-screen flex justify-between h-16 items-center bg-white/90 fixed top-0 z-50 min-w-min shadow-lg ">
         <div className="relative md:w-48 w-40 flex items-center justify-center cursor-pointer ml-2 md:ml-10 ">
           <Link href="/">
             <a>
@@ -56,7 +61,7 @@ const Header = () => {
 
         <div className="hidden md:flex h-full justify-center items-center">
           <Link passHref href="/">
-            <div className="font-bold text-2xl border-b-4 border-transparent hover:text-blue-400 hover:border-blue-400 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150">
+            <div className="font-semibold text-2xl border-b-4 border-transparent hover:text-blue-400 hover:border-blue-400 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150">
               HOME
             </div>
           </Link>
@@ -67,7 +72,7 @@ const Header = () => {
             >
               <div
                 onMouseOver={() => setShowDropMenu(true)}
-                className="font-bold text-2xl border-b-4 border-transparent hover:text-blue-400 hover:border-blue-400 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150 "
+                className="font-semibold text-2xl border-b-4 border-transparent hover:text-blue-400 hover:border-blue-400 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150 "
               >
                 CATALOG
               </div>
@@ -93,7 +98,7 @@ const Header = () => {
             </div>
           </Link>
           <Link passHref href="/contact">
-            <div className="font-bold text-2xl border-b-4 border-transparent hover:text-blue-400 hover:border-blue-400 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150 ">
+            <div className="font-semibold text-2xl border-b-4 border-transparent hover:text-blue-400 hover:border-blue-400 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150 ">
               CONTACT
             </div>
           </Link>
@@ -128,23 +133,41 @@ const Header = () => {
             >
               <Link href="/">
                 <a>
-                  <div className="font-bold my-3 text-lg hover:border-b-4 border-blue-400 h-full cursor-pointer mx-2 select-none ">
+                  <div className="font-semibold my-3 text-lg hover:border-b-4 border-blue-400 h-full cursor-pointer mx-2 select-none ">
                     HOME
                   </div>
                 </a>
               </Link>
               <div
                 onClick={() => setShowCatalog(!showCatalog)}
-                className="font-bold my-3 text-lg hover:border-b-4 border-blue-400 h-full cursor-pointer mx-2 select-none "
+                className="font-semibold my-3 text-lg hover:border-b-4 border-blue-400 h-full cursor-pointer mx-2 select-none flex items-center justify-center"
               >
                 CATALOG
+                {/* <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 ml-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
+                  />
+                </svg> */}
               </div>
+
               {showCatalog && (
-                <>
+                <animated.div
+                  style={{ opacity: styles4.opacity }}
+                  className="border-y-2 border-blue-400"
+                >
                   <div className="text-right w-full">
                     <Link href="/catalog/2/1">
                       <a>
-                        <div className="font-semibold my-3 hover:text-blue-400 border-blue-400 h-full cursor-pointer mx-2 select-none ">
+                        <div className="font-semibold my-2  hover:text-blue-400 border-blue-400 h-full cursor-pointer mx-2 select-none ">
                           2022 New Items
                         </div>
                       </a>
@@ -153,17 +176,17 @@ const Header = () => {
                   <div className="text-right w-full">
                     <Link href="/catalog/1/0">
                       <a>
-                        <div className="font-semibold my-3 hover:text-blue-400 border-blue-400 h-full cursor-pointer mx-2 select-none ">
+                        <div className="font-semibold my-2  hover:text-blue-400 border-blue-400 h-full cursor-pointer mx-2 select-none ">
                           Main Catalog
                         </div>
                       </a>
                     </Link>
                   </div>
-                </>
+                </animated.div>
               )}
               <Link href="/contact">
                 <a>
-                  <div className="font-bold my-3 text-lg hover:border-b-4 border-blue-400 h-full cursor-pointer mx-2 select-none ">
+                  <div className="font-semibold my-3 text-lg hover:border-b-4 border-blue-400 h-full cursor-pointer mx-2 select-none ">
                     CONTACT
                   </div>
                 </a>
