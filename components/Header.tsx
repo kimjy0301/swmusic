@@ -46,7 +46,7 @@ const Header = () => {
   return (
     <>
       <div className="w-screen flex justify-between h-16 items-center bg-white/90 fixed top-0 z-50 min-w-min ">
-        <div className="relative md:w-56 w-28 flex items-center justify-center cursor-pointer ml-2 md:ml-10 ">
+        <div className="relative md:w-48 w-40 flex items-center justify-center cursor-pointer ml-2 md:ml-10 ">
           <Link href="/">
             <a>
               <Image src={logo} alt={"swmusic logo"} priority={true}></Image>
