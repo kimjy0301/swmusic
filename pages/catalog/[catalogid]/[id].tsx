@@ -148,7 +148,7 @@ const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
         />
       </Head>
 
-      <div className="flex h-screen justify-center items-center flex-col">
+      <div className="flex h-screen justify-center items-center flex-col lg:pt-10">
         <Transition
           items={items}
           keys={(items: any) => items.id}

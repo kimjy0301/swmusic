@@ -1,12 +1,16 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import { animated, useSpring, useTransition } from "react-spring";
 import { useRecoilState } from "recoil";
 import useSWR from "swr";
 import { content } from "./publicInterface";
 import { categoryNaviState } from "./state/atomState";
 
+type Inputs = {
+  searchText: string;
+};
 const CatalogLayout = ({ children }: any) => {
   const router = useRouter();
   const { catalogid, id } = router.query;
@@ -17,7 +21,7 @@ const CatalogLayout = ({ children }: any) => {
   const fetcher = (url: any) => fetch(url).then((r) => r.json());
   const { data, error } = useSWR(`/api/catalog/${catalogid}`, fetcher);
 
-  const contents: content[] = data?.contents;
+  let contents: content[] = data?.contents;
 
   const [show, setShow] = useRecoilState(categoryNaviState);
 
@@ -33,11 +37,23 @@ const CatalogLayout = ({ children }: any) => {
     enter: { opacity: 1 },
   });
 
+  const { register, watch } = useForm<Inputs>();
+
   useEffect(() => {
     if (show == false) {
       setShow(true);
     }
   }, [show, setShow]);
+
+  let searchTextValue = watch("searchText");
+
+  let tagMap;
+
+  if (searchTextValue && data) {
+    contents = contents.filter((value) =>
+      value.name.includes(searchTextValue.toUpperCase())
+    );
+  }
 
   return (
     <>
@@ -52,9 +68,16 @@ const CatalogLayout = ({ children }: any) => {
                   className="absolute border-r-1 border-b-2 border-gray-300 bg-slate-100/95 left-0 top-16 rounded shadow-lg text-sm lg:text-lg mt-2 text-center flex items-center justify-center catalog-layout "
                 >
                   {contents ? (
-                    <div className="flex flex-col items-center h-full  overflow-y-auto scroll-smooth overflow-x-hidden w-full">
-                      <input id="name" type="text" placeholder="Search" />
-                      <>
+                    <div className="flex flex-col items-center h-full scroll-smooth overflow-x-hidden w-full">
+                      <div>
+                        <input
+                          className="my-2 shadow-md h-10 w-48 rounded px-2 focus:border-2 focus:border-blue-400"
+                          {...register("searchText")}
+                          type="text"
+                          placeholder="Search"
+                        />
+                      </div>
+                      <div className="flex flex-col items-center h-full  overflow-y-auto scroll-smooth overflow-x-hidden w-full">
                         {contents.map((i, key) => {
                           return (
                             <Link
@@ -77,7 +100,7 @@ const CatalogLayout = ({ children }: any) => {
                             </Link>
                           );
                         })}
-                      </>
+                      </div>
                     </div>
                   ) : (
                     <>
