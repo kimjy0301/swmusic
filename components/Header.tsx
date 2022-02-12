@@ -51,7 +51,7 @@ const Header = () => {
   return (
     <>
       <div className="w-screen flex justify-between h-16 items-center bg-white/90 fixed top-0 z-50 min-w-min shadow-lg ">
-        <div className="relative md:w-48 w-40 flex items-center justify-center cursor-pointer ml-2 md:ml-10 ">
+        <div className="relative md:w-48 w-40 flex items-center justify-center cursor-pointer ml-2 md:ml-10 mt-1">
           <Link href="/">
             <a>
               <Image src={logo} alt={"swmusic logo"} priority={true}></Image>
@@ -133,14 +133,14 @@ const Header = () => {
             >
               <Link href="/">
                 <a>
-                  <div className="font-semibold my-3 text-lg hover:border-b-4 border-blue-400 h-full cursor-pointer mx-2 select-none ">
+                  <div className="font-semibold my-3 text-lg hover:text-blue-400 border-blue-400 h-full cursor-pointer mx-2 select-none ">
                     HOME
                   </div>
                 </a>
               </Link>
               <div
                 onClick={() => setShowCatalog(!showCatalog)}
-                className="font-semibold my-3 text-lg hover:border-b-4 border-blue-400 h-full cursor-pointer mx-2 select-none flex items-center justify-center"
+                className="font-semibold my-3 text-lg hover:text-blue-400 border-blue-400 h-full cursor-pointer mx-2 select-none flex items-center justify-center"
               >
                 CATALOG
                 {/* <svg
@@ -186,7 +186,7 @@ const Header = () => {
               )}
               <Link href="/contact">
                 <a>
-                  <div className="font-semibold my-3 text-lg hover:border-b-4 border-blue-400 h-full cursor-pointer mx-2 select-none ">
+                  <div className="font-semibold my-3 text-lg hover:text-blue-400 border-blue-400 h-full cursor-pointer mx-2 select-none ">
                     CONTACT
                   </div>
                 </a>
