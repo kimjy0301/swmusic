@@ -110,7 +110,7 @@ const CatalogLayout = ({ children }: any) => {
                           );
                         })}
 
-                        {tagPages && (
+                        {tagPages.length > 0 && (
                           <>
                             <div className="px-2 border-2 w-5/6 border-blue-400 "></div>
                           </>
