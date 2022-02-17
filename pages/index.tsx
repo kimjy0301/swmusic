@@ -17,7 +17,7 @@ const Home: NextPage = ({ catalogs }: any) => {
     setShow(false);
   }, [setShow]);
   return (
-    <div className="">
+    <>
       <Head>
         <title>HOME|SAMWOO MANUFACTURING CO., LTD.</title>
         <meta
@@ -33,7 +33,7 @@ const Home: NextPage = ({ catalogs }: any) => {
       <div className="flex flex-col justify-center items-center">
         <MainPage></MainPage>
       </div>
-    </div>
+    </>
   );
 };
 
