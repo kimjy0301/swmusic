@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { animated, useSpring, useTransition } from "react-spring";
 import { useRecoilState } from "recoil";
 import useSWR from "swr";
-import { content } from "./publicInterface";
+import { content, page } from "./publicInterface";
 import { categoryNaviState } from "./state/atomState";
 
 type Inputs = {
@@ -22,6 +22,7 @@ const CatalogLayout = ({ children }: any) => {
   const { data, error } = useSWR(`/api/catalog/${catalogid}`, fetcher);
 
   let contents: content[] = data?.contents;
+  let pages: page[] = data?.pages;
 
   const [show, setShow] = useRecoilState(categoryNaviState);
 
@@ -47,12 +48,20 @@ const CatalogLayout = ({ children }: any) => {
 
   let searchTextValue = watch("searchText");
 
-  let tagMap;
+  const tagPages: page[] = [];
 
   if (searchTextValue && data) {
     contents = contents.filter((value) =>
       value.name.includes(searchTextValue.toUpperCase())
     );
+
+    for (let i = 0; i < pages.length; i++) {
+      const element: page = pages[i];
+
+      if (element.tag.toUpperCase().includes(searchTextValue.toUpperCase())) {
+        tagPages.push(element);
+      }
+    }
   }
 
   return (
@@ -95,6 +104,43 @@ const CatalogLayout = ({ children }: any) => {
                                 <div>{i.name}</div>
                                 <div className="text-sm text-right">
                                   {`P${i.startPage}`} ~ {`P${i.endPage}`}
+                                </div>
+                              </div>
+                            </Link>
+                          );
+                        })}
+
+                        {tagPages.length > 0 && (
+                          <>
+                            <div className="px-2 border-2 w-5/6 border-blue-400 "></div>
+                          </>
+                        )}
+                        {tagPages.map((i, key) => {
+                          return (
+                            <Link
+                              key={key}
+                              passHref
+                              href={`/catalog/${i.catalogId}/${i.pageNumber}`}
+                            >
+                              <div
+                                className={`my-3 px-2 hover:bg-blue-400 hover:text-white cursor-pointer w-full transition-all duration-100  ${
+                                  numId === i.pageNumber
+                                    ? "bg-blue-400 text-white "
+                                    : ""
+                                }`}
+                              >
+                                {i.tag.split("/").map((value, key) => {
+                                  if (
+                                    value
+                                      .toUpperCase()
+                                      .includes(searchTextValue.toUpperCase())
+                                  ) {
+                                    return <div key={key}>{value}</div>;
+                                  }
+                                })}
+
+                                <div className="text-sm text-right">
+                                  {`P${i.pageNumber}`}
                                 </div>
                               </div>
                             </Link>
