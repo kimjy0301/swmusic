@@ -160,7 +160,7 @@ const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
         <meta
           name="viewport"
           content="initial-scale=1.0, width=device-width, user-scalable=no,maximum-scale=1.0,minimum-scale=1.0"
-        />
+        /><meta name="google-site-verification" content="QbfEjI-CV9tEUfIi3AUzHr0l72sFMkKeDnSgQeNcfwE" />
       </Head>
 
       <div className="flex h-screen justify-center items-center flex-col lg:pt-10">

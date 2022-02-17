@@ -52,6 +52,10 @@ const Contact = () => {
           content="Contact Page all patrs for guitar korea SAMWOO MANUFACTURING."
         />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="google-site-verification"
+          content="QbfEjI-CV9tEUfIi3AUzHr0l72sFMkKeDnSgQeNcfwE"
+        />
       </Head>
 
       <div className="flex flex-col justify-center items-center py-16 h-screen">
