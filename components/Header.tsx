@@ -61,7 +61,7 @@ const Header = () => {
 
         <div className="hidden md:flex h-full justify-center items-center">
           <Link passHref href="/">
-            <div className="font-semibold text-2xl border-b-4 border-transparent hover:text-blue-400 hover:border-blue-400 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150">
+            <div className="font-semibold text-2xl border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150">
               HOME
             </div>
           </Link>
@@ -72,7 +72,7 @@ const Header = () => {
             >
               <div
                 onMouseOver={() => setShowDropMenu(true)}
-                className="font-semibold text-2xl border-b-4 border-transparent hover:text-blue-400 hover:border-blue-400 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150 "
+                className="font-semibold text-2xl border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150 "
               >
                 CATALOG
               </div>
@@ -84,12 +84,12 @@ const Header = () => {
               >
                 <div className="flex flex-col bg-white/90 items-center justify-center rounded-b-lg shadow-lg">
                   <Link passHref href="/catalog/2/1">
-                    <div className="cursor-pointer select-none my-2 hover:text-blue-400 transition-all duration-150">
+                    <div className="cursor-pointer select-none my-2 hover:text-cyan-600 transition-all duration-150">
                       2022 New Items
                     </div>
                   </Link>
                   <Link passHref href="/catalog/1/0">
-                    <div className="cursor-pointer select-none my-2 hover:text-blue-400 transition-all duration-150">
+                    <div className="cursor-pointer select-none my-2 hover:text-cyan-600 transition-all duration-150">
                       Main Catalog
                     </div>
                   </Link>
@@ -98,7 +98,7 @@ const Header = () => {
             </div>
           </Link>
           <Link passHref href="/contact">
-            <div className="font-semibold text-2xl border-b-4 border-transparent hover:text-blue-400 hover:border-blue-400 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150 ">
+            <div className="font-semibold text-2xl border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150 ">
               CONTACT
             </div>
           </Link>
@@ -133,14 +133,14 @@ const Header = () => {
             >
               <Link href="/">
                 <a>
-                  <div className="font-semibold my-3 text-lg hover:text-blue-400 border-blue-400 h-full cursor-pointer mx-2 select-none ">
+                  <div className="font-semibold my-3 text-lg hover:text-cyan-600 border-cyan-600 h-full cursor-pointer mx-2 select-none ">
                     HOME
                   </div>
                 </a>
               </Link>
               <div
                 onClick={() => setShowCatalog(!showCatalog)}
-                className="font-semibold my-3 text-lg hover:text-blue-400 border-blue-400 h-full cursor-pointer mx-2 select-none flex items-center justify-center"
+                className="font-semibold my-3 text-lg hover:text-cyan-600 border-cyan-600 h-full cursor-pointer mx-2 select-none flex items-center justify-center"
               >
                 CATALOG
                 {/* <svg
@@ -162,12 +162,12 @@ const Header = () => {
               {showCatalog && (
                 <animated.div
                   style={{ opacity: styles4.opacity }}
-                  className="border-y-2 border-blue-400"
+                  className="border-y-2 border-cyan-600"
                 >
                   <div className="text-right w-full">
                     <Link href="/catalog/2/1">
                       <a>
-                        <div className="font-semibold my-2  hover:text-blue-400 border-blue-400 h-full cursor-pointer mx-2 select-none ">
+                        <div className="font-semibold my-2  hover:text-cyan-600 border-cyan-600 h-full cursor-pointer mx-2 select-none ">
                           2022 New Items
                         </div>
                       </a>
@@ -176,7 +176,7 @@ const Header = () => {
                   <div className="text-right w-full">
                     <Link href="/catalog/1/0">
                       <a>
-                        <div className="font-semibold my-2  hover:text-blue-400 border-blue-400 h-full cursor-pointer mx-2 select-none ">
+                        <div className="font-semibold my-2  hover:text-cyan-600 border-cyan-600 h-full cursor-pointer mx-2 select-none ">
                           Main Catalog
                         </div>
                       </a>
@@ -186,7 +186,7 @@ const Header = () => {
               )}
               <Link href="/contact">
                 <a>
-                  <div className="font-semibold my-3 text-lg hover:text-blue-400 border-blue-400 h-full cursor-pointer mx-2 select-none ">
+                  <div className="font-semibold my-3 text-lg hover:text-cyan-600 border-cyan-600 h-full cursor-pointer mx-2 select-none ">
                     CONTACT
                   </div>
                 </a>

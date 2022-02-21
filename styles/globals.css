@@ -134,6 +134,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  @apply bg-cyan-700;
 }
 
 .sticky-elem {

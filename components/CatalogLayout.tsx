@@ -80,7 +80,7 @@ const CatalogLayout = ({ children }: any) => {
                     <div className="flex flex-col items-center h-full scroll-smooth overflow-x-hidden w-full">
                       <div>
                         <input
-                          className="my-2 shadow-md h-10 w-48 rounded px-2 focus:border-2 focus:border-blue-400"
+                          className="my-2 shadow-md h-10 w-48 rounded px-2 focus:border-2 focus:border-cyan-600"
                           {...register("searchText")}
                           type="text"
                           placeholder="Search"
@@ -95,9 +95,9 @@ const CatalogLayout = ({ children }: any) => {
                               href={`/catalog/${i.catalogId}/${i.startPage}`}
                             >
                               <div
-                                className={`my-3 px-2 hover:bg-blue-400 hover:text-white cursor-pointer w-full transition-all duration-100  ${
+                                className={`my-3 px-2 hover:bg-cyan-600 hover:text-white cursor-pointer w-full transition-all duration-100  ${
                                   numId >= i.startPage && numId <= i.endPage
-                                    ? "bg-blue-400 text-white "
+                                    ? "bg-cyan-600 text-white "
                                     : ""
                                 }`}
                               >
@@ -112,7 +112,7 @@ const CatalogLayout = ({ children }: any) => {
 
                         {tagPages.length > 0 && (
                           <>
-                            <div className="px-2 border-2 w-5/6 border-blue-400 "></div>
+                            <div className="px-2 border-2 w-5/6 border-cyan-600 "></div>
                           </>
                         )}
                         {tagPages.map((i, key) => {
@@ -123,9 +123,9 @@ const CatalogLayout = ({ children }: any) => {
                               href={`/catalog/${i.catalogId}/${i.pageNumber}`}
                             >
                               <div
-                                className={`my-3 px-2 hover:bg-blue-400 hover:text-white cursor-pointer w-full transition-all duration-100  ${
+                                className={`my-3 px-2 hover:bg-cyan-600 hover:text-white cursor-pointer w-full transition-all duration-100  ${
                                   numId === i.pageNumber
-                                    ? "bg-blue-400 text-white "
+                                    ? "bg-cyan-600 text-white "
                                     : ""
                                 }`}
                               >
