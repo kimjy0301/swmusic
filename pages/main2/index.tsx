@@ -1,21 +1,14 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useRecoilState } from "recoil";
-import { categoryNaviState, countState } from "../components/state/atomState";
+import {
+  categoryNaviState,
+  countState,
+} from "../../components/state/atomState";
+import MainPage from "../../components/MainPage";
 import { useEffect } from "react";
-import MainPage2 from "../components/MainPage2";
 
-interface catalog {
-  id: number;
-  name: string;
-  created: string;
-}
-
-const Home: NextPage = ({ catalogs }: any) => {
-  const [show, setShow] = useRecoilState(categoryNaviState);
-  useEffect(() => {
-    setShow(false);
-  }, [setShow]);
+const index: NextPage = ({ catalogs }: any) => {
   return (
     <>
       <Head>
@@ -31,10 +24,10 @@ const Home: NextPage = ({ catalogs }: any) => {
         />
       </Head>
       <div className="flex flex-col justify-center items-center">
-        <MainPage2></MainPage2>
+        <MainPage></MainPage>
       </div>
     </>
   );
 };
 
-export default Home;
+export default index;

@@ -50,7 +50,11 @@ const Header = () => {
 
   return (
     <>
-      <div className="w-screen flex justify-between h-16 items-center bg-white/90 fixed top-0 z-50 min-w-min shadow-lg ">
+      <div
+        className={`${
+          router.asPath === "/" && "opacity-0"
+        } main-header w-screen flex justify-between h-16 items-center bg-white/90 fixed top-0 z-50 min-w-min shadow-lg transition-all duration-500`}
+      >
         <div className="relative md:w-48 w-40 flex items-center justify-center cursor-pointer ml-2 md:ml-10 mt-1">
           <Link href="/">
             <a>
@@ -62,7 +66,7 @@ const Header = () => {
         <div className="hidden md:flex h-full justify-center items-center">
           <Link passHref href="/">
             <div className="font-semibold text-2xl border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150">
-              HOME
+              ABOUT
             </div>
           </Link>
           <Link passHref href="/catalog/1/0">

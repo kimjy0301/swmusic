@@ -205,7 +205,22 @@ body {
   height: 464px;
 }
 
+.main-section {
+  width: 330px;
+  max-width: 330px;
+  height: 100vh;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media (min-width: 1024px) {
+  .main-section {
+    width: 1000px;
+    max-width: 1000px;
+    height: 100vh;
+    font-size: 5rem;
+  }
   .catalog {
     height: 775px;
     width: 550px /* 384px */;
