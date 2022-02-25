@@ -45,24 +45,21 @@ const MainPage2 = () => {
           <Image src={logo} alt={"swmusic logo"} priority={true}></Image>
         </div>
         <div className="main-section">
-          <div className="text-lg">
-            <span>
-              For good music, to find good sound, and to provide good service.
-            </span>
-            <span>
-              'SAMWOO' was established in 1994 and has been providing the best
-              quality and service until now. Our goal is to satisfy our
-              customers and provide the highest quality products at an
-              affordable price.
-            </span>
-            Together with people who love music and love the guitar, We want to
-            help make the world warmer and more beautiful. We always strives for
-            R&D and develop for convenient management and good quality of
-            customers. We handle all parts necessary for guitar. If you have any
-            questions, please send an e-mail to SAMWOO@SWMUSIC.CO.KR or use the
-            Contact us page on our website. Welcome to our website! The 'SAMWOO'
-            Team.
-          </div>
+          For good music, to find good sound, and to provide good service.
+        </div>
+        <div className="main-section">
+          'SAMWOO' was established in 1994 and has been providing the best
+          quality and service until now. Our goal is to satisfy our customers
+          and provide the highest quality products at an affordable price.
+        </div>
+        <div className="main-section">
+          Together with people who love music and love the guitar, We want to
+          help make the world warmer and more beautiful. We always strives for
+          R&D and develop for convenient management and good quality of
+          customers. We handle all parts necessary for guitar. If you have any
+          questions, please send an e-mail to SAMWOO@SWMUSIC.CO.KR or use the
+          Contact us page on our website. Welcome to our website! The 'SAMWOO'
+          Team.
         </div>
       </div>
     </>
