@@ -59,8 +59,8 @@ const MainPage2 = () => {
           R&amp;D and develop for convenient management and good quality of
           customers. We handle all parts necessary for guitar. If you have any
           questions, please send an e-mail to SAMWOO@SWMUSIC.CO.KR or use the
-          Contact us page on our website. Welcome to our website! The 'SAMWOO'
-          Team.
+          Contact us page on our website. Welcome to our website! The
+          &apos;SAMWOO&apos; Team.
         </div>
       </div>
     </>
