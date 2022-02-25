@@ -48,14 +48,15 @@ const MainPage2 = () => {
           For good music, to find good sound, and to provide good service.
         </div>
         <div className="main-section">
-          'SAMWOO' was established in 1994 and has been providing the best
-          quality and service until now. Our goal is to satisfy our customers
-          and provide the highest quality products at an affordable price.
+          &apos;SAMWOO&apos; was established in 1994 and has been providing the
+          best quality and service until now. Our goal is to satisfy our
+          customers and provide the highest quality products at an affordable
+          price.
         </div>
         <div className="main-section">
           Together with people who love music and love the guitar, We want to
           help make the world warmer and more beautiful. We always strives for
-          R&D and develop for convenient management and good quality of
+          R&amp;D and develop for convenient management and good quality of
           customers. We handle all parts necessary for guitar. If you have any
           questions, please send an e-mail to SAMWOO@SWMUSIC.CO.KR or use the
           Contact us page on our website. Welcome to our website! The 'SAMWOO'
