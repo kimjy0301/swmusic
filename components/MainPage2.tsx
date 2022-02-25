@@ -57,10 +57,13 @@ const MainPage2 = () => {
           Together with people who love music and love the guitar, We want to
           help make the world warmer and more beautiful. We always strives for
           R&amp;D and develop for convenient management and good quality of
-          customers. We handle all parts necessary for guitar. If you have any
-          questions, please send an e-mail to SAMWOO@SWMUSIC.CO.KR or use the
-          Contact us page on our website. Welcome to our website! The
-          &apos;SAMWOO&apos; Team.
+          customers.
+        </div>
+        <div className="main-section">
+          We handle all parts necessary for guitar. If you have any questions,
+          please send an e-mail to SAMWOO@SWMUSIC.CO.KR or use the Contact us
+          page on our website. Welcome to our website! The &apos;SAMWOO&apos;
+          Team.
         </div>
       </div>
     </>

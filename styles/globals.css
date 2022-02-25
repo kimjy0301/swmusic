@@ -130,11 +130,18 @@ body {
 }
 
 .footer {
-  height: 7rem;
   display: flex;
   justify-content: center;
   align-items: center;
   @apply bg-cyan-700;
+  width: 100vw;
+}
+
+.footer p {
+  font-size: 6px;
+}
+.footer .footer-card {
+  width: 300px;
 }
 
 .sticky-elem {
@@ -221,6 +228,13 @@ body {
     height: 100vh;
     font-size: 2.5rem;
   }
+  .footer p {
+    font-size: 13px;
+  }
+  .footer .footer-card {
+    width: 400px;
+  }
+
   .catalog {
     height: 775px;
     width: 550px /* 384px */;
