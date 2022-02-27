@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { animated, useSpring } from "react-spring";
 import { useRecoilState } from "recoil";
 import logo from "../public/logo.png";
-import messe2 from "../public/image/messe.png";
-import namm2 from "../public/image/namm.png";
+import messe2 from "../public/image/messe2.png";
+import namm2 from "../public/image/namm2.png";
 import { ProgressBar } from "./progress/ProgressBar";
 import { isLoadingState } from "./state/atomState";
 const Header = () => {
