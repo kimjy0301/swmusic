@@ -110,12 +110,12 @@ const Header = () => {
           </Link>
           <Link passHref href="/contact">
             <div className="border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-2 select-none flex items-center transition-all duration-150 ">
-              <Image src={messe2} alt="messe"></Image>
+              <Image src={messe2} alt="messe" priority={true}></Image>
             </div>
           </Link>
           <Link passHref href="/contact">
             <div className="border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-2 select-none flex items-center transition-all duration-150 ">
-              <Image src={namm2} alt="namm"></Image>
+              <Image src={namm2} alt="namm" priority={true}></Image>
             </div>
           </Link>
         </div>
