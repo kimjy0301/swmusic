@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { animated, useSpring } from "react-spring";
 import { useRecoilState } from "recoil";
 import logo from "../public/logo.png";
-import messe from "../public/image/messe.png";
-import namm from "../public/image/namm.png";
+import messe2 from "../public/image/messe.png";
+import namm2 from "../public/image/namm.png";
 import { ProgressBar } from "./progress/ProgressBar";
 import { isLoadingState } from "./state/atomState";
 const Header = () => {
@@ -110,12 +110,12 @@ const Header = () => {
           </Link>
           <Link passHref href="/contact">
             <div className="border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-2 select-none flex items-center transition-all duration-150 ">
-              <Image src={messe} alt="messe"></Image>
+              <Image src={messe2} alt="messe"></Image>
             </div>
           </Link>
           <Link passHref href="/contact">
             <div className="border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-2 select-none flex items-center transition-all duration-150 ">
-              <Image src={namm} alt="namm"></Image>
+              <Image src={namm2} alt="namm"></Image>
             </div>
           </Link>
         </div>
@@ -208,12 +208,12 @@ const Header = () => {
               </Link>
               <Link href="/contact">
                 <a className="font-semibold my-3 text-lg hover:text-cyan-600 border-cyan-600 h-full cursor-pointer ml-2 -mr-2 select-none">
-                  <Image src={messe} alt="messe"></Image>
+                  <Image src={messe2} alt="messe"></Image>
                 </a>
               </Link>
               <Link href="/contact">
                 <a className="font-semibold my-3 text-lg hover:text-cyan-600 border-cyan-600 h-full cursor-pointer ml-2 -mr-2 select-none">
-                  <Image src={namm} alt="namm"></Image>
+                  <Image src={namm2} alt="namm"></Image>
                 </a>
               </Link>
             </animated.div>
