@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { animated, useSpring } from "react-spring";
 import { useRecoilState } from "recoil";
 import logo from "../public/logo.png";
+import messe from "../public/image/messe.png";
+import namm from "../public/image/namm.PNG";
 import { ProgressBar } from "./progress/ProgressBar";
 import { isLoadingState } from "./state/atomState";
 const Header = () => {
@@ -65,7 +67,7 @@ const Header = () => {
 
         <div className="hidden md:flex h-full justify-center items-center">
           <Link passHref href="/">
-            <div className="font-semibold text-2xl border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150">
+            <div className="font-semibold text-2xl border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-8 select-none flex items-center transition-all duration-150">
               ABOUT
             </div>
           </Link>
@@ -76,7 +78,7 @@ const Header = () => {
             >
               <div
                 onMouseOver={() => setShowDropMenu(true)}
-                className="font-semibold text-2xl border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150 "
+                className="font-semibold text-2xl border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-8 select-none flex items-center transition-all duration-150 "
               >
                 CATALOG
               </div>
@@ -102,8 +104,18 @@ const Header = () => {
             </div>
           </Link>
           <Link passHref href="/contact">
-            <div className="font-semibold text-2xl border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-10 select-none flex items-center transition-all duration-150 ">
+            <div className="font-semibold text-2xl border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-8 select-none flex items-center transition-all duration-150 ">
               CONTACT
+            </div>
+          </Link>
+          <Link passHref href="/contact">
+            <div className="border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-2 select-none flex items-center transition-all duration-150 ">
+              <Image src={messe} alt="messe"></Image>
+            </div>
+          </Link>
+          <Link passHref href="/contact">
+            <div className="border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-2 select-none flex items-center transition-all duration-150 ">
+              <Image src={namm} alt="namm"></Image>
             </div>
           </Link>
         </div>
@@ -162,7 +174,6 @@ const Header = () => {
                   />
                 </svg> */}
               </div>
-
               {showCatalog && (
                 <animated.div
                   style={{ opacity: styles4.opacity }}
@@ -193,6 +204,16 @@ const Header = () => {
                   <div className="font-semibold my-3 text-lg hover:text-cyan-600 border-cyan-600 h-full cursor-pointer mx-2 select-none ">
                     CONTACT
                   </div>
+                </a>
+              </Link>
+              <Link href="/contact">
+                <a className="font-semibold my-3 text-lg hover:text-cyan-600 border-cyan-600 h-full cursor-pointer ml-2 -mr-2 select-none">
+                  <Image src={messe} alt="messe"></Image>
+                </a>
+              </Link>
+              <Link href="/contact">
+                <a className="font-semibold my-3 text-lg hover:text-cyan-600 border-cyan-600 h-full cursor-pointer ml-2 -mr-2 select-none">
+                  <Image src={namm} alt="namm"></Image>
                 </a>
               </Link>
             </animated.div>
