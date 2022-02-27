@@ -6,7 +6,8 @@ import { animated, useSpring } from "react-spring";
 import { useRecoilState } from "recoil";
 import logo from "../public/logo.png";
 import messe from "../public/image/messe.png";
-import namm from "../public/image/namm.PNG";
+import namm from "../public/image/namm.png";
+
 import { ProgressBar } from "./progress/ProgressBar";
 import { isLoadingState } from "./state/atomState";
 const Header = () => {
