@@ -137,13 +137,6 @@ const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
     }
   }, [mobile, setMobile]);
 
-  useEffect(() => {
-    const divEle: HTMLElement | null = document.querySelector(".catalog-div");
-    if (divEle) {
-      divEle.style.height = `${window.innerHeight}px`;
-    }
-  }, []);
-
   const onClickPrev = () => {
     const nowPage = pageProps.nowPage;
     const nowCatalog = pageProps.nowCatalog;
