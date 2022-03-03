@@ -246,9 +246,7 @@ body {
   width: 330px;
 }
 .catalog-div {
-  height: 100vh;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+  height: calc(var(--vh, 1vh) * 100);
 }
 @media (min-width: 1024px) {
   .contact-item {
