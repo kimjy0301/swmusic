@@ -139,11 +139,8 @@ const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
 
   useEffect(() => {
     const divEle: HTMLElement | null = document.querySelector(".catalog-div");
-
-    console.log(divEle);
     if (divEle) {
-      divEle.style.height = `${window.innerHeight.toString()}px`;
-      console.log(divEle.style.height);
+      divEle.style.height = `${window.innerHeight}px`;
     }
   }, []);
 
