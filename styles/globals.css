@@ -245,6 +245,9 @@ body {
 .catalog-button {
   width: 330px;
 }
+.catalog-div {
+  height: 100vh;
+}
 
 @media (min-width: 1024px) {
   .contact-item {
