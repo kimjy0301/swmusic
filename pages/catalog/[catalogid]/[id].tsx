@@ -167,7 +167,7 @@ const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
         />
       </Head>
 
-      <div className="flex h-screen justify-center items-center flex-col lg:pt-10 bg-slate-700">
+      <div className="flex relative h-screen justify-center items-center flex-col lg:pt-10 bg-slate-700">
         <Transition
           items={items}
           keys={(items: any) => items.id}
@@ -190,65 +190,65 @@ const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
                   mobile={mobile}
                 ></CatalogImage>
               </div>
-              <div className="flex mt-2 justify-between">
-                {pageProps.prev && (
-                  <div
-                    onClick={onClickPrev}
-                    className="cursor-pointer bg-cyan-600 rounded px-2 text-xl text-white hover:bg-cyan-700 transition-all duration-200 self-start"
-                  >
-                    Prev
-                  </div>
-                )}
-
-                <div></div>
-                <div className="text-gray-50 text-lg absolute bottom-0 left-1/3 hidden lg:block">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 inline-block"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                    />
-                  </svg>
-                  You can zoom in &amp; out by turning the mouse wheel.
-                </div>
-
-                <div className="text-gray-50 text-sm absolute -bottom-14 left-4 block lg:hidden">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 inline-block"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                    />
-                  </svg>
-                  You can zoom in &amp; out using two fingers.
-                </div>
-
-                {pageProps.next && (
-                  <div
-                    onClick={onClickNext}
-                    className="cursor-pointer bg-cyan-600 rounded px-2 text-xl text-white hover:bg-cyan-700 transition-all duration-200 self-end"
-                  >
-                    Next
-                  </div>
-                )}
-              </div>
             </animated.div>
           )}
         </Transition>
+        <div className="flex absolute h-20 w-full mt-2 bottom-0 lg:-bottom-8 items-start justify-between catalog-button">
+          {pageProps.prev && (
+            <div
+              onClick={onClickPrev}
+              className="cursor-pointer bg-cyan-600 rounded px-2 text-xl text-white hover:bg-cyan-700 transition-all duration-200 "
+            >
+              Prev
+            </div>
+          )}
+
+          <div></div>
+          <div className="text-gray-50 text-lg absolute left-1/3 hidden lg:block">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 inline-block"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+              />
+            </svg>
+            You can zoom in &amp; out by turning the mouse wheel.
+          </div>
+
+          <div className="text-gray-50 text-sm absolute bottom-4 left-4 block lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 inline-block"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+              />
+            </svg>
+            You can zoom in &amp; out using two fingers.
+          </div>
+
+          {pageProps.next && (
+            <div
+              onClick={onClickNext}
+              className="cursor-pointer bg-cyan-600 rounded px-2 text-xl text-white hover:bg-cyan-700 transition-all duration-200 "
+            >
+              Next
+            </div>
+          )}
+        </div>
       </div>
     </>
   );

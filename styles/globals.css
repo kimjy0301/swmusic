@@ -242,9 +242,15 @@ body {
 .contact-item {
   width: 330px;
 }
+.catalog-button {
+  width: 330px;
+}
 @media (min-width: 1024px) {
   .contact-item {
     width: 500px;
+  }
+  .catalog-button {
+    width: 1100px;
   }
   .main-section {
     width: 1000px;
