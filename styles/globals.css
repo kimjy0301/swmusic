@@ -234,7 +234,18 @@ body {
   background-image: url("/image/2.jpg");
   background-size: cover;
 }
+
+.contact-wrapper {
+  @apply flex flex-col justify-center items-center py-16 h-screen;
+  width: 100vw;
+}
+.contact-item {
+  width: 330px;
+}
 @media (min-width: 1024px) {
+  .contact-item {
+    width: 500px;
+  }
   .main-section {
     width: 1000px;
     max-width: 1000px;

@@ -24,7 +24,7 @@ const CatalogImage = ({ imageProps, imageProps2, mobile }: any) => {
     <>
       <TransformWrapper initialScale={mobile ? 1.2 : 1}>
         <TransformComponent>
-          <div className="relative catalog ">
+          <div className="relative catalog">
             <Image
               {...imageProps}
               alt="test"
