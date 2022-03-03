@@ -137,6 +137,12 @@ const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
     }
   }, [mobile, setMobile]);
 
+  useEffect(() => {
+    const divEle: HTMLElement | null = document.querySelector(".catalog-div");
+    if (divEle) {
+      divEle.style.height = window.innerHeight.toString();
+    }
+  }, []);
   // useEffect(() => {
   //   let vh = window.innerHeight * 0.01;
   //   document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -172,7 +178,7 @@ const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
         />
       </Head>
 
-      <div className="flex relative h-screen justify-center items-center flex-col lg:pt-10 bg-slate-700">
+      <div className="flex relative catalog-div justify-center items-center flex-col lg:pt-10 bg-slate-700">
         <Transition
           items={items}
           keys={(items: any) => items.id}
