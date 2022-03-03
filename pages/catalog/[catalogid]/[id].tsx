@@ -142,7 +142,7 @@ const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
 
     console.log(divEle);
     if (divEle) {
-      divEle.style.height = window.innerHeight.toString();
+      divEle.style.height = `${window.innerHeight.toString()}px`;
       console.log(divEle.style.height);
     }
   }, []);
