@@ -137,10 +137,10 @@ const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
     }
   }, [mobile, setMobile]);
 
-  useEffect(() => {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  }, []);
+  // useEffect(() => {
+  //   let vh = window.innerHeight * 0.01;
+  //   document.documentElement.style.setProperty("--vh", `${vh}px`);
+  // }, []);
 
   const onClickPrev = () => {
     const nowPage = pageProps.nowPage;
