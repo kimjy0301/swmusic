@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import logo from "../public/logo.png";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const MainPage2 = () => {
   const controlScrollY = () => {
@@ -21,6 +23,28 @@ const MainPage2 = () => {
   };
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils
+      .toArray<HTMLElement>(".main-section")
+      .forEach((mainSection, i) => {
+        if (i === 5) {
+          ScrollTrigger.create({
+            trigger: mainSection,
+            start: "bottom bottom",
+            pin: true,
+            pinSpacing: true,
+          });
+        } else {
+          ScrollTrigger.create({
+            trigger: mainSection,
+            start: "top top",
+            pin: true,
+            pinSpacing: false,
+          });
+        }
+      });
+
     const headerdiv = document.querySelector(".main-header");
     headerdiv?.classList.add("-top-16");
     if (window.scrollY > 5) {
@@ -42,7 +66,7 @@ const MainPage2 = () => {
   return (
     <>
       <div className="flex flex-col justify-center items-center">
-        <div className="main-section">
+        <div className="main-section bg-red-300">
           <Image
             className="img"
             src={logo}
@@ -50,28 +74,28 @@ const MainPage2 = () => {
             priority={true}
           ></Image>
         </div>
-        <div className="main-section">
+        <div className="main-section bg-blue-300">
           For good music, to find good sound, and to provide good service.
         </div>
-        <div className="main-section">
+        <div className="main-section bg-green-300">
           &apos;SAMWOO&apos; was established in 1994 and has been providing the
           best quality and service until now. Our goal is to satisfy our
           customers and provide the highest quality products at an affordable
           price.
         </div>
-        <div className="main-section">
+        <div className="main-section bg-cyan-600">
           Together with people who love music and love the guitar, We want to
           help make the world warmer and more beautiful. We always strives for
           R&amp;D and develop for convenient management and good quality of
           customers.
         </div>
-        <div className="main-section">
+        <div className="main-section bg-zinc-600">
           We handle all parts necessary for guitar. If you have any questions,
           please send an e-mail to SAMWOO@SWMUSIC.CO.KR or use the Contact us
           page on our website. Welcome to our website! The &apos;SAMWOO&apos;
           Team.
         </div>
-        <div className="w-screen py-16 flex flex-col justify-center items-center  ">
+        <div className="w-screen py-16 flex flex-col justify-center items-center main-section bg-amber-500 ">
           <div className="text-4xl font-bold font-sans">CATALOG</div>
           <div className="w-5/6 border-b-2 border-gray-600 my-10"></div>
           <div className="flex flex-col lg:flex-row justify-center items-center">
