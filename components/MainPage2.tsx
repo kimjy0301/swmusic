@@ -31,7 +31,7 @@ const MainPage2 = () => {
         if (i === 5) {
           ScrollTrigger.create({
             trigger: mainSection,
-            start: "bottom bottom",
+            start: "bottom 0",
             pin: true,
             pinSpacing: true,
           });
