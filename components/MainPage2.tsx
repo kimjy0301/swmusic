@@ -2,6 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import logo from "../public/logo.png";
+import main1 from "../public/image/main_1.jpg";
+import main2 from "../public/image/main_2.jpg";
+import main3 from "../public/image/main_3.jpg";
+import main4 from "../public/image/main_4.jpg";
+import main5 from "../public/image/main_5.jpg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -25,25 +30,29 @@ const MainPage2 = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.utils
-      .toArray<HTMLElement>(".main-section")
-      .forEach((mainSection, i) => {
-        if (i === 5) {
-          ScrollTrigger.create({
-            trigger: mainSection,
-            start: "bottom 0",
-            pin: true,
-            pinSpacing: true,
-          });
-        } else {
-          ScrollTrigger.create({
-            trigger: mainSection,
-            start: "top top",
-            pin: true,
-            pinSpacing: false,
-          });
-        }
-      });
+    let sections = gsap.utils.toArray<HTMLElement>(".main-section");
+
+    sections.forEach((mainSection, i) => {
+      if (i === 5) {
+        ScrollTrigger.create({
+          trigger: mainSection,
+          start: "bottom 0",
+          pin: true,
+          pinSpacing: true,
+          snap: 1,
+          scrub: 0.001,
+        });
+      } else {
+        ScrollTrigger.create({
+          trigger: mainSection,
+          start: "top top",
+          pin: true,
+          pinSpacing: false,
+          snap: 1,
+          scrub: 0.001,
+        });
+      }
+    });
 
     const headerdiv = document.querySelector(".main-header");
     headerdiv?.classList.add("-top-16");
@@ -66,7 +75,7 @@ const MainPage2 = () => {
   return (
     <>
       <div className="flex flex-col justify-center items-center">
-        <div className="main-section bg-red-300">
+        <div className="main-section ">
           <Image
             className="img"
             src={logo}
@@ -74,28 +83,77 @@ const MainPage2 = () => {
             priority={true}
           ></Image>
         </div>
-        <div className="main-section bg-blue-300">
-          For good music, to find good sound, and to provide good service.
+        <div className="main-section bg-slate-100">
+          <div className="">
+            <Image
+              className="img rounded-lg"
+              src={main1}
+              alt={"main image 1"}
+              width={500}
+              height={500}
+              layout={"intrinsic"}
+            ></Image>
+          </div>
+          <div className="w-1/2">
+            For good music, to find good sound, and to provide good service.
+          </div>
         </div>
-        <div className="main-section bg-green-300">
-          &apos;SAMWOO&apos; was established in 1994 and has been providing the
-          best quality and service until now. Our goal is to satisfy our
-          customers and provide the highest quality products at an affordable
-          price.
+        <div className="main-section bg-slate-100">
+          <div className="w-1/2">
+            &apos;SAMWOO&apos; was established in 1994 and has been providing
+            the best quality and service until now. Our goal is to satisfy our
+            customers and provide the highest quality products at an affordable
+            price.
+          </div>
+          <div className="">
+            <Image
+              className="img rounded-lg"
+              src={main2}
+              alt={"main image 2"}
+              width={500}
+              height={500}
+              layout={"intrinsic"}
+            ></Image>
+          </div>
         </div>
-        <div className="main-section bg-cyan-600">
-          Together with people who love music and love the guitar, We want to
-          help make the world warmer and more beautiful. We always strives for
-          R&amp;D and develop for convenient management and good quality of
-          customers.
+        <div className="main-section bg-slate-100">
+          <div className="">
+            <Image
+              className="img rounded-lg"
+              src={main3}
+              alt={"main image 3"}
+              width={500}
+              height={500}
+              layout={"intrinsic"}
+            ></Image>
+          </div>
+          <div className="w-1/2">
+            Together with people who love music and love the guitar, We want to
+            help make the world warmer and more beautiful. We always strives for
+            R&amp;D and develop for convenient management and good quality of
+            customers.
+          </div>
         </div>
-        <div className="main-section bg-zinc-600">
-          We handle all parts necessary for guitar. If you have any questions,
-          please send an e-mail to SAMWOO@SWMUSIC.CO.KR or use the Contact us
-          page on our website. Welcome to our website! The &apos;SAMWOO&apos;
-          Team.
+        <div className="main-section bg-slate-100">
+          <div className="w-1/2">
+            We handle all parts necessary for guitar. If you have any questions,
+            please send an e-mail to SAMWOO@SWMUSIC.CO.KR or use the Contact us
+            page on our website. Welcome to our website! The &apos;SAMWOO&apos;
+            Team.
+          </div>
+
+          <div className="">
+            <Image
+              className="img rounded-lg"
+              src={main4}
+              alt={"main image 4"}
+              width={500}
+              height={500}
+              layout={"intrinsic"}
+            ></Image>
+          </div>
         </div>
-        <div className="w-screen py-16 flex flex-col justify-center items-center main-section bg-amber-500 ">
+        <div className="w-screen py-16 flex flex-col justify-center items-center main-section bg-slate-100 ">
           <div className="text-4xl font-bold font-sans">CATALOG</div>
           <div className="w-5/6 border-b-2 border-gray-600 my-10"></div>
           <div className="flex flex-col lg:flex-row justify-center items-center">
