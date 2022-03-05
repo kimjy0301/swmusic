@@ -92,6 +92,7 @@ const MainPage2 = () => {
               width={500}
               height={500}
               layout={"intrinsic"}
+              priority={true}
             ></Image>
           </div>
           <div className="w-1/2">
@@ -113,6 +114,7 @@ const MainPage2 = () => {
               width={500}
               height={500}
               layout={"intrinsic"}
+              priority={true}
             ></Image>
           </div>
         </div>
@@ -125,6 +127,7 @@ const MainPage2 = () => {
               width={500}
               height={500}
               layout={"intrinsic"}
+              priority={true}
             ></Image>
           </div>
           <div className="w-1/2">
@@ -150,6 +153,7 @@ const MainPage2 = () => {
               width={500}
               height={500}
               layout={"intrinsic"}
+              priority={true}
             ></Image>
           </div>
         </div>
