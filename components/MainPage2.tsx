@@ -96,7 +96,7 @@ const MainPage2 = () => {
             </div>
           </div>
           <div className="main-section main-section-card">
-            <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg -skew-x-2">
+            <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg">
               <div>
                 <Image
                   className="img rounded-lg"
@@ -115,7 +115,7 @@ const MainPage2 = () => {
             </div>
           </div>
           <div className="main-section main-section-card">
-            <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg -skew-x-2">
+            <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg">
               <div className="w-1/3">
                 &apos;SAMWOO&apos; was established in 1994 and has been
                 providing the best quality and service until now. Our goal is to
@@ -138,7 +138,7 @@ const MainPage2 = () => {
             </div>
           </div>
           <div className="main-section main-section-card">
-            <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg -skew-x-2">
+            <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg">
               <div className="">
                 <Image
                   className="img rounded-lg"
@@ -160,7 +160,7 @@ const MainPage2 = () => {
             </div>
           </div>
           <div className="main-section main-section-card">
-            <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg -skew-x-2">
+            <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg">
               <div className="w-1/3">
                 We handle all parts necessary for guitar. If you have any
                 questions, please send an e-mail to SAMWOO@SWMUSIC.CO.KR or use
