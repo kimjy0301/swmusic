@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+
+const withTM = require("next-transpile-modules")(["gsap"]);
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
@@ -7,8 +10,4 @@ const nextConfig = {
     imageSizes: [128, 128, 256, 384],
   },
 };
-module.exports = nextConfig;
-
-const withTM = require("next-transpile-modules")(["gsap"]);
-
-module.exports = withTM({});
+module.exports = withTM(nextConfig);
