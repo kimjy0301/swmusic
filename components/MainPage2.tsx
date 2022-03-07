@@ -39,19 +39,21 @@ const MainPage2 = () => {
         ScrollTrigger.create({
           trigger: mainSection,
           start: "bottom 0",
-          pin: true,
+          pin: false,
           pinSpacing: true,
           snap: 1,
           scrub: 0.001,
+          markers: true,
         });
       } else {
         ScrollTrigger.create({
           trigger: mainSection,
           start: "top top",
-          pin: true,
+          pin: false,
           pinSpacing: false,
           snap: 1,
           scrub: 0.001,
+          markers: true,
         });
       }
     });
