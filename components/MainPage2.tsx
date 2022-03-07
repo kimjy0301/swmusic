@@ -86,7 +86,7 @@ const MainPage2 = () => {
       <div className="w-full h-full main-bg">
         <div className="flex flex-col justify-center items-center">
           <div className="main-section ">
-            <div className="p-10 ">
+            <div className="p-10 bg-white rounded-full main-section-card">
               <Image
                 className="img"
                 src={logo}

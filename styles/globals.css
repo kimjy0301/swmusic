@@ -224,6 +224,10 @@ body {
   align-items: center;
   justify-content: center;
 }
+.main-section1 {
+  width: 100vw !important;
+  max-width: 100vw !important;
+}
 .main-section-card {
   width: 300px !important;
   max-width: 300px !important;
