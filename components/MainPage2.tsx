@@ -86,13 +86,15 @@ const MainPage2 = () => {
       <div className="w-full h-full main-bg">
         <div className="flex flex-col justify-center items-center">
           <div className="main-section ">
-            <div className="p-10 bg-white rounded-full main-section-card">
-              <Image
-                className="img"
-                src={logo}
-                alt={"swmusic logo"}
-                priority={true}
-              ></Image>
+            <div className="p-10 bg-cyan-700 rounded-full main-section-card">
+              <div className="p-10 bg-white rounded-full ">
+                <Image
+                  className="img"
+                  src={logo}
+                  alt={"swmusic logo"}
+                  priority={true}
+                ></Image>
+              </div>
             </div>
           </div>
           <div className="main-section main-section-card">
