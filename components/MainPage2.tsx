@@ -175,7 +175,7 @@ const MainPage2 = () => {
                 <br></br> If you have any questions, please send an e-mail to
                 <a
                   href="mailto:samwoo@swmusic.co.kr"
-                  className="text-cyan-700 hover:text-cyan-800 hover:font-semibold text-xs lg:text-base"
+                  className="text-cyan-700 hover:text-cyan-800 hover:font-semibold text-xs lg:text-base break-words"
                 >
                   {" "}
                   SAMWOO@SWMUSIC.CO.KR{" "}
