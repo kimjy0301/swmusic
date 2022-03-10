@@ -257,7 +257,7 @@ body {
   height: 100vh;
 }
 .main-bg {
-  background: linear-gradient(45deg, #3d368a, #02001f);
+  background: linear-gradient(25deg, #3d368a, #02001f);
 }
 
 @media (min-width: 1024px) {
