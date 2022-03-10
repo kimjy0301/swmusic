@@ -58,8 +58,8 @@ const Contact = () => {
         />
       </Head>
 
-      <div className="contact-wrapper">
-        <div className="contact-item text-lg font-semibold ">
+      <div className="contact-wrapper main-bg">
+        <div className="contact-item text-lg font-semibold text-white">
           If you have any questions about the product, please submit the form
           below. We will reply as soon as possible.
           <br></br>You can contact our e-mail address directly.<br></br>
