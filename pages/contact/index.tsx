@@ -4,6 +4,8 @@ import { categoryNaviState } from "../../components/state/atomState";
 import { useForm, SubmitHandler } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import Head from "next/head";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 type Inputs = {
   email: string;
@@ -21,11 +23,10 @@ const Contact = () => {
     handleSubmit,
     watch,
     formState: { errors },
+    reset,
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
-
     emailjs
       .send(
         "service_0qov1rn",
@@ -35,10 +36,11 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          toast.success("Success");
+          reset();
         },
         (error) => {
-          console.log(error.text);
+          toast.error("Failed");
         }
       );
   };
@@ -79,7 +81,9 @@ const Contact = () => {
               className="block my-2 px-2 w-full caret-cyan-600 border-2  rounded shadow-inner focus:border-cyan-700 focus:outline-none"
               {...register("title", { required: true })}
             ></input>
-            {errors.title && <span>This field is required</span>}
+            {errors.title && (
+              <span className="text-white"> * This field is required</span>
+            )}
             <textarea
               placeholder="Text"
               className="block my-2 px-2 h-48 w-full caret-cyan-600 border-2  rounded shadow-inner focus:border-cyan-700 focus:outline-none resize-none"
@@ -92,6 +96,18 @@ const Contact = () => {
             />
           </form>
         </div>
+        <ToastContainer
+          className="text-black"
+          position="bottom-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </div>
     </>
   );
