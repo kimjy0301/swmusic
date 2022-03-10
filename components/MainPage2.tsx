@@ -13,6 +13,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 const MainPage2 = () => {
   const [imgWidth, setImgWidth] = useState(500);
   const [imgHeight, setImgHeight] = useState(500);
+  const [scrollSize, setScrollSize] = useState(1);
   const controlScrollY = () => {
     const headerdiv = document.querySelector(".main-header");
 
@@ -80,8 +81,9 @@ const MainPage2 = () => {
     if (window.innerWidth < 1024) {
       setImgHeight(100);
       setImgWidth(100);
+      setScrollSize(20);
     }
-  }, [setImgHeight, setImgWidth]);
+  }, [setImgHeight, setImgWidth, setScrollSize]);
 
   return (
     <>
@@ -89,7 +91,7 @@ const MainPage2 = () => {
         <div className="flex flex-col justify-center items-center">
           <div className="main-section ">
             <div
-              onClick={() => window.scroll(0, 1)}
+              onClick={() => window.scroll(0, scrollSize)}
               className="p-3 lg:p-10 bg-cyan-700 rounded-full main-section-card hover:scale-105 cursor-pointer transition-all"
             >
               <div className="p-3 lg:p-10 bg-white rounded-full ">
