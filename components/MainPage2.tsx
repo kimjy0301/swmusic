@@ -43,7 +43,7 @@ const MainPage2 = () => {
           pinSpacing: true,
           snap: 1,
           scrub: 0.001,
-          markers: true,
+          markers: false,
         });
       } else {
         ScrollTrigger.create({
@@ -53,7 +53,7 @@ const MainPage2 = () => {
           pinSpacing: false,
           snap: 1,
           scrub: 0.001,
-          markers: true,
+          markers: false,
         });
       }
     });
@@ -78,8 +78,8 @@ const MainPage2 = () => {
 
   useEffect(() => {
     if (window.innerWidth < 1024) {
-      setImgHeight(170);
-      setImgWidth(170);
+      setImgHeight(100);
+      setImgWidth(100);
     }
   }, [setImgHeight, setImgWidth]);
 
@@ -88,8 +88,8 @@ const MainPage2 = () => {
       <div className="w-full h-full main-bg">
         <div className="flex flex-col justify-center items-center">
           <div className="main-section ">
-            <div className="p-10 bg-cyan-700 rounded-full main-section-card">
-              <div className="p-10 bg-white rounded-full ">
+            <div className="p-3 lg:p-10 bg-cyan-700 rounded-full main-section-card">
+              <div className="p-3 lg:p-10 bg-white rounded-full ">
                 <Image
                   className="img"
                   src={logo}
@@ -99,7 +99,7 @@ const MainPage2 = () => {
               </div>
             </div>
           </div>
-          <div className="main-section main-section-card">
+          {/* <div className="main-section main-section-card">
             <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg">
               <div>
                 <Image
@@ -117,14 +117,17 @@ const MainPage2 = () => {
                 For good music, to find good sound, and to provide good service.
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="main-section main-section-card">
             <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg">
-              <div className="w-1/3">
+              <div className="w-1/2 px-2 lg:w-1/3 first-letter:font-bold first-letter:text-xl">
+                For good music, to find good sound, and to provide good service.
+                <br></br>
+                <br></br>
                 &apos;SAMWOO&apos; was established in 1994 and has been
-                providing the best quality and service until now. Our goal is to
-                satisfy our customers and provide the highest quality products
-                at an affordable price.
+                providing the best quality and service until now. <br></br>
+                <br></br> Our goal is to satisfy our customers and provide the
+                highest quality products at an affordable price.
               </div>
 
               <div className="h-full border-r-2 border-gray-500"></div>
@@ -155,21 +158,35 @@ const MainPage2 = () => {
                 ></Image>
               </div>
               <div className="h-full border-r-2 border-gray-500"></div>
-              <div className="w-1/3">
-                Together with people who love music and love the guitar, We want
-                to help make the world warmer and more beautiful. We always
-                strives for R&amp;D and develop for convenient management and
-                good quality of customers.
+              <div className="w-1/2 px-2 lg:w-1/3 first-letter:font-bold first-letter:text-xl">
+                Together with people who love music and love the guitar,
+                <br></br>
+                <br></br> We want to help make the world warmer and more
+                beautiful.<br></br>
+                <br></br> We always strives for R&amp;D and develop for
+                convenient management and good quality of customers.
               </div>
             </div>
           </div>
           <div className="main-section main-section-card">
             <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg">
-              <div className="w-1/3">
-                We handle all parts necessary for guitar. If you have any
-                questions, please send an e-mail to SAMWOO@SWMUSIC.CO.KR or use
-                the Contact us page on our website. Welcome to our website! The
-                &apos;SAMWOO&apos; Team.
+              <div className="w-1/2 px-2 lg:w-1/3 first-letter:font-bold first-letter:text-xl">
+                We handle all parts necessary for guitar.<br></br>
+                <br></br> If you have any questions, please send an e-mail to
+                <a
+                  href="mailto:samwoo@swmusic.co.kr"
+                  className="text-cyan-700 hover:text-cyan-800 hover:font-semibold text-xs lg:text-base"
+                >
+                  {" "}
+                  SAMWOO@SWMUSIC.CO.KR{" "}
+                </a>
+                or use the{" "}
+                <a className="text-cyan-700 hover:text-cyan-800 hover:font-semibold">
+                  <Link passHref href="/contact">
+                    Contact
+                  </Link>
+                </a>{" "}
+                us page on our website.
               </div>
 
               <div className="h-full border-r-2 border-gray-500"></div>
