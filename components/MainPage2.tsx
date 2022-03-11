@@ -2,18 +2,28 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import logo from "../public/logo.png";
-import main1 from "../public/image/main_1.jpg";
+import main0 from "../public/image/main_0.jpg";
 import main2 from "../public/image/main_2.jpg";
 import main3 from "../public/image/main_3.jpg";
 import main4 from "../public/image/main_4.jpg";
 import main5 from "../public/image/main_5.jpg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { animated, useSpring } from "react-spring";
 
 const MainPage2 = () => {
   const [imgWidth, setImgWidth] = useState(500);
   const [imgHeight, setImgHeight] = useState(500);
   const [scrollSize, setScrollSize] = useState(1);
+  const [mainImgHeight, setMainImgHeight] = useState(1082);
+  const [mainImgWidth, setMainImgWidth] = useState(1920);
+
+  const styles = useSpring({
+    loop: true,
+    to: [{ scaleX: 0.9 }, { scaleX: 1.1 }],
+    from: { scaleX: 1 },
+  });
+
   const controlScrollY = () => {
     const headerdiv = document.querySelector(".main-header");
 
@@ -83,16 +93,35 @@ const MainPage2 = () => {
       setImgWidth(100);
       setScrollSize(20);
     }
-  }, [setImgHeight, setImgWidth, setScrollSize]);
+
+    setMainImgHeight(window.innerHeight);
+    setMainImgWidth(window.innerWidth);
+  }, [
+    setImgHeight,
+    setImgWidth,
+    setScrollSize,
+    setMainImgHeight,
+    setMainImgWidth,
+  ]);
 
   return (
     <>
-      <div className="w-full h-full main-bg">
+      <div className="w-full h-full main-bg relative">
+        <div className="fixed w-auto h-auto top-0 left-0 -z10">
+          <Image
+            src={main0}
+            alt={"main img"}
+            priority={true}
+            width={mainImgWidth}
+            height={mainImgHeight}
+          ></Image>
+        </div>
         <div className="flex flex-col justify-center items-center">
-          <div className="main-section ">
-            <div
+          <div className="main-section flex flex-col relative">
+            <animated.div
+              style={{ scale: styles.scaleX }}
               onClick={() => window.scroll(0, scrollSize)}
-              className="p-3 lg:p-10 bg-cyan-700 rounded-full main-section-card hover:scale-105 cursor-pointer transition-all"
+              className="p-3 lg:p-10 bg-cyan-700 rounded-full main-section-card z-10  hover:scale-105 cursor-pointer transition-all"
             >
               <div className="p-3 lg:p-10 bg-white rounded-full ">
                 <Image
@@ -102,9 +131,9 @@ const MainPage2 = () => {
                   priority={true}
                 ></Image>
               </div>
-            </div>
+            </animated.div>
           </div>
-          {/* <div className="main-section main-section-card">
+          {/* <div className="main-section main-section-card z-10 ">
             <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg">
               <div>
                 <Image
@@ -123,7 +152,7 @@ const MainPage2 = () => {
               </div>
             </div>
           </div> */}
-          <div className="main-section main-section-card">
+          <div className="main-section main-section-card z-10 ">
             <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg">
               <div className="w-1/2 px-2 lg:w-1/3 first-letter:font-bold first-letter:text-xl">
                 For good music, to find good sound, and to provide good service.
@@ -136,7 +165,10 @@ const MainPage2 = () => {
               </div>
 
               <div className="h-full border-r-2 border-gray-500"></div>
-              <div className="">
+              <div
+                className="shadow-xl"
+                style={{ width: imgWidth, height: imgHeight }}
+              >
                 <Image
                   className="img rounded-lg"
                   src={main2}
@@ -149,7 +181,7 @@ const MainPage2 = () => {
               </div>
             </div>
           </div>
-          <div className="main-section main-section-card">
+          <div className="main-section main-section-card z-10 ">
             <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg">
               <div className="">
                 <Image
@@ -173,7 +205,7 @@ const MainPage2 = () => {
               </div>
             </div>
           </div>
-          <div className="main-section main-section-card">
+          <div className="main-section main-section-card z-10 ">
             <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg">
               <div className="w-1/2 px-2 lg:w-1/3 first-letter:font-bold first-letter:text-xl">
                 We handle all parts necessary for guitar.<br></br>
@@ -208,7 +240,7 @@ const MainPage2 = () => {
               </div>
             </div>
           </div>
-          <div className="w-screen py-16 flex flex-col justify-center items-center main-section bg-slate-100">
+          <div className="w-screen py-16 flex flex-col justify-center items-center main-section bg-slate-100 z-10">
             <div className="text-2xl lg:text-4xl font-bold font-sans">
               CATALOG
             </div>
