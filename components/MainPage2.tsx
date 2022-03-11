@@ -18,12 +18,6 @@ const MainPage2 = () => {
   const [mainImgHeight, setMainImgHeight] = useState(1082);
   const [mainImgWidth, setMainImgWidth] = useState(1920);
 
-  const styles = useSpring({
-    loop: true,
-    to: [{ scaleX: 0.9 }, { scaleX: 1.1 }],
-    from: { scaleX: 1 },
-  });
-
   const controlScrollY = () => {
     const headerdiv = document.querySelector(".main-header");
 
@@ -126,8 +120,7 @@ const MainPage2 = () => {
         </div>
         <div className="flex flex-col justify-center items-center">
           <div className="main-section flex flex-col relative">
-            <animated.div
-              style={{ scale: styles.scaleX }}
+            <div
               onClick={() => window.scroll(0, scrollSize)}
               className="p-3 lg:p-10 bg-cyan-700 rounded-full main-section-card z-10  hover:scale-105 cursor-pointer transition-all"
             >
@@ -139,7 +132,7 @@ const MainPage2 = () => {
                   priority={true}
                 ></Image>
               </div>
-            </animated.div>
+            </div>
           </div>
           {/* <div className="main-section main-section-card z-10 ">
             <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg">
