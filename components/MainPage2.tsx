@@ -41,6 +41,11 @@ const MainPage2 = () => {
   };
 
   useEffect(() => {
+    window.addEventListener("resize", () => {
+      setMainImgHeight(window.innerHeight);
+      setMainImgWidth(window.innerWidth);
+    });
+
     gsap.registerPlugin(ScrollTrigger);
 
     let sections = gsap.utils.toArray<HTMLElement>(".main-section");
