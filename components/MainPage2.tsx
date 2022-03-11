@@ -58,7 +58,7 @@ const MainPage2 = () => {
           pin: false,
           pinSpacing: true,
           snap: 1,
-          scrub: 0.001,
+          scrub: 1,
           markers: false,
         });
       } else {
@@ -68,7 +68,7 @@ const MainPage2 = () => {
           pin: false,
           pinSpacing: false,
           snap: 1,
-          scrub: 0.001,
+          scrub: 1,
           markers: false,
         });
       }
@@ -112,13 +112,16 @@ const MainPage2 = () => {
   return (
     <>
       <div className="w-full h-full main-bg relative">
-        <div className="fixed w-auto h-auto top-0 left-0 -z10">
+        <div
+          className="fixed w-auto h-auto top-0 left-0 -z10"
+          style={{ width: mainImgWidth, height: mainImgHeight }}
+        >
           <Image
             src={main0}
             alt={"main img"}
             priority={true}
-            width={mainImgWidth}
-            height={mainImgHeight}
+            layout={"fill"}
+            objectFit={"cover"}
           ></Image>
         </div>
         <div className="flex flex-col justify-center items-center">
