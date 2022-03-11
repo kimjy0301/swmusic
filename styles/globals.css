@@ -133,8 +133,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  @apply bg-cyan-700;
+  background: linear-gradient(45deg, #1e95b6, #0e7490);
   width: 100vw;
+  @apply shadow-inner;
 }
 
 .footer p {
