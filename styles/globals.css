@@ -138,6 +138,11 @@ body {
   @apply shadow-inner;
 }
 
+.exhibition {
+  min-height: 100vh;
+  @apply bg-slate-100;
+}
+
 .footer p {
   font-size: 6px;
 }

@@ -108,7 +108,7 @@ const Header = () => {
               CONTACT
             </div>
           </Link>
-          <Link passHref href="/contact">
+          <Link passHref href="/namm">
             <div className="border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-2 select-none flex items-center transition-all duration-150 ">
               <Image
                 height={45}
@@ -119,7 +119,7 @@ const Header = () => {
               ></Image>
             </div>
           </Link>
-          <Link passHref href="/contact">
+          <Link passHref href="/messe">
             <div className="border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-2 select-none flex items-center transition-all duration-150 ">
               <Image src={messe2} alt="messe" priority={true}></Image>
             </div>
@@ -212,12 +212,12 @@ const Header = () => {
                   </div>
                 </a>
               </Link>
-              <Link href="/contact">
+              <Link href="/namm">
                 <a className="font-semibold my-3 text-lg hover:text-cyan-600 border-cyan-600 h-full cursor-pointer ml-2 -mr-2 select-none">
                   <Image src={namm2} alt="namm"></Image>
                 </a>
               </Link>
-              <Link href="/contact">
+              <Link href="/messe">
                 <a className="font-semibold my-3 text-lg hover:text-cyan-600 border-cyan-600 h-full cursor-pointer ml-2 -mr-2 select-none">
                   <Image src={messe2} alt="messe"></Image>
                 </a>
