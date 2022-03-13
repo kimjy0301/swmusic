@@ -140,7 +140,7 @@ body {
 
 .exhibition {
   min-height: 100vh;
-  @apply bg-slate-100;
+  background: linear-gradient(180deg, #ffffff, #ffffff);
 }
 
 .footer p {
