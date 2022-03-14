@@ -34,7 +34,7 @@ const Index = () => {
             <Carousel>
               <div
                 style={{ height: carouselHeigt }}
-                className="bg-gray-900 rounded-lg shadow-xl"
+                className="bg-gray-900 rounded-lg shadow-xl overflow-hidden"
               >
                 <Image
                   src={messe_img_1}
@@ -45,7 +45,7 @@ const Index = () => {
               </div>
               <div
                 style={{ height: carouselHeigt }}
-                className="bg-gray-900 rounded-lg shadow-xl"
+                className="bg-gray-900 rounded-lg shadow-xl overflow-hidden"
               >
                 <Image
                   src={messe_img_2}
@@ -56,7 +56,7 @@ const Index = () => {
               </div>
               <div
                 style={{ height: carouselHeigt }}
-                className="bg-gray-900 rounded-lg shadow-xl"
+                className="bg-gray-900 rounded-lg shadow-xl overflow-hidden"
               >
                 <Image
                   src={messe_img_3}

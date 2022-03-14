@@ -38,7 +38,7 @@ const Index = () => {
             <Carousel>
               <div
                 style={{ height: carouselHeigt }}
-                className="bg-gray-900 rounded-lg shadow-xl"
+                className="bg-gray-900 rounded-lg shadow-xl overflow-hidden"
               >
                 <Image
                   src={namm_img_1}
@@ -49,7 +49,7 @@ const Index = () => {
               </div>
               <div
                 style={{ height: carouselHeigt }}
-                className="bg-gray-900 rounded-lg shadow-xl"
+                className="bg-gray-900 rounded-lg shadow-xl overflow-hidden"
               >
                 <Image
                   src={namm_img_2}
@@ -60,7 +60,7 @@ const Index = () => {
               </div>
               <div
                 style={{ height: carouselHeigt }}
-                className="bg-gray-900 rounded-lg shadow-xl"
+                className="bg-gray-900 rounded-lg shadow-xl overflow-hidden"
               >
                 <Image
                   src={namm_img_3}
@@ -71,7 +71,7 @@ const Index = () => {
               </div>
               <div
                 style={{ height: carouselHeigt }}
-                className="bg-gray-900 rounded-lg shadow-xl"
+                className="bg-gray-900 rounded-lg shadow-xl overflow-hidden"
               >
                 <Image
                   src={namm_img_4}
@@ -82,7 +82,7 @@ const Index = () => {
               </div>
               <div
                 style={{ height: carouselHeigt }}
-                className="bg-gray-900 rounded-lg shadow-xl"
+                className="bg-gray-900 rounded-lg shadow-xl overflow-hidden"
               >
                 <Image
                   src={namm_img_5}
@@ -93,7 +93,7 @@ const Index = () => {
               </div>
               <div
                 style={{ height: carouselHeigt }}
-                className="bg-gray-900 rounded-lg shadow-xl"
+                className="bg-gray-900 rounded-lg shadow-xl overflow-hidden"
               >
                 <Image
                   src={namm_img_6}
@@ -104,7 +104,7 @@ const Index = () => {
               </div>
               <div
                 style={{ height: carouselHeigt }}
-                className="bg-gray-900 rounded-lg shadow-xl"
+                className="bg-gray-900 rounded-lg shadow-xl overflow-hidden"
               >
                 <Image
                   src={namm_img_7}
