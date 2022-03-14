@@ -34,30 +34,33 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   return getLayout(
     <>
-      {isLoading ? (
+      {/* {isLoading ? (
         <div className="h-screen w-screen flex justify-center items-center text-xl lg:text-3xl">
           Loading...
         </div>
-      ) : (
-        <BaseLayout>
-          <Layout>
-            <Transition
-              items={items}
-              keys={(items: any) => items.id}
-              from={{ opacity: 0 }}
-              initial={{ opacity: 0 }}
-              enter={{ opacity: 1, x: 0 }}
-              leave={{ opacity: 0, x: 500, position: "absolute" }}
-            >
-              {(styles, { pageProps, Component }) => (
-                <animated.div style={{ ...styles, width: "100%" }}>
-                  <Component {...pageProps} />
-                </animated.div>
-              )}
-            </Transition>
-          </Layout>
-        </BaseLayout>
-      )}
+      ) : ( */}
+      <BaseLayout>
+        <Layout>
+          <Transition
+            items={items}
+            keys={(items: any) => items.id}
+            from={{ opacity: 0 }}
+            initial={{ opacity: 0 }}
+            enter={{ opacity: 1, x: 0 }}
+            leave={{ opacity: 0, x: 500, position: "absolute" }}
+          >
+            {(styles, { pageProps, Component }) => (
+              <animated.div style={{ ...styles, width: "100%" }}>
+                <Component {...pageProps} />
+              </animated.div>
+            )}
+          </Transition>
+        </Layout>
+      </BaseLayout>
+      {/* 
+
+       )}
+ */}
     </>
   );
 }
