@@ -31,7 +31,7 @@ const Home: NextPage = ({ catalogs }: any) => {
         />
       </Head>
       <div className="flex flex-col justify-center items-center">
-        <MainPage2></MainPage2>
+        <MainPage2 main={true}></MainPage2>
       </div>
     </>
   );

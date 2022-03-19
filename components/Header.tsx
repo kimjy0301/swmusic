@@ -66,9 +66,9 @@ const Header = () => {
         </div>
 
         <div className="hidden md:flex h-full justify-center items-center">
-          <Link passHref href="/">
+          <Link passHref href="/about">
             <div className="font-semibold text-2xl border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-8 select-none flex items-center transition-all duration-150">
-              ABOUT
+              ABOUT US
             </div>
           </Link>
           <Link passHref href="/catalog/1/0">
@@ -105,7 +105,7 @@ const Header = () => {
           </Link>
           <Link passHref href="/contact">
             <div className="font-semibold text-2xl border-b-4 border-transparent hover:text-cyan-600 hover:border-cyan-600 h-full cursor-pointer mx-8 select-none flex items-center transition-all duration-150 ">
-              CONTACT
+              CONTACT US
             </div>
           </Link>
           <Link passHref href="/namm">
@@ -153,10 +153,10 @@ const Header = () => {
               }}
               className="w-44 absolute right-0 top-16 flex flex-col bg-white/90 items-end justify-center rounded-b-lg shadow-lg pr-5"
             >
-              <Link href="/">
+              <Link href="/about">
                 <a>
                   <div className="font-semibold my-3 text-lg hover:text-cyan-600 border-cyan-600 h-full cursor-pointer mx-2 select-none ">
-                    HOME
+                    ABOUT US
                   </div>
                 </a>
               </Link>
@@ -208,7 +208,7 @@ const Header = () => {
               <Link href="/contact">
                 <a>
                   <div className="font-semibold my-3 text-lg hover:text-cyan-600 border-cyan-600 h-full cursor-pointer mx-2 select-none ">
-                    CONTACT
+                    CONTACT US
                   </div>
                 </a>
               </Link>

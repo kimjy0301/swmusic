@@ -178,7 +178,7 @@ const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
         />
       </Head>
 
-      <div className="flex relative catalog-div justify-center items-center flex-col lg:pt-10 bg-slate-700">
+      <div className="flex relative catalog-div justify-center items-center flex-col  bg-slate-700">
         <Transition
           items={items}
           keys={(items: any) => items.id}

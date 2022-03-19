@@ -95,7 +95,7 @@ const CatalogLayout = ({ children }: any) => {
                               href={`/catalog/${i.catalogId}/${i.startPage}`}
                             >
                               <div
-                                className={`my-3 px-2 hover:bg-cyan-600 hover:text-white cursor-pointer w-full transition-all duration-100  ${
+                                className={`my-3 px-2 hover:bg-cyan-600 hover:text-white text-base font-semibold cursor-pointer w-full transition-all duration-100  ${
                                   numId >= i.startPage && numId <= i.endPage
                                     ? "bg-cyan-600 text-white "
                                     : ""
@@ -123,7 +123,7 @@ const CatalogLayout = ({ children }: any) => {
                               href={`/catalog/${i.catalogId}/${i.pageNumber}`}
                             >
                               <div
-                                className={`my-3 px-2 hover:bg-cyan-600 hover:text-white cursor-pointer w-full transition-all duration-100  ${
+                                className={`my-3 px-2 hover:bg-cyan-600 hover:text-white text-base font-semibold cursor-pointer w-full transition-all duration-100  ${
                                   numId === i.pageNumber
                                     ? "bg-cyan-600 text-white "
                                     : ""
