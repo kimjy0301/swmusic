@@ -180,13 +180,13 @@ const MainPage2 = () => {
                 <br></br> If you have any questions, please send an e-mail to
                 <a
                   href="mailto:samwoo@swmusic.co.kr"
-                  className="text-cyan-700 hover:text-cyan-800 text-xs lg:text-lg break-words"
+                  className="text-amber-700 hover:text-amber-800 text-xs lg:text-lg break-words"
                 >
                   {" "}
                   SAMWOO@SWMUSIC.CO.KR{" "}
                 </a>
                 or use the{" "}
-                <a className="text-cyan-700 hover:text-cyan-800">
+                <a className="text-amber-700 hover:text-amber-800">
                   <Link passHref href="/contact">
                     Contact
                   </Link>
