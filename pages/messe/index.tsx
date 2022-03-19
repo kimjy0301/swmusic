@@ -31,7 +31,7 @@ const Index = () => {
             </span>
           </div>
           <div className="w-full h-fit my-5">
-            <Carousel>
+            <Carousel showThumbs={false}>
               <div
                 style={{ height: carouselHeigt }}
                 className="bg-gray-900 rounded-lg shadow-xl overflow-hidden"
