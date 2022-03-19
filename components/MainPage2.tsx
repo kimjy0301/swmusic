@@ -45,7 +45,7 @@ const MainPage2 = () => {
     let sections = gsap.utils.toArray<HTMLElement>(".main-section");
 
     sections.forEach((mainSection, i) => {
-      if (i === 5) {
+      if (i === 2) {
         ScrollTrigger.create({
           trigger: mainSection,
           start: "bottom 0",
