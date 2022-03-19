@@ -155,7 +155,7 @@ const MainPage2 = () => {
           </div> */}
           <div className="main-section main-section-card z-10">
             <div className="bg-rounded lg:px-10 px-2 py-3 h-5/6 text-sm lg:text-lg flex flex-col justify-center items-center rounded-xl shadow-lg relative">
-              <div className="w-full px-2 first-letter:font-bold lg:first-letter:text-2xl lg:text-xl text-white">
+              <div className="w-full px-2 first-letter:font-bold lg:first-letter:text-2xl lg:text-xl text-white z-20">
                 For good music, to find good sound, and to provide good service.
                 <br></br>
                 <br></br>
@@ -165,7 +165,7 @@ const MainPage2 = () => {
                 highest quality products at an affordable price.<br></br>
                 <br></br>
               </div>
-              <div className="w-full px-2 first-letter:font-bold lg:first-letter:text-2xl lg:text-xl text-white">
+              <div className="w-full px-2 first-letter:font-bold lg:first-letter:text-2xl lg:text-xl text-white z-20">
                 Together with people who love music and love the guitar,
                 <br></br>
                 <br></br> We want to help make the world warmer and more
@@ -175,7 +175,7 @@ const MainPage2 = () => {
                 <br></br>
               </div>
 
-              <div className="w-full px-2 first-letter:font-bold lg:first-letter:text-2xl lg:text-xl text-white">
+              <div className="w-full px-2 first-letter:font-bold lg:first-letter:text-2xl lg:text-xl text-white z-20">
                 We handle all parts necessary for guitar.<br></br>
                 <br></br> If you have any questions, please send an e-mail to
                 <a
@@ -185,15 +185,16 @@ const MainPage2 = () => {
                   {" "}
                   SAMWOO@SWMUSIC.CO.KR{" "}
                 </a>
-                or use the{" "}
-                <a className="text-amber-700 hover:text-amber-800">
-                  <Link passHref href="/contact">
-                    Contact
-                  </Link>
-                </a>{" "}
+                or use the
+                <Link passHref href="/contact">
+                  <span className="text-amber-700 hover:text-amber-800 cursor-pointer">
+                    {" "}
+                    Contact{" "}
+                  </span>
+                </Link>
                 us page on our website.
               </div>
-              <div className="shadow-xl w-full h-full top-auto absolute opacity-10">
+              <div className="shadow-xl w-full h-full top-auto absolute opacity-10 z-10">
                 <Image
                   width={mainImgWidth}
                   className="img rounded-lg"
