@@ -194,7 +194,7 @@ const MainPage2 = () => {
                 </Link>
                 us page on our website.
               </div>
-              <div className="shadow-xl w-full h-full top-auto absolute opacity-10 z-10">
+              <div className="shadow-xl w-full h-full bottom-0 left-1/2 absolute opacity-10 z-10 -translate-x-1/2 translate-y-4">
                 <Image
                   width={mainImgWidth}
                   className="img rounded-lg"
