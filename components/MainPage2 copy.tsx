@@ -122,7 +122,7 @@ const MainPage2 = () => {
           <div className="main-section flex flex-col relative">
             <div
               onClick={() => window.scroll(0, scrollSize)}
-              className="p-3 lg:p-10 bg-rounded rounded-full main-section-card z-10  hover:scale-105 cursor-pointer transition-all"
+              className="p-3 lg:p-10 bg-cyan-700 rounded-full main-section-card z-10  hover:scale-105 cursor-pointer transition-all"
             >
               <div className="p-3 lg:p-10 bg-white rounded-full ">
                 <Image
@@ -153,60 +153,94 @@ const MainPage2 = () => {
               </div>
             </div>
           </div> */}
-          <div className="main-section main-section-card z-10">
-            <div className="bg-rounded lg:px-10 px-2 py-3 h-5/6 text-sm lg:text-lg flex flex-col justify-center items-center rounded-xl shadow-lg relative">
-              <div className="w-full px-2 first-letter:font-bold lg:first-letter:text-2xl lg:text-xl text-white">
+          <div className="main-section main-section-card z-10 ">
+            <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg">
+              <div className="w-1/2 px-2 lg:w-1/3 first-letter:font-bold first-letter:text-xl">
                 For good music, to find good sound, and to provide good service.
                 <br></br>
                 <br></br>
                 &apos;SAMWOO&apos; was established in 1994 and has been
                 providing the best quality and service until now. <br></br>
                 <br></br> Our goal is to satisfy our customers and provide the
-                highest quality products at an affordable price.<br></br>
-                <br></br>
+                highest quality products at an affordable price.
               </div>
-              <div className="w-full px-2 first-letter:font-bold lg:first-letter:text-2xl lg:text-xl text-white">
+
+              <div className="h-full border-r-2 border-gray-500"></div>
+              <div
+                className="shadow-xl"
+                style={{ width: imgWidth, height: imgHeight }}
+              >
+                <Image
+                  className="img rounded-lg"
+                  src={main2}
+                  alt={"main image 2"}
+                  width={imgWidth}
+                  height={imgHeight}
+                  layout={"intrinsic"}
+                  priority={true}
+                ></Image>
+              </div>
+            </div>
+          </div>
+          <div className="main-section main-section-card z-10 ">
+            <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg">
+              <div className="">
+                <Image
+                  className="img rounded-lg"
+                  src={main3}
+                  alt={"main image 3"}
+                  width={imgWidth}
+                  height={imgHeight}
+                  layout={"intrinsic"}
+                  priority={true}
+                ></Image>
+              </div>
+              <div className="h-full border-r-2 border-gray-500"></div>
+              <div className="w-1/2 px-2 lg:w-1/3 first-letter:font-bold first-letter:text-xl">
                 Together with people who love music and love the guitar,
                 <br></br>
                 <br></br> We want to help make the world warmer and more
                 beautiful.<br></br>
                 <br></br> We always strives for R&amp;D and develop for
-                convenient management and good quality of customers.<br></br>
-                <br></br>
+                convenient management and good quality of customers.
               </div>
-
-              <div className="w-full px-2 first-letter:font-bold lg:first-letter:text-2xl lg:text-xl text-white">
+            </div>
+          </div>
+          <div className="main-section main-section-card z-10 ">
+            <div className="bg-white lg:px-10 px-2 py-3 lg:py-12 h-2/3 text-sm lg:text-lg flex justify-between items-center rounded-xl shadow-lg">
+              <div className="w-1/2 px-2 lg:w-1/3 first-letter:font-bold first-letter:text-xl">
                 We handle all parts necessary for guitar.<br></br>
                 <br></br> If you have any questions, please send an e-mail to
                 <a
                   href="mailto:samwoo@swmusic.co.kr"
-                  className="text-cyan-700 hover:text-cyan-800 text-xs lg:text-lg break-words"
+                  className="text-cyan-700 hover:text-cyan-800 hover:font-semibold text-xs lg:text-base break-words"
                 >
                   {" "}
                   SAMWOO@SWMUSIC.CO.KR{" "}
                 </a>
                 or use the{" "}
-                <a className="text-cyan-700 hover:text-cyan-800">
+                <a className="text-cyan-700 hover:text-cyan-800 hover:font-semibold">
                   <Link passHref href="/contact">
                     Contact
                   </Link>
                 </a>{" "}
                 us page on our website.
               </div>
-              <div className="shadow-xl w-full h-full top-auto absolute opacity-10">
+
+              <div className="h-full border-r-2 border-gray-500"></div>
+              <div className="">
                 <Image
-                  width={mainImgWidth}
                   className="img rounded-lg"
-                  src={main2}
-                  alt={"main image 2"}
-                  layout={"responsive"}
+                  src={main4}
+                  alt={"main image 4"}
+                  width={imgWidth}
+                  height={imgHeight}
+                  layout={"intrinsic"}
                   priority={true}
-                  objectFit={"cover"}
                 ></Image>
               </div>
             </div>
           </div>
-
           <div className="w-screen py-16 flex flex-col justify-center items-center main-section bg-slate-100 z-10">
             <div className="text-2xl lg:text-4xl font-bold font-sans">
               CATALOG

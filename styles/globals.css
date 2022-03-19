@@ -133,7 +133,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(45deg, #1e95b6, #0e7490);
+  /* background: linear-gradient(45deg, #1e95b6, #0e7490); */
+  @apply bg-slate-900;
   width: 100vw;
   @apply shadow-inner;
 }
@@ -265,7 +266,9 @@ body {
 .main-bg {
   background: linear-gradient(25deg, #3d368a, #02001f);
 }
-
+.bg-rounded {
+  background: linear-gradient(67deg, rgb(8, 95, 119), rgb(15 23 42));
+}
 @media (min-width: 1024px) {
   .contact-item {
     width: 500px;
