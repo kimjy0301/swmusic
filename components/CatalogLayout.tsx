@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { Oval } from "react-loader-spinner";
 import { animated, useSpring, useTransition } from "react-spring";
 import { useRecoilState } from "recoil";
 import useSWR from "swr";
@@ -151,7 +152,15 @@ const CatalogLayout = ({ children }: any) => {
                   ) : (
                     <>
                       <div className="my-3 px-2 w-full flex items-center justify-center h-full">
-                        Loading...
+                        <Oval
+                          ariaLabel="loading-indicator"
+                          height={45}
+                          width={45}
+                          strokeWidth={5}
+                          strokeWidthSecondary={5}
+                          color="#2A6F85"
+                          secondaryColor="trnasparent"
+                        />
                       </div>
                     </>
                   )}

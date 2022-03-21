@@ -10,6 +10,7 @@ import namm_img_7 from "../../public/image/namm/namm (7).jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { useEffect, useState } from "react";
+import Head from "next/head";
 
 const Index = () => {
   const [carouselHeigt, setCarouselHeight] = useState(420);
@@ -21,6 +22,18 @@ const Index = () => {
 
   return (
     <>
+      <Head>
+        <title>NAMM|SAMWOO MANUFACTURING CO., LTD.</title>
+        <meta
+          name="description"
+          content="NAMM Page all patrs for guitar korea SAMWOO MANUFACTURING."
+        />
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="google-site-verification"
+          content="QbfEjI-CV9tEUfIi3AUzHr0l72sFMkKeDnSgQeNcfwE"
+        />
+      </Head>
       <div className="exhibition flex justify-center items-center">
         <div className="main-section flex flex-col">
           <div className="mt-10">
@@ -28,11 +41,25 @@ const Index = () => {
           </div>
           <div className="w-4/5 border-t-2 border-slate-500 my-3"></div>
           <div className="w-4/5">
-            <span className="text-base lg:text-2xl text-gray-800">
-              SAMWOO participates in NAMM, the world&apos;s largest music
-              industry exhibition, and presents our products. <br></br> You can
-              meet Samwoo at NAMM.
-            </span>
+            <p className="text-sm lg:text-2xl text-gray-800">
+              Messe Frankfurt is a music fair with a long history.
+              <br></br>
+              SAMWOO has participated every year since its foundation in 1994.
+              <br></br>
+              Please visit
+              <a
+                href="https://www.messefrankfurt.com/frankfurt/en.html"
+                rel="noreferrer"
+                target={"_blank"}
+              >
+                <span className="text-cyan-700 hover:text-cyan-800 cursor-pointer">
+                  {" "}
+                  https://www.messefrankfurt.com{" "}
+                </span>
+              </a>
+              to find out where we are at the exhibition. <br></br> We are
+              waiting for you at messe frankfurt!
+            </p>
           </div>
           <div className="w-full h-fit my-5">
             <Carousel showThumbs={false}>
