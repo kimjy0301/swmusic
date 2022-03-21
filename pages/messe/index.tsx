@@ -38,24 +38,23 @@ const Index = () => {
           <div className="w-4/5 border-t-2 border-slate-500 my-3"></div>
           <div className="w-4/5">
             <p className="text-sm lg:text-2xl text-gray-800">
-              The NAMM Show is the world&apos;s largest fair.
+              Messe Frankfurt is a music fair with a long history.
               <br></br>
-              SAMWOO has participated in the NAMM SHOW every year since its
-              foundation in 1994.
+              SAMWOO has participated every year since its foundation in 1994.
               <br></br>
-              Visit
+              Please visit
               <a
-                href="https://www.namm.org/"
+                href="https://www.messefrankfurt.com/frankfurt/en.html"
                 rel="noreferrer"
                 target={"_blank"}
               >
                 <span className="text-cyan-700 hover:text-cyan-800 cursor-pointer">
                   {" "}
-                  https://www.namm.org/{" "}
+                  https://www.messefrankfurt.com{" "}
                 </span>
               </a>
-              and search our exhibition location! <br></br> We are waiting for
-              you at NAMM!
+              to find out where we are at the exhibition. <br></br> We are
+              waiting for you at messe frankfurt!
             </p>
           </div>
           <div className="w-full h-fit my-5">
