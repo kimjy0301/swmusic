@@ -6,7 +6,8 @@ import main0 from "../public/image/main_0.jpg";
 import main2 from "../public/image/main_2.jpg";
 import main3 from "../public/image/main_3.jpg";
 import main4 from "../public/image/main_4.jpg";
-import main5 from "../public/image/main_5.jpg";
+import catalog_img1 from "../public/image/1.jpg";
+import catalog_img2 from "../public/image/2.jpg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { animated, useSpring } from "react-spring";
@@ -248,12 +249,12 @@ const MainPage2 = () => {
             <div className="w-5/6 border-b-2 border-gray-600 my-3 lg:my-10"></div>
             <div className="flex flex-col lg:flex-row justify-center items-center">
               <Link passHref href="/catalog/1/1">
-                <div className="relative  lg:w-64 lg:h-64 w-40 h-40 bg-slate-400 m-6 rounded shadow-xl flex justify-center items-center cursor-pointer text-base lg:text-xl font-semibold catalog-card1 hover:scale-105 transition-all duration-200">
+                <div className="relative  lg:w-64 lg:h-64 w-40 h-40 bg-slate-400 m-6 rounded shadow-xl flex justify-center items-center cursor-pointer text-base lg:text-xl font-semibold hover:scale-105 transition-all duration-200">
                   <div className="absolute -bottom-8"> Main CATALOG</div>
                 </div>
               </Link>
               <Link passHref href="/catalog/2/1">
-                <div className="relative lg:w-64 lg:h-64 w-40 h-40 bg-slate-400 m-6 rounded shadow-xl flex justify-center items-center cursor-pointer text-base lg:text-xl font-semibold catalog-card2 hover:scale-105 transition-all duration-200">
+                <div className="relative lg:w-64 lg:h-64 w-40 h-40 bg-slate-400 m-6 rounded shadow-xl flex justify-center items-center cursor-pointer text-base lg:text-xl font-semibold hover:scale-105 transition-all duration-200">
                   <div className="absolute -bottom-8">2022 New Items</div>
                 </div>
               </Link>
