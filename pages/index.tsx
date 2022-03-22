@@ -17,13 +17,6 @@ const Home: NextPage = ({ catalogs }: any) => {
     setShow(false);
   }, [setShow]);
 
-  const [isIE, setIsIE] = useState(false);
-
-  useEffect(() => {
-    setIsIE(/MSIE|Trident/.test(window.navigator.userAgent));
-    return () => {};
-  }, []);
-
   return (
     <>
       <Head>
@@ -39,12 +32,6 @@ const Home: NextPage = ({ catalogs }: any) => {
         />
       </Head>
       <div className="flex flex-col justify-center items-center">
-        {isIE && (
-          <div>
-            This site does not support IE11. Please use a modern browser such as
-            Edge or Chrome.
-          </div>
-        )}
         <MainPage2 main={true}></MainPage2>
       </div>
     </>

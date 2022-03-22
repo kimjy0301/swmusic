@@ -1,9 +1,16 @@
 import Head from "next/head";
-import { RecoilRoot } from "recoil";
+import { useEffect, useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 
 const Layout = (props: any) => {
+  const [isIE, setIsIE] = useState(false);
+
+  useEffect(() => {
+    setIsIE(/MSIE|Trident/.test(window.navigator.userAgent));
+    return () => {};
+  }, []);
+
   return (
     <>
       <Head>
@@ -16,11 +23,16 @@ const Layout = (props: any) => {
         />
       </Head>
       <div className="">
+        {isIE && (
+          <div className="z-50">
+            This site does not support IE11. Please use a modern browser such as
+            Edge or Chrome.
+          </div>
+        )}
         <div className="bg-slate-100 flex justify-center items-center">
           <Header></Header>
           {props.children}
         </div>
-
         <Footer></Footer>
       </div>
     </>
