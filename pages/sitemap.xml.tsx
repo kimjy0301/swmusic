@@ -10,10 +10,10 @@ export const getServerSideProps = async ({ res }: any) => {
   const BASE_URL = "https://swmusic.co.kr";
 
   const staticPaths = [
-    "http://localhost:3000/about",
-    "http://localhost:3000/contact",
-    "http://localhost:3000/messe",
-    "http://localhost:3000/namm",
+    "https://swmusic.co.kr/about",
+    "https://swmusic.co.kr/contact",
+    "https://swmusic.co.kr/messe",
+    "https://swmusic.co.kr/namm",
   ];
 
   // const staticPaths = fs
