@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useRecoilState } from "recoil";
 import { categoryNaviState, countState } from "../components/state/atomState";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import MainPage2 from "../components/MainPage2";
 
 interface catalog {
@@ -16,6 +16,14 @@ const Home: NextPage = ({ catalogs }: any) => {
   useEffect(() => {
     setShow(false);
   }, [setShow]);
+
+  const [isIE, setIsIE] = useState(false);
+
+  useEffect(() => {
+    setIsIE(/MSIE|Trident/.test(window.navigator.userAgent));
+    return () => {};
+  }, []);
+
   return (
     <>
       <Head>
@@ -31,6 +39,12 @@ const Home: NextPage = ({ catalogs }: any) => {
         />
       </Head>
       <div className="flex flex-col justify-center items-center">
+        {isIE && (
+          <div>
+            This site does not support IE11. Please use a modern browser such as
+            Edge or Chrome.
+          </div>
+        )}
         <MainPage2 main={true}></MainPage2>
       </div>
     </>
