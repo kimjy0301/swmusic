@@ -9,21 +9,28 @@ const Sitemap = () => {
 export const getServerSideProps = async ({ res }: any) => {
   const BASE_URL = "https://swmusic.co.kr";
 
-  const staticPaths = fs
-    .readdirSync("pages")
-    .filter((staticPage) => {
-      return ![
-        "api",
-        "_app.tsx",
-        "_document.tsx",
-        "index.tsx",
-        "sitemap.xml.tsx",
-        "sitemap",
-      ].includes(staticPage);
-    })
-    .map((staticPagePath) => {
-      return `${BASE_URL}/${staticPagePath}`;
-    });
+  const staticPaths = [
+    "http://localhost:3000/about",
+    "http://localhost:3000/contact",
+    "http://localhost:3000/messe",
+    "http://localhost:3000/namm",
+  ];
+
+  // const staticPaths = fs
+  //   .readdirSync("pages")
+  //   .filter((staticPage) => {
+  //     return ![
+  //       "api",
+  //       "_app.tsx",
+  //       "_document.tsx",
+  //       "index.tsx",
+  //       "sitemap.xml.tsx",
+  //       "sitemap",
+  //     ].includes(staticPage);
+  //   })
+  //   .map((staticPagePath) => {
+  //     return `${BASE_URL}/${staticPagePath}`;
+  //   });
 
   const catalogs: catalog[] = await prisma.catalog.findMany({
     include: { pages: { orderBy: { pageNumber: "asc" } } },
