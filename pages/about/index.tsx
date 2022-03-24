@@ -5,7 +5,7 @@ const Index = () => {
   return (
     <>
       <Head>
-        <title>ABOUT|SAMWOO MANUFACTURING CO., LTD.</title>
+        <title>ABOUT | SAMWOO MANUFACTURING</title>
         <meta
           name="description"
           content="About Page all patrs for guitar korea SAMWOO MANUFACTURING."

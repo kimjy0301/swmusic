@@ -19,7 +19,7 @@ const Index = () => {
   return (
     <>
       <Head>
-        <title>MESSE|SAMWOO MANUFACTURING CO., LTD.</title>
+        <title>MESSE | SAMWOO MANUFACTURING</title>
         <meta
           name="description"
           content="MESSE Page all patrs for guitar korea SAMWOO MANUFACTURING."

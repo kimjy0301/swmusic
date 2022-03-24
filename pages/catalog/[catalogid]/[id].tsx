@@ -162,7 +162,7 @@ const CatalogIndex = ({ imageProps, imageProps2, pageProps }: any) => {
   return (
     <>
       <Head>
-        <title>{`${pageProps.catalogName}|SAMWOO MANUFACTURING CO., LTD.`}</title>
+        <title>{`${pageProps.catalogName} | SAMWOO MANUFACTURING`}</title>
         <meta
           name="description"
           content={`${pageProps.catalogName} Page all patrs for guitar korea SAMWOO MANUFACTURING, ${pageProps.tags}`}

@@ -20,7 +20,7 @@ const Home: NextPage = ({ catalogs }: any) => {
   return (
     <>
       <Head>
-        <title>HOME|SAMWOO MANUFACTURING CO., LTD.</title>
+        <title>HOME | SAMWOO MANUFACTURING</title>
         <meta
           name="description"
           content="Home Page all patrs for guitar korea SAMWOO MANUFACTURING."

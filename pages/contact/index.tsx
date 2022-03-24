@@ -64,7 +64,7 @@ const Contact = () => {
   return (
     <>
       <Head>
-        <title>CONTACT|SAMWOO MANUFACTURING CO., LTD.</title>
+        <title>CONTACT | SAMWOO MANUFACTURING</title>
         <meta
           name="description"
           content="Contact Page all patrs for guitar korea SAMWOO MANUFACTURING."
