@@ -37,7 +37,7 @@ const Index = () => {
           </div>
           <div className="w-4/5 border-t-2 border-slate-500 my-3"></div>
           <div className="w-4/5">
-            <p className="text-sm lg:text-2xl text-gray-800">
+            <p className="text-sm lg:text-2xl lg:leading-10 text-gray-800">
               Messe Frankfurt is a music fair with a long history.
               <br></br>
               SAMWOO has participated every year since its foundation in 1994.
