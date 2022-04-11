@@ -7,13 +7,13 @@ const Sitemap = () => {
 };
 
 export const getServerSideProps = async ({ res }: any) => {
-  const BASE_URL = "https://swmusic.co.kr";
+  const BASE_URL = "https://www.swmusic.co.kr";
 
   const staticPaths = [
-    "https://swmusic.co.kr/about",
-    "https://swmusic.co.kr/contact",
-    "https://swmusic.co.kr/messe",
-    "https://swmusic.co.kr/namm",
+    "https://www.swmusic.co.kr/about",
+    "https://www.swmusic.co.kr/contact",
+    "https://www.swmusic.co.kr/messe",
+    "https://www.swmusic.co.kr/namm",
   ];
 
   // const staticPaths = fs
