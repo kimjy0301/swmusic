@@ -7,6 +7,7 @@ import { useRecoilState } from "recoil";
 import logo from "../public/logo.png";
 import messe2 from "../public/image/messe2.png";
 import namm2 from "../public/image/namm2.png";
+import korea_flag from "../public/Flag_of_South_Korea.svg";
 import { ProgressBar } from "./progress/ProgressBar";
 import { isLoadingState } from "./state/atomState";
 const Header = () => {
@@ -63,6 +64,17 @@ const Header = () => {
               <Image src={logo} alt={"swmusic logo"} priority={true}></Image>
             </a>
           </Link>
+
+          <div className="absolute top-0 left-40 lg:left-48 h-full rounded overflow-hidden flex justify-center items-center">
+            <Image
+              width={100}
+              height={50}
+              layout="fixed"
+              src={korea_flag}
+              alt={"KOREA Flag"}
+              priority={true}
+            ></Image>
+          </div>
         </div>
 
         <div className="hidden md:flex h-full justify-center items-center">
