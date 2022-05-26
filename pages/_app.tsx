@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { NextPage } from "next";
 import { ReactElement, ReactNode, useEffect, useState } from "react";
 import BaseLayout from "../components/BaseLayout";
-
+import * as gtag from "../public/js/gtag";
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
@@ -31,7 +31,15 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       pageProps,
     },
   ];
-
+  useEffect(() => {
+    const handleRouteChange = (url: any) => {
+      gtag.pageview(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
   return getLayout(
     <>
       {/* {isLoading ? (
