@@ -4,6 +4,33 @@ const Footer = () => {
       <div className="footer py-16 text-gray-100 text-sm lg:text-lg flex flex-col lg:flex-row relative font-semibold tracking-wide">
         <div className="flex flex-col">
           <div className="footer-card my-2">
+            <div className="flex ">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-strokeWidth="1.5"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="w-6 h-6 inline"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H6.911a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661z"
+                  />
+                </svg>
+                <span className="ml-1 lg:ml-3">EMAIL : </span>
+              </div>
+              <div className="flex-col ml-1">
+                <div>SAMWOO@SWMUSIC.CO.KR</div>
+                <div>SAMWOO9191@NAVER.COM</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="footer-card my-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 inline text-green-600"
@@ -37,6 +64,7 @@ const Footer = () => {
             </svg>
             <span className="ml-1 lg:ml-3">FAX : 82-31-902-9611</span>
           </div>
+
           <div className="footer-card my-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
