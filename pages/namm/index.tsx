@@ -41,6 +41,12 @@ const Index = () => {
           </div>
           <div className="w-4/5 border-t-2 border-slate-500 my-3"></div>
           <div className="w-4/5">
+            <br></br>
+            <p className="text-sm lg:text-2xl lg:leading-10 text-gray-800 font-bold">
+              2024 NAMM SHOW - HALL D BOOTHS 4024
+              <br></br>
+              <br></br>
+            </p>
             <p className="text-sm lg:text-2xl lg:leading-10 text-gray-800">
               The NAMM Show is the world&apos;s largest fair.
               <br></br>
