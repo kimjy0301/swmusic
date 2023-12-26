@@ -201,7 +201,7 @@ const Header = () => {
                     <Link href="/catalog/2/1">
                       <a>
                         <div className="font-semibold my-2  hover:text-cyan-600 border-cyan-600 h-full cursor-pointer mx-2 select-none ">
-                          2022 New Items
+                          2024 New Items
                         </div>
                       </a>
                     </Link>

@@ -250,7 +250,7 @@ const MainPage2 = ({ main }: MainPage2Props) => {
                       objectFit="contain"
                     ></Image>
                   </div>
-                  <div className="absolute -bottom-8">2022 New Items</div>
+                  <div className="absolute -bottom-8">2024 New Items</div>
                 </div>
               </Link>
             </div>
