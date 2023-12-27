@@ -103,7 +103,7 @@ const Header = () => {
                 <div className="flex flex-col bg-white/90 items-center justify-center rounded-b-lg shadow-lg">
                   <Link passHref href="/catalog/2/1">
                     <div className="cursor-pointer select-none my-2 hover:text-cyan-600 transition-all duration-150">
-                      2022 New Items
+                      2024 New Items
                     </div>
                   </Link>
                   <Link passHref href="/catalog/1/0">
