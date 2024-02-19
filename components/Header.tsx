@@ -111,6 +111,16 @@ const Header = () => {
                       Main Catalog
                     </div>
                   </Link>
+                  <Link passHref href="/catalog/3/1">
+                    <div className="cursor-pointer select-none my-2 hover:text-cyan-600 transition-all duration-150">
+                      WILKINSON
+                    </div>
+                  </Link>
+                  <Link passHref href="/catalog/4/1">
+                    <div className="cursor-pointer select-none my-2 hover:text-cyan-600 transition-all duration-150">
+                      BABICZ
+                    </div>
+                  </Link>
                 </div>
               </animated.div>
             </div>
@@ -211,6 +221,24 @@ const Header = () => {
                       <a>
                         <div className="font-semibold my-2  hover:text-cyan-600 border-cyan-600 h-full cursor-pointer mx-2 select-none ">
                           Main Catalog
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
+                  <div className="text-right w-full">
+                    <Link href="/catalog/3/1">
+                      <a>
+                        <div className="font-semibold my-2  hover:text-cyan-600 border-cyan-600 h-full cursor-pointer mx-2 select-none ">
+                          WILKINSON
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
+                  <div className="text-right w-full">
+                    <Link href="/catalog/4/1">
+                      <a>
+                        <div className="font-semibold my-2  hover:text-cyan-600 border-cyan-600 h-full cursor-pointer mx-2 select-none ">
+                          BABICZ
                         </div>
                       </a>
                     </Link>

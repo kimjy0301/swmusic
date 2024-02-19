@@ -7,6 +7,8 @@ import namm_img_4 from "../../public/image/namm/namm (4).jpg";
 import namm_img_5 from "../../public/image/namm/namm (5).jpg";
 import namm_img_6 from "../../public/image/namm/namm (6).jpg";
 import namm_img_7 from "../../public/image/namm/namm (7).jpg";
+import namm_img_8 from "../../public/image/namm/namm (8).jpg";
+import namm_img_9 from "../../public/image/namm/namm (9).jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { useEffect, useState } from "react";
@@ -70,6 +72,28 @@ const Index = () => {
           </div>
           <div className="w-full h-fit my-5">
             <Carousel showThumbs={false}>
+            <div
+                style={{ height: carouselHeigt }}
+                className="bg-gray-900 rounded-lg shadow-xl overflow-hidden"
+              >
+                <Image
+                  src={namm_img_8}
+                  alt="namm"
+                  layout="fill"
+                  objectFit="contain"
+                ></Image>
+              </div>
+              <div
+                style={{ height: carouselHeigt }}
+                className="bg-gray-900 rounded-lg shadow-xl overflow-hidden"
+              >
+                <Image
+                  src={namm_img_9}
+                  alt="namm"
+                  layout="fill"
+                  objectFit="contain"
+                ></Image>
+              </div>
               <div
                 style={{ height: carouselHeigt }}
                 className="bg-gray-900 rounded-lg shadow-xl overflow-hidden"
