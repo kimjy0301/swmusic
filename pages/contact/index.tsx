@@ -45,7 +45,7 @@ const Contact = () => {
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     emailjs
       .send(
-        "service_0qov1rn",
+        "service_6lratd9",
         "template_8wh6qfp",
         data,
         "user_iLCRL9p3HZ7CUrsE7niKg"
