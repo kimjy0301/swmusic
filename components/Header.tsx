@@ -251,6 +251,15 @@ const Header = () => {
                       </a>
                     </Link>
                   </div>
+                  <div className="text-right w-full">
+                    <Link href="/download">
+                      <a>
+                        <div className="font-semibold my-2  hover:text-cyan-600 border-cyan-600 h-full cursor-pointer mx-2 select-none ">
+                          DOWNLOAD
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
                 </animated.div>
               )}
               <Link href="/contact">
