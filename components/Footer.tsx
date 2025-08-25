@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Footer = () => {
   return (
     <>
@@ -109,6 +111,11 @@ const Footer = () => {
           </div>
         </div>
         <div>
+          <Link passHref href="/download">
+            <div className="text-center w-full cursor-pointer select-none my-2 text-slate-900 hover:bg-gray-300 bg-gray-100 px-2 py-1 rounded-md transition-all duration-150">
+              DOWNLOAD CATALOG
+            </div>
+          </Link>
           <iframe
             className="rounded-lg shadow-md footer-card h-64"
             loading="lazy"

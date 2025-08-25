@@ -121,6 +121,14 @@ const Header = () => {
                       BABICZ
                     </div>
                   </Link>
+
+                  <div className="w-full h-px bg-gray-300"></div>
+
+                  <Link passHref href="/download">
+                    <div className="cursor-pointer select-none my-2 hover:text-cyan-600 transition-all duration-150">
+                      DOWNLOAD
+                    </div>
+                  </Link>
                 </div>
               </animated.div>
             </div>
