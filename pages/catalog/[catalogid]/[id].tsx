@@ -13,6 +13,38 @@ import { prisma } from "../../../components/client";
 
 import { catalog, page } from "../../../components/publicInterface";
 
+// page.ip(146.56.147.155)는 이 주소로 301 리다이렉트되며, plaiceholder는 리다이렉트를 처리하지 못한다
+const IMAGE_HOST = "https://kimjiyong.co.kr";
+
+// 이미지 서버가 빌드 중 동시 요청을 다 받지 못해 연결이 멈추는 경우가 있어, 실패해도 페이지 생성이 막히지 않게 한다
+const PLACEHOLDER_TIMEOUT_MS = 10000;
+const FALLBACK_IMAGE = {
+  width: 2479,
+  height: 3508,
+  blurDataURL:
+    "data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==",
+};
+
+const getImageProps = async (src: string) => {
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const { img, base64 } = await Promise.race([
+        getPlaiceholder(src),
+        new Promise<never>((_, reject) =>
+          setTimeout(
+            () => reject(new Error(`timeout: ${src}`)),
+            PLACEHOLDER_TIMEOUT_MS
+          )
+        ),
+      ]);
+      return { ...img, blurDataURL: base64 };
+    } catch (e) {
+      console.warn(`getPlaiceholder failed (${attempt + 1}/2): ${src}`, e);
+    }
+  }
+  return { ...FALLBACK_IMAGE, src };
+};
+
 export async function getStaticPaths() {
   const catalogs: catalog[] = await prisma.catalog.findMany({
     include: { pages: { orderBy: { pageNumber: "asc" } } },
@@ -78,18 +110,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
       next = true;
     }
 
-    const plaiceHolder1 = await getPlaiceholder(
-      `http://${page?.ip}${page?.filePath}`
-    );
-
-    let plaiceHolder2;
-    if (page2) {
-      plaiceHolder2 = await getPlaiceholder(
-        `http://${page2?.ip}${page2?.filePath}`
-      );
-    } else {
-      plaiceHolder2 = { img: null, base64: null };
-    }
+    const [imageProps, imageProps2] = await Promise.all([
+      getImageProps(`${IMAGE_HOST}${page?.filePath}`),
+      page2
+        ? getImageProps(`${IMAGE_HOST}${page2.filePath}`)
+        : Promise.resolve({ blurDataURL: null }),
+    ]);
 
     if (page) {
       tags = page.tag;
@@ -100,14 +126,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
     return {
       props: {
-        imageProps: {
-          ...plaiceHolder1.img,
-          blurDataURL: plaiceHolder1.base64,
-        },
-        imageProps2: {
-          ...plaiceHolder2.img,
-          blurDataURL: plaiceHolder2.base64,
-        },
+        imageProps,
+        imageProps2,
         pageProps: {
           prev,
           next,
