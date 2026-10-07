@@ -45,7 +45,7 @@ const Index = () => {
           <div className="w-4/5">
             <br></br>
             <p className="text-sm lg:text-2xl lg:leading-10 text-gray-800 font-bold">
-              2024 NAMM SHOW - HALL D BOOTHS 4024
+              2027 NAMM SHOW - HALL D BOOTH. 3823
               <br></br>
               <br></br>
             </p>
@@ -72,7 +72,7 @@ const Index = () => {
           </div>
           <div className="w-full h-fit my-5">
             <Carousel showThumbs={false}>
-            <div
+              <div
                 style={{ height: carouselHeigt }}
                 className="bg-gray-900 rounded-lg shadow-xl overflow-hidden"
               >
