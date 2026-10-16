@@ -8,6 +8,7 @@ import logo from "../public/logo.png";
 import messe2 from "../public/image/messe2.png";
 import namm2 from "../public/image/namm2.png";
 import korea_flag from "../public/Flag_of_South_Korea.svg";
+import fzLogo from "../public/FZ-logo.png";
 import { ProgressBar } from "./progress/ProgressBar";
 import { isLoadingState } from "./state/atomState";
 const Header = () => {
@@ -65,15 +66,33 @@ const Header = () => {
             </a>
           </Link>
 
-          <div className="absolute top-0 left-40 lg:left-48 h-full rounded overflow-hidden flex justify-center items-center">
-            <Image
-              width={100}
-              height={50}
-              layout="fixed"
-              src={korea_flag}
-              alt={"KOREA Flag"}
-              priority={true}
-            ></Image>
+          <div className="absolute top-0 left-40 lg:left-48 h-full flex justify-center items-center gap-1.5 md:gap-2">
+            <div className="rounded overflow-hidden flex shrink-0">
+              <Image
+                width={100}
+                height={50}
+                layout="fixed"
+                src={korea_flag}
+                alt={"KOREA Flag"}
+                priority={true}
+              ></Image>
+            </div>
+            <a
+              href="https://frettedzone.co.kr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Fretted Zone"
+              className="relative block h-8 w-[92px] md:h-10 md:w-[118px] shrink-0"
+            >
+              <Image
+                src={fzLogo}
+                alt="Fretted Zone"
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+                priority={true}
+              />
+            </a>
           </div>
         </div>
 
